@@ -1,44 +1,24 @@
-import React, {
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
-
-import {
-  Search,
-  Menu,
-  X,
-  ArrowRight,
-  ArrowLeft,
-  Clock3,
-  FileText,
-  Download,
-  BookOpen,
-  Building2,
-  Activity,
-  ShieldCheck,
-  Users,
-  Database,
-  Globe2,
-  CheckCircle2,
-  ChevronRight,
-} from "lucide-react";
-
+import React, { useEffect, useRef, useState } from "react";
 import logoDefault from "./assets/logo-default.png";
 
 /* =========================================================
-   DATA
+   NAVIGATION
 ========================================================= */
 
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
+  { id: "news", label: "News" },
+  { id: "insights", label: "Insights" },
   { id: "research", label: "Research" },
   { id: "case-studies", label: "Case Studies" },
   { id: "library", label: "Library" },
   { id: "events", label: "Events" },
   { id: "community", label: "Community" },
 ];
+
+/* =========================================================
+   LIBRARY TOPICS
+========================================================= */
 
 const TOPICS = [
   { id: "SATUSEHAT", label: "SATUSEHAT", icon: "➕" },
@@ -51,12 +31,420 @@ const TOPICS = [
   { id: "Akreditasi", label: "Akreditasi", icon: "🏅" },
 ];
 
+/* =========================================================
+   CASE STUDIES
+========================================================= */
+
+const CASE_STUDIES = [
+  {
+    id: 1,
+    tag: "SMART HOSPITAL",
+    title: "Smart Hospital Dashboard untuk Monitoring Operasional",
+    description:
+      "Implementasi dashboard eksekutif untuk membantu rumah sakit memonitor operasional, pelayanan, kapasitas, dan indikator kinerja secara terintegrasi.",
+    author: "TIM EDITORIAL INOVAMEDIKA",
+    date: "JULY 22, 2026",
+    image:
+      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+    industry: "Rumah Sakit Umum",
+    location: "Indonesia (Dummy Project)",
+    client: "Rumah Sakit Umum",
+    duration: "4 Bulan",
+    status: "Completed",
+    solutions: [
+      "SIMRS iHospital",
+      "Executive Dashboard",
+      "Business Intelligence",
+      "Data Analytics",
+      "Real-time Monitoring",
+    ],
+    summary: [
+      "Sebuah rumah sakit menghadapi tantangan dalam memantau operasional secara menyeluruh karena informasi berasal dari berbagai sistem dan laporan manual.",
+      "Kondisi tersebut menyebabkan proses pengambilan keputusan menjadi lebih lambat, terutama ketika manajemen membutuhkan data terkini mengenai pelayanan, kapasitas, maupun kinerja operasional.",
+      "Melalui implementasi Smart Hospital Dashboard, data dari berbagai modul SIMRS diintegrasikan ke dalam satu dashboard yang menampilkan informasi secara real-time.",
+      "Dashboard ini membantu pimpinan rumah sakit memonitor indikator utama pelayanan dan operasional melalui visualisasi yang lebih mudah dipahami.",
+    ],
+    challenges: [
+      "Data operasional tersebar di berbagai modul dan sulit dikonsolidasikan.",
+      "Penyusunan laporan manajemen masih dilakukan secara manual.",
+      "Monitoring indikator pelayanan membutuhkan waktu yang lama.",
+      "Informasi yang diterima manajemen tidak selalu mencerminkan kondisi terkini.",
+      "Pengambilan keputusan sering bergantung pada laporan periodik.",
+    ],
+    solutionDescription:
+      "Rumah sakit mengembangkan dashboard operasional yang mengintegrasikan data dari berbagai layanan, sehingga informasi dapat dipantau melalui satu tampilan yang terpusat.",
+    solutionAreas: [
+      {
+        title: "Monitoring Kapasitas",
+        items: [
+          "Bed Occupancy Rate (BOR)",
+          "Ketersediaan tempat tidur",
+          "Average Length of Stay (ALOS)",
+          "Turn Over Interval (TOI)",
+          "Bed Turn Over (BTO)",
+        ],
+      },
+      {
+        title: "Pelayanan",
+        items: [
+          "Kunjungan pasien rawat jalan",
+          "Kunjungan rawat inap",
+          "Status pelayanan IGD",
+          "Aktivitas kamar operasi",
+          "Pemeriksaan laboratorium",
+          "Pemeriksaan radiologi",
+          "Monitoring antrean pelayanan",
+        ],
+      },
+      {
+        title: "Manajemen",
+        items: [
+          "Pendapatan harian",
+          "Tren kunjungan",
+          "Utilisasi tempat tidur",
+          "Dashboard KPI rumah sakit",
+          "Executive Dashboard untuk pimpinan",
+        ],
+      },
+    ],
+    outcomes: [
+      "Monitoring operasional menjadi lebih cepat melalui satu dashboard terintegrasi.",
+      "Manajemen memperoleh informasi yang lebih mudah dipahami melalui visualisasi data.",
+      "Proses penyusunan laporan menjadi lebih efisien.",
+      "Koordinasi antar unit meningkat karena menggunakan sumber data yang sama.",
+      "Pengambilan keputusan dapat dilakukan berdasarkan informasi yang lebih aktual.",
+    ],
+    successFactors: [
+      "Integrasi data dari berbagai modul SIMRS.",
+      "Standarisasi indikator operasional.",
+      "Kualitas data yang konsisten.",
+      "Keterlibatan manajemen dalam penyusunan kebutuhan dashboard.",
+      "Evaluasi berkala terhadap indikator yang ditampilkan.",
+    ],
+    lessons:
+      "Implementasi dashboard bukan hanya mengenai visualisasi data, tetapi juga memastikan bahwa data yang digunakan memiliki kualitas yang baik dan dapat dipercaya. Dashboard yang efektif harus menyajikan informasi yang relevan, mudah dipahami, dan mendukung proses pengambilan keputusan di berbagai tingkat manajemen.",
+    keyOutcomes: [
+      {
+        area: "Monitoring Operasional",
+        impact:
+          "Informasi lebih mudah dipantau melalui dashboard terintegrasi",
+      },
+      {
+        area: "Pelaporan",
+        impact: "Penyusunan laporan menjadi lebih efisien",
+      },
+      {
+        area: "Pengambilan Keputusan",
+        impact: "Didukung oleh data operasional yang lebih aktual",
+      },
+      {
+        area: "Koordinasi",
+        impact: "Antar unit menggunakan sumber data yang sama",
+      },
+      {
+        area: "Transparansi",
+        impact: "KPI operasional lebih mudah dimonitor oleh manajemen",
+      },
+    ],
+    technologies: [
+      "Role-based Access Control (RBAC)",
+      "SIMRS",
+      "Business Intelligence Dashboard",
+      "Data Warehouse",
+      "Real-time Analytics",
+      "Executive Dashboard",
+    ],
+    content:
+      "Implementasi Smart Hospital Dashboard ini bertujuan untuk mengintegrasikan seluruh data operasional rumah sakit secara terstruktur dan mudah dipantau.",
+    impacts: [
+      "Monitoring operasional melalui dashboard terintegrasi",
+      "Pengambilan keputusan berbasis data operasional",
+      "Visualisasi indikator pelayanan secara lebih mudah dipahami",
+    ],
+  },
+
+  {
+    id: 2,
+    tag: "LABORATORIUM",
+    title: "Modernisasi Laboratorium dengan iLab",
+    description:
+      "Laboratorium berhasil mengintegrasikan proses registrasi, barcode specimen, hasil pemeriksaan, dan distribusi laporan secara digital.",
+    author: "TIM EDITORIAL INOVAMEDIKA",
+    date: "JULY 22, 2026",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    industry: "Laboratorium Klinik",
+    location: "Indonesia (Dummy Project)",
+    client: "Jaringan Laboratorium Klinik",
+    duration: "3 Bulan",
+    status: "Completed",
+    solutions: [
+      "Laboratory Information System",
+      "Barcode Specimen",
+      "Digital Result",
+      "Workflow Automation",
+    ],
+    summary: [
+      "Laboratorium menghadapi kebutuhan untuk meningkatkan efisiensi proses pemeriksaan dan distribusi hasil.",
+      "Implementasi sistem iLab membantu menghubungkan proses registrasi, specimen, pemeriksaan, hingga penerbitan hasil.",
+    ],
+    challenges: [
+      "Pencatatan specimen masih membutuhkan proses manual.",
+      "Distribusi hasil pemeriksaan membutuhkan waktu.",
+      "Risiko kesalahan input masih cukup tinggi.",
+    ],
+    solutionDescription:
+      "Sistem iLab digunakan untuk mengotomatisasi workflow laboratorium mulai dari registrasi hingga distribusi hasil pemeriksaan.",
+    solutionAreas: [
+      {
+        title: "Laboratory Workflow",
+        items: [
+          "Registrasi pasien",
+          "Barcode specimen",
+          "Tracking specimen",
+          "Hasil pemeriksaan",
+          "Distribusi laporan",
+        ],
+      },
+    ],
+    outcomes: [
+      "Meminimalkan kesalahan pencatatan sampel.",
+      "Workflow laboratorium menjadi lebih terstruktur.",
+      "Distribusi hasil pemeriksaan menjadi lebih cepat.",
+    ],
+    successFactors: [
+      "Standarisasi workflow laboratorium.",
+      "Integrasi sistem dengan perangkat pemeriksaan.",
+      "Konsistensi data pasien dan specimen.",
+    ],
+    lessons:
+      "Digitalisasi laboratorium perlu memperhatikan keseluruhan alur specimen dan hasil pemeriksaan, bukan hanya proses pencatatan.",
+    keyOutcomes: [
+      {
+        area: "Workflow",
+        impact: "Proses laboratorium lebih terstruktur",
+      },
+      {
+        area: "Specimen",
+        impact: "Tracking specimen lebih mudah",
+      },
+      {
+        area: "Reporting",
+        impact: "Distribusi hasil menjadi lebih cepat",
+      },
+    ],
+    technologies: [
+      "Laboratory Information System",
+      "Barcode",
+      "Workflow Automation",
+      "Digital Reporting",
+    ],
+    content:
+      "Dengan menerapkan sistem iLab, seluruh alur kerja laboratorium mulai dari pencetakan barcode sampel, pemeriksaan hingga penerbitan hasil analisis dilakukan secara digital.",
+    impacts: [
+      "Meminimalkan kesalahan human error pada pencatatan sampel",
+      "Workflow laboratorium lebih efisien",
+      "Distribusi hasil pemeriksaan lebih cepat",
+    ],
+  },
+
+  {
+    id: 3,
+    tag: "KLINIK",
+    title: "Digitalisasi Pelayanan Klinik Medika Prima",
+    description:
+      "Implementasi sistem manajemen klinik berbasis cloud untuk meningkatkan efisiensi registrasi pasien dan penjadwalan.",
+    author: "TIM EDITORIAL INOVAMEDIKA",
+    date: "JULY 22, 2026",
+    image:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+    industry: "Klinik",
+    location: "Indonesia (Dummy Project)",
+    client: "Klinik Utama Medika Prima",
+    duration: "2 Bulan",
+    status: "Completed",
+    solutions: [
+      "Clinic Management System",
+      "Online Registration",
+      "Electronic Medical Record",
+      "Inventory Management",
+    ],
+    summary: [
+      "Klinik membutuhkan sistem terintegrasi untuk meningkatkan efisiensi pelayanan dan administrasi pasien.",
+      "Transformasi dilakukan melalui digitalisasi registrasi, rekam medis, dan pengelolaan inventaris.",
+    ],
+    challenges: [
+      "Antrean pendaftaran fisik.",
+      "Dokumentasi rekam medis yang belum terintegrasi.",
+      "Monitoring stok obat masih dilakukan secara manual.",
+    ],
+    solutionDescription:
+      "Implementasi sistem manajemen klinik berbasis web mengintegrasikan proses pendaftaran, rekam medis, pelayanan, dan inventaris.",
+    solutionAreas: [
+      {
+        title: "Pelayanan Klinik",
+        items: [
+          "Pendaftaran online",
+          "Rekam medis elektronik",
+          "Jadwal dokter",
+          "Monitoring pelayanan",
+        ],
+      },
+      {
+        title: "Farmasi",
+        items: [
+          "Inventory obat",
+          "Monitoring stok",
+          "Riwayat penggunaan",
+        ],
+      },
+    ],
+    outcomes: [
+      "Mengurangi antrean pendaftaran fisik.",
+      "Rekam medis lebih mudah diakses.",
+      "Stok obat dapat dipantau secara lebih akurat.",
+    ],
+    successFactors: [
+      "Adopsi sistem oleh tenaga medis.",
+      "Standardisasi proses pelayanan.",
+      "Konsistensi pengelolaan data.",
+    ],
+    lessons:
+      "Digitalisasi klinik memberikan manfaat terbesar ketika proses administratif dan klinis dirancang sebagai satu workflow yang terintegrasi.",
+    keyOutcomes: [
+      {
+        area: "Registration",
+        impact: "Antrean pendaftaran dapat dikurangi",
+      },
+      {
+        area: "Medical Record",
+        impact: "Data pasien lebih mudah diakses",
+      },
+      {
+        area: "Inventory",
+        impact: "Stok obat lebih transparan",
+      },
+    ],
+    technologies: [
+      "Clinic Management System",
+      "Electronic Medical Record",
+      "Cloud Application",
+      "Inventory Management",
+    ],
+    content:
+      "Transformasi digital klinik dilakukan dengan menerapkan pendaftaran online, rekam medis elektronik berbasis web, dan modul inventaris obat otomatis.",
+    impacts: [
+      "Mengurangi antrean pendaftaran fisik",
+      "Rekam medis pasien tersimpan aman",
+      "Stok obat terpantau secara transparan",
+    ],
+  },
+
+  {
+    id: 4,
+    tag: "RADIOLOGI",
+    title: "Digital Imaging Workflow Menggunakan iRad",
+    description:
+      "Implementasi PACS dan RIS untuk mempercepat distribusi hasil radiologi dan integrasi dengan sistem rumah sakit.",
+    author: "TIM EDITORIAL INOVAMEDIKA",
+    date: "JULY 22, 2026",
+    image:
+      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+    industry: "Radiologi Rumah Sakit",
+    location: "Indonesia (Dummy Project)",
+    client: "Departemen Radiologi RS Pusat",
+    duration: "5 Bulan",
+    status: "Completed",
+    solutions: [
+      "PACS",
+      "RIS",
+      "DICOM",
+      "Digital Imaging Workflow",
+      "SIMRS Integration",
+    ],
+    summary: [
+      "Departemen radiologi membutuhkan workflow digital yang mampu mempercepat distribusi citra dan hasil ekspertise.",
+      "Implementasi iRad menghubungkan PACS, RIS, dan sistem rumah sakit sehingga dokter dapat mengakses citra secara digital.",
+    ],
+    challenges: [
+      "Distribusi citra masih bergantung pada media fisik.",
+      "Proses pencarian pemeriksaan membutuhkan waktu.",
+      "Integrasi radiologi dengan SIMRS perlu ditingkatkan.",
+    ],
+    solutionDescription:
+      "Integrasi PACS dan RIS memungkinkan pengelolaan citra serta informasi radiologi melalui workflow digital yang terhubung dengan sistem rumah sakit.",
+    solutionAreas: [
+      {
+        title: "Imaging",
+        items: [
+          "X-Ray",
+          "CT Scan",
+          "MRI",
+          "Digital image archive",
+        ],
+      },
+      {
+        title: "Workflow",
+        items: [
+          "RIS",
+          "PACS",
+          "DICOM",
+          "SIMRS integration",
+        ],
+      },
+    ],
+    outcomes: [
+      "Penghematan biaya cetak film radiologi.",
+      "Hasil ekspertise radiologi selesai lebih cepat.",
+      "Dokter DPJP dapat melihat hasil gambar melalui SIMRS.",
+    ],
+    successFactors: [
+      "Implementasi DICOM.",
+      "Integrasi PACS dan RIS.",
+      "Standardisasi workflow radiologi.",
+    ],
+    lessons:
+      "Digital imaging membutuhkan integrasi antara perangkat, standar komunikasi, workflow klinis, dan sistem informasi rumah sakit.",
+    keyOutcomes: [
+      {
+        area: "Imaging",
+        impact: "Citra medis dapat diakses secara digital",
+      },
+      {
+        area: "Workflow",
+        impact: "Distribusi hasil menjadi lebih cepat",
+      },
+      {
+        area: "Integration",
+        impact: "Radiologi terhubung dengan SIMRS",
+      },
+    ],
+    technologies: [
+      "PACS",
+      "RIS",
+      "DICOM",
+      "SIMRS",
+      "Digital Imaging",
+    ],
+    content:
+      "Integrasi sistem PACS dan RIS memungkinkan dokter spesialis radiologi mengakses citra medis seperti X-Ray, CT-Scan, dan MRI secara digital.",
+    impacts: [
+      "Penghematan biaya cetak film radiologi secara signifikan",
+      "Hasil ekspertise radiologi selesai lebih cepat",
+      "Dokter DPJP dapat langsung melihat hasil gambar melalui SIMRS",
+    ],
+  },
+];
+
+/* =========================================================
+   LIBRARY
+========================================================= */
+
 const LIBRARY_ITEMS = [
   {
     id: 1,
     tag: "REGULASI",
-    title:
-      "Peraturan Menteri Kesehatan tentang Rekam Medis Elektronik",
+    title: "Peraturan Menteri Kesehatan tentang Rekam Medis Elektronik",
     desc:
       "Regulasi nasional yang mengatur penyelenggaraan Rekam Medis Elektronik pada fasilitas pelayanan kesehatan.",
     publisher: "Kementerian Kesehatan RI",
@@ -67,1131 +455,978 @@ const LIBRARY_ITEMS = [
     size: "2.4 MB",
     uploadedDate: "12 Januari 2026",
     language: "Indonesia",
-    authors: "Kementerian Kesehatan Republik Indonesia",
-    source: "Kementerian Kesehatan Republik Indonesia",
-    documentType: "Regulasi Kesehatan",
     image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Dokumen regulasi yang membahas penyelenggaraan Rekam Medis Elektronik pada fasilitas pelayanan kesehatan, termasuk aspek tata kelola, keamanan, kerahasiaan, dan interoperabilitas data kesehatan.",
-    editorialNote:
-      "Konten halaman ini merupakan ringkasan untuk kebutuhan Library. Dokumen PDF yang dirujuk tetap merupakan publikasi asli dari penerbitnya.",
-    summary: [
+      "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1000&q=80",
+    keyPoints: [
       "Mengatur penyelenggaraan Rekam Medis Elektronik di fasilitas pelayanan kesehatan.",
-      "Menetapkan prinsip keamanan dan kerahasiaan informasi kesehatan.",
-      "Mendukung interoperabilitas dan pertukaran data kesehatan.",
-      "Menjelaskan tanggung jawab fasilitas pelayanan kesehatan dalam pengelolaan rekam medis.",
+      "Menetapkan standar keamanan, kerahasiaan, dan interoperabilitas data.",
+      "Mendorong integrasi sistem informasi kesehatan nasional.",
     ],
-    scope: [
-      {
-        title: "Penyelenggaraan Rekam Medis Elektronik",
-        items: [
-          "Kebijakan penyelenggaraan RME",
-          "Pengelolaan data pasien",
-          "Hak akses pengguna",
-          "Pengelolaan informasi kesehatan",
-        ],
-      },
-      {
-        title: "Keamanan dan Kerahasiaan",
-        items: [
-          "Perlindungan informasi pasien",
-          "Pengendalian akses",
-          "Kerahasiaan data",
-          "Audit dan pengawasan sistem",
-        ],
-      },
-      {
-        title: "Interoperabilitas Data",
-        items: [
-          "Pertukaran data antar sistem",
-          "Standar data kesehatan",
-          "Integrasi dengan platform kesehatan nasional",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "Rekam Medis Elektronik",
-      "SIMRS",
-      "SATUSEHAT",
-      "Healthcare Interoperability",
-      "Patient Data Management",
-    ],
-    suitableFor: [
-      "Hospital CIO",
-      "IT Manager",
-      "Medical Record Team",
-      "System Analyst",
-      "Healthcare IT Team",
-      "Digital Health Consultant",
-    ],
-    reference:
-      "Kementerian Kesehatan Republik Indonesia. Peraturan Menteri Kesehatan tentang Rekam Medis Elektronik.",
-    pdfUrl: "#",
   },
-
   {
     id: 2,
-    tag: "SATUSEHAT",
-    title: "SATUSEHAT Platform Implementation Guide",
+    tag: "BPJS",
+    title: "Memahami Bridging BPJS Kesehatan dalam SIMRS",
     desc:
-      "Panduan implementasi integrasi sistem informasi kesehatan dengan platform SATUSEHAT.",
-    publisher: "Kementerian Kesehatan RI",
+      "Panduan implementasi bridging BPJS, meliputi alur administrasi, verifikasi pelayanan, billing, hingga klaim.",
+    publisher: "BPJS Kesehatan / Inova Medika",
     year: "2025",
-    type: "Implementation Guide",
+    type: "Panduan",
     fileType: "PDF",
-    pages: "68 Halaman",
-    size: "5.8 MB",
-    uploadedDate: "20 November 2025",
+    pages: "18 Halaman",
+    size: "3.1 MB",
+    uploadedDate: "05 Februari 2026",
     language: "Indonesia",
-    authors: "Kementerian Kesehatan Republik Indonesia",
-    source: "SATUSEHAT Platform",
-    documentType: "Implementation Guide",
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Panduan teknis untuk membantu fasilitas pelayanan kesehatan memahami proses integrasi sistem informasi dengan ekosistem SATUSEHAT.",
-    editorialNote:
-      "Ringkasan disusun untuk membantu pembaca memahami konteks dokumen sebelum membuka dokumen sumber.",
-    summary: [
-      "Konsep integrasi SATUSEHAT.",
-      "Alur pertukaran data kesehatan.",
-      "Pemanfaatan API dan standar interoperabilitas.",
-      "Persiapan sistem fasilitas kesehatan.",
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80",
+    keyPoints: [
+      "Alur integrasi API SIMRS dengan BPJS Kesehatan.",
+      "Otomatisasi klaim dan verifikasi data peserta.",
+      "Manajemen penanganan kendala integrasi.",
     ],
-    scope: [
-      {
-        title: "SATUSEHAT Architecture",
-        items: [
-          "Komponen platform",
-          "Integration flow",
-          "Healthcare data exchange",
-        ],
-      },
-      {
-        title: "API Integration",
-        items: [
-          "Authentication",
-          "Request dan response",
-          "Resource management",
-          "Error handling",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "SATUSEHAT",
-      "FHIR",
-      "Healthcare API",
-      "SIMRS",
-      "RME",
-    ],
-    suitableFor: [
-      "System Architect",
-      "Software Engineer",
-      "Integration Specialist",
-      "IT Manager",
-      "Healthcare IT Team",
-    ],
-    reference:
-      "Kementerian Kesehatan Republik Indonesia. SATUSEHAT Platform Implementation Guide.",
-    pdfUrl: "#",
   },
-
   {
     id: 3,
     tag: "HL7 FHIR",
-    title: "HL7 FHIR Interoperability Overview",
+    title: "HL7 FHIR & Rekam Medis Elektronik: Pengantar Interoperabilitas",
     desc:
-      "Pengantar standar HL7 FHIR untuk pertukaran informasi kesehatan secara interoperabel.",
-    publisher: "HL7 International",
-    year: "2025",
-    type: "Technical Standard",
+      "Mengenal konsep HL7 FHIR, resource utama, dan pemetaan data untuk RME.",
+    publisher: "HL7 Indonesia Workgroup",
+    year: "2026",
+    type: "Standar Teknis",
     fileType: "PDF",
-    pages: "42 Halaman",
-    size: "4.1 MB",
-    uploadedDate: "7 Oktober 2025",
-    language: "English",
-    authors: "HL7 International",
-    source: "HL7 International",
-    documentType: "Technical Standard",
+    pages: "30 Halaman",
+    size: "4.2 MB",
+    uploadedDate: "18 Februari 2026",
+    language: "English / Indonesia",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Dokumen pengantar mengenai HL7 FHIR dan penggunaannya untuk interoperabilitas sistem informasi kesehatan.",
-    editorialNote:
-      "Halaman Library menyajikan ringkasan dan konteks penggunaan dokumen. Dokumen sumber tetap mengacu pada publikasi penerbit.",
-    summary: [
-      "Konsep dasar HL7 FHIR.",
-      "FHIR resources.",
-      "RESTful API.",
-      "Pertukaran informasi kesehatan.",
+      "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1000&q=80",
+    keyPoints: [
+      "Prinsip utama arsitektur HL7 FHIR.",
+      "Pemetaan data RME lokal ke format FHIR Resource.",
+      "Keamanan transmisi data kesehatan.",
     ],
-    scope: [
-      {
-        title: "FHIR Fundamentals",
-        items: [
-          "FHIR Resources",
-          "Profiles",
-          "Extensions",
-          "Implementation Guides",
-        ],
-      },
-      {
-        title: "Healthcare Interoperability",
-        items: [
-          "Data exchange",
-          "API-based integration",
-          "System interoperability",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "HL7 FHIR",
-      "Healthcare API",
-      "Interoperability",
-      "RME",
-      "Health Information Exchange",
-    ],
-    suitableFor: [
-      "Software Engineer",
-      "System Architect",
-      "Integration Specialist",
-      "System Analyst",
-      "Digital Health Consultant",
-    ],
-    reference:
-      "HL7 International. HL7 FHIR Interoperability Overview.",
-    pdfUrl: "#",
   },
-
   {
     id: 4,
-    tag: "DICOM",
-    title: "DICOM Overview and Medical Imaging Interoperability",
+    tag: "Cybersecurity",
+    title: "Cybersecurity Readiness Checklist untuk Rumah Sakit",
     desc:
-      "Dokumen pengantar mengenai standar DICOM untuk pertukaran dan pengelolaan medical imaging.",
-    publisher: "DICOM Standards Committee",
-    year: "2018",
-    type: "Technical Standard",
+      "Daftar periksa kesiapan keamanan siber meliputi akses, backup, audit log, dan respons insiden.",
+    publisher: "Tim Cyber Security Health",
+    year: "2026",
+    type: "Checklist",
     fileType: "PDF",
-    pages: "36 Halaman",
-    size: "3.7 MB",
-    uploadedDate: "18 September 2025",
-    language: "English",
-    authors: "DICOM Standards Committee",
-    source: "DICOM Standard",
-    documentType: "Medical Imaging Standard",
-    image:
-      "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Dokumen yang menjelaskan konsep dasar DICOM dan perannya dalam pertukaran informasi medical imaging.",
-    editorialNote:
-      "Ringkasan ini disediakan untuk kebutuhan Library dan tidak menggantikan dokumen standar asli.",
-    summary: [
-      "Konsep DICOM.",
-      "Medical imaging workflow.",
-      "Interoperability.",
-      "Pertukaran image dan metadata.",
-    ],
-    scope: [
-      {
-        title: "DICOM Fundamentals",
-        items: [
-          "Images",
-          "Metadata",
-          "Information objects",
-          "DICOM services",
-        ],
-      },
-      {
-        title: "Imaging Workflow",
-        items: [
-          "Modality",
-          "PACS",
-          "RIS",
-          "Hospital Information System",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "Radiology",
-      "PACS",
-      "RIS",
-      "DICOM",
-      "Medical Imaging",
-    ],
-    suitableFor: [
-      "Radiology IT Team",
-      "System Architect",
-      "Healthcare IT Team",
-      "Integration Specialist",
-    ],
-    reference:
-      "DICOM Standards Committee. DICOM Overview and Medical Imaging Interoperability.",
-    pdfUrl: "#",
-  },
-
-  {
-    id: 5,
-    tag: "BPJS",
-    title: "Digital Healthcare Integration and BPJS Workflow",
-    desc:
-      "Materi referensi mengenai integrasi sistem informasi fasilitas kesehatan dengan workflow layanan BPJS.",
-    publisher: "Healthcare Technology Reference",
-    year: "2025",
-    type: "Healthcare Integration",
-    fileType: "PDF",
-    pages: "31 Halaman",
-    size: "3.2 MB",
-    uploadedDate: "8 Agustus 2025",
+    pages: "12 Halaman",
+    size: "3.8 MB",
+    uploadedDate: "01 Maret 2026",
     language: "Indonesia",
-    authors: "Healthcare Technology Editorial Team",
-    source: "Healthcare Technology Reference",
-    documentType: "Integration Guide",
     image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Referensi mengenai digitalisasi workflow administrasi dan integrasi data dalam pelayanan kesehatan.",
-    editorialNote:
-      "Materi dirangkum sebagai referensi awal untuk pembaca Library.",
-    summary: [
-      "Digitalisasi administrasi pasien.",
-      "Integrasi workflow pelayanan.",
-      "Pertukaran data.",
-      "Pengurangan proses manual.",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80",
+    keyPoints: [
+      "Penilaian tingkat kematangan keamanan informasi fasyankes.",
+      "Prosedur pencegahan kebocoran data rekam medis.",
+      "Rencana pemulihan bencana.",
     ],
-    scope: [
-      {
-        title: "Healthcare Administration",
-        items: [
-          "Patient registration",
-          "Eligibility",
-          "Referral workflow",
-          "Service documentation",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "BPJS",
-      "SIMRS",
-      "Patient Registration",
-      "Healthcare Integration",
-    ],
-    suitableFor: [
-      "Hospital IT Team",
-      "Hospital Operations",
-      "System Analyst",
-      "Digital Health Consultant",
-    ],
-    reference:
-      "Healthcare Technology Reference. Digital Healthcare Integration and BPJS Workflow.",
-    pdfUrl: "#",
   },
+];
 
-  {
-    id: 6,
-    tag: "CYBERSECURITY",
-    title: "Healthcare Cybersecurity Fundamentals",
-    desc:
-      "Panduan dasar keamanan siber untuk sistem informasi dan data kesehatan.",
-    publisher: "Healthcare Security Reference",
-    year: "2025",
-    type: "Cybersecurity",
-    fileType: "PDF",
-    pages: "55 Halaman",
-    size: "4.6 MB",
-    uploadedDate: "16 Juli 2025",
-    language: "English",
-    authors: "Healthcare Security Editorial Team",
-    source: "Healthcare Security Reference",
-    documentType: "Cybersecurity Guide",
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Referensi dasar mengenai cybersecurity dalam lingkungan sistem informasi kesehatan.",
-    editorialNote:
-      "Ringkasan digunakan sebagai informasi pendukung dan tidak menggantikan dokumen sumber.",
-    summary: [
-      "Healthcare cybersecurity fundamentals.",
-      "Access control.",
-      "Data protection.",
-      "Security monitoring.",
-    ],
-    scope: [
-      {
-        title: "Healthcare Security",
-        items: [
-          "Identity management",
-          "Access control",
-          "Data protection",
-          "Security monitoring",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "Cybersecurity",
-      "RME",
-      "Patient Data",
-      "Hospital Information System",
-    ],
-    suitableFor: [
-      "CISO",
-      "IT Security Team",
-      "Hospital CIO",
-      "System Architect",
-      "Risk & Compliance Team",
-    ],
-    reference:
-      "Healthcare Security Reference. Healthcare Cybersecurity Fundamentals.",
-    pdfUrl: "#",
-  },
+/* =========================================================
+   HOME CONTENT
+========================================================= */
 
+const HOME_FEATURED = [
   {
-    id: 7,
-    tag: "CYBERSECURITY",
+    category: "NEWS",
     title:
-      "Securely Connecting the World with Cyber Security Standards",
-    desc:
-      "Securely Connecting the World with Cyber Security Standards merupakan publikasi dari National Institute of Standards and Technology (NIST) yang membahas peran standar cybersecurity dalam membangun konektivitas digital yang aman.",
-    publisher:
-      "National Institute of Standards and Technology (NIST)",
-    year: "2005",
-    type: "Cybersecurity Standard",
-    fileType: "PDF",
-    pages: "18 Halaman",
-    size: "PDF",
-    uploadedDate: "2005",
-    language: "English",
-    authors: "Alicia Clay & Michael D. Hogan",
-    source: "NIST",
-    documentType: "Cybersecurity Standards Publication",
+      "Workshop SATUSEHAT Klaim Non-JKN: Menuju Integrasi Klaim Rumah Sakit yang Lebih Cepat dan Akurat",
+    date: "September 9, 2026",
     image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    category: "INSIGHTS",
+    title:
+      "Ketika Sistem Informasi Rumah Sakit Bisa Membantu Berpikir, Bukan Sekadar Mencatat",
+    date: "September 2, 2026",
+    image:
+      "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    category: "RESEARCH",
+    title:
+      "Survey & Benchmark SIMRS 2026: Tren Implementasi, Kematangan Digital, dan Interoperabilitas",
+    date: "July 22, 2026",
+    image:
+      "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1000&q=80",
+  },
+];
 
+const HOME_TOPICS = [
+  "Smart Hospital",
+  "SATUSEHAT",
+  "Digital Health",
+  "RME",
+  "SIMRS",
+  "Cybersecurity",
+];
+
+const HOME_INSIGHTS = [
+  {
+    category: "SMART HOSPITAL",
+    title:
+      "Smart Hospital di Indonesia: Dari Rekomendasi Teknologi Menuju Standar Nasional",
     description:
-      "Securely Connecting the World with Cyber Security Standards merupakan publikasi dari National Institute of Standards and Technology (NIST) yang membahas peran standar cybersecurity dalam membangun konektivitas digital yang aman. Dokumen ini menjelaskan bagaimana standar keamanan dapat membantu organisasi menjaga kerahasiaan, integritas, dan ketersediaan sistem serta informasi. Pembahasan juga mencakup kategori standar cybersecurity, identity management, security testing, interoperability, serta pengelolaan keamanan sistem informasi.",
-
-    editorialNote:
-      "Konten halaman ini merupakan ringkasan untuk kebutuhan Library. Dokumen PDF yang dirujuk tetap merupakan publikasi asli dari NIST.",
-
-    summary: [
-      "Pentingnya standar dalam mengamankan sistem yang saling terhubung.",
-      "Confidentiality — menjaga kerahasiaan informasi.",
-      "Integrity — menjaga keutuhan dan keakuratan informasi.",
-      "Availability — memastikan sistem dan informasi tersedia saat dibutuhkan.",
-      "Assurance — memberikan keyakinan bahwa sistem telah memenuhi kebutuhan keamanan.",
-      "Kategori standar mencakup technical standards, management standards, dan testing standards.",
-    ],
-
-    scope: [
-      {
-        number: "01",
-        title: "Cyber Security Standards",
-        items: [
-          "Confidentiality",
-          "Integrity",
-          "Availability",
-          "Security assurance",
-          "Interoperability",
-          "Secure connectivity",
-        ],
-      },
-      {
-        number: "02",
-        title: "Categories of Cyber Security Standards",
-        items: [
-          "Technical Standards — menetapkan kebutuhan teknis untuk hardware, software, firmware, access, encryption, dan interoperability.",
-          "Management Standards — mendukung pengelolaan keamanan organisasi dan risk management.",
-          "Testing Standards — menyediakan metode pengujian untuk memverifikasi sistem dan komponen.",
-        ],
-      },
-      {
-        number: "03",
-        title: "Identity Management",
-        items: [
-          "User identity",
-          "Identifier management",
-          "Authentication",
-          "Identity theft protection",
-          "Biometric identification",
-          "Smart card technologies",
-        ],
-      },
-      {
-        number: "04",
-        title: "Cyber Security Testing",
-        items: [
-          "Conformance testing",
-          "Interoperability testing",
-          "Security testing",
-          "Test methodology",
-          "Test scenarios",
-          "Laboratory testing",
-          "Validation and certification",
-        ],
-      },
-      {
-        number: "05",
-        title: "Secure Management of Information Systems",
-        items: [
-          "Identify security needs",
-          "Determine appropriate controls",
-          "Test security implementation",
-          "Improve interoperability",
-          "Support risk management",
-        ],
-      },
-    ],
-
-    healthcareRelevance: [
-      "EMR / RME",
-      "Hospital Information System",
-      "Healthcare APIs",
-      "Health Information Exchange",
-      "Patient Identity Management",
-      "Interoperability Platform",
-      "Connected Medical Systems",
-    ],
-
-    suitableFor: [
-      "Hospital CIO",
-      "IT Manager",
-      "Cybersecurity Team",
-      "Information Security Officer",
-      "System Architect",
-      "Software Engineer",
-      "System Analyst",
-      "Healthcare IT Team",
-      "Healthcare Integration Specialist",
-      "Digital Health Consultant",
-      "IT Governance Team",
-      "Risk & Compliance Team",
-    ],
-
-    reference:
-      "National Institute of Standards and Technology (NIST). Securely Connecting the World with Cyber Security Standards. Alicia Clay & Michael D. Hogan.",
-
-    pdfUrl:
-      "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=150423",
+      "Melihat perkembangan konsep smart hospital dan bagaimana teknologi mulai menjadi bagian dari strategi transformasi fasilitas kesehatan.",
+    date: "July 27, 2026",
+  },
+  {
+    category: "DIGITAL HEALTH",
+    title:
+      "Ketika SIMRS Tidak Lagi Sekadar Sistem Pencatatan",
+    description:
+      "Perkembangan SIMRS bergerak menuju platform yang mampu mendukung analisis dan pengambilan keputusan.",
+    date: "September 2, 2026",
+  },
+  {
+    category: "CYBERSECURITY",
+    title:
+      "Cybersecurity Readiness untuk Infrastruktur Rumah Sakit",
+    description:
+      "Prinsip dasar yang perlu diperhatikan ketika rumah sakit meningkatkan konektivitas dan integrasi sistem.",
+    date: "July 22, 2026",
   },
 ];
 
 /* =========================================================
-   CASE STUDIES
+   SMALL COMPONENTS
 ========================================================= */
 
-const CASE_STUDIES = [
-  {
-    id: 1,
-    tag: "RADIOLOGI",
-    title: "Digital Imaging Workflow Menggunakan iRad",
-    desc:
-      "Implementasi PACS dan RIS untuk mempercepat distribusi hasil radiologi dan integrasi dengan sistem rumah sakit.",
-    author: "TIM EDITORIAL INOVAMEDIKA",
-    date: "JULY 22, 2026",
-    image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80",
-    client: "Departemen Radiologi RS Pusat",
-    duration: "5 Bulan",
-    status: "Completed",
-    content:
-      "Implementasi sistem digital imaging dilakukan untuk mengurangi proses manual dalam pengelolaan pemeriksaan radiologi dan mempercepat akses dokter terhadap hasil pemeriksaan.",
-    impacts: [
-      "Penghematan biaya cetak film radiologi secara signifikan",
-      "Hasil ekspertise radiologi selesai lebih cepat",
-      "Dokter DPJP dapat langsung melihat hasil gambar melalui SIMRS",
-    ],
-  },
-
-  {
-    id: 2,
-    tag: "KLINIK",
-    title: "Digitalisasi Operasional Klinik Terpadu",
-    desc:
-      "Transformasi proses pendaftaran, rekam medis, farmasi, dan pelaporan melalui sistem terintegrasi.",
-    author: "TIM EDITORIAL INOVAMEDIKA",
-    date: "JUNE 12, 2026",
-    image:
-      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1000&q=80",
-    client: "Jaringan Klinik Mitra",
-    duration: "4 Bulan",
-    status: "Completed",
-    content:
-      "Digitalisasi dilakukan untuk mengintegrasikan proses operasional klinik dari pendaftaran hingga farmasi dalam satu alur kerja.",
-    impacts: [
-      "Mengurangi antrean pendaftaran fisik hingga 60%",
-      "Rekam medis pasien tersimpan aman dan mudah diakses dokter",
-      "Stok obat terpantau secara akurat dan transparan",
-    ],
-  },
-
-  {
-    id: 3,
-    tag: "SIMRS",
-    title: "Integrasi SIMRS dan Sistem Layanan Terpadu",
-    desc:
-      "Pengembangan integrasi sistem untuk menyatukan data pelayanan rumah sakit dan mendukung workflow digital.",
-    author: "TIM EDITORIAL INOVAMEDIKA",
-    date: "MAY 04, 2026",
-    image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80",
-    client: "Rumah Sakit Regional",
-    duration: "7 Bulan",
-    status: "Completed",
-    content:
-      "Integrasi dilakukan untuk meningkatkan konsistensi data dan mempercepat akses informasi antar unit pelayanan.",
-    impacts: [
-      "Data pelayanan lebih terintegrasi",
-      "Mengurangi input data berulang",
-      "Meningkatkan visibilitas operasional rumah sakit",
-    ],
-  },
-
-  {
-    id: 4,
-    tag: "INTEROPERABILITY",
-    title: "Healthcare Interoperability Platform",
-    desc:
-      "Implementasi platform integrasi untuk mendukung pertukaran data kesehatan melalui API dan standar interoperabilitas.",
-    author: "TIM EDITORIAL INOVAMEDIKA",
-    date: "APRIL 18, 2026",
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80",
-    client: "Healthcare Network",
-    duration: "8 Bulan",
-    status: "Completed",
-    content:
-      "Platform interoperabilitas digunakan sebagai lapisan integrasi antar sistem informasi kesehatan.",
-    impacts: [
-      "Integrasi sistem menjadi lebih terstruktur",
-      "Pertukaran data lebih cepat",
-      "Mendukung implementasi standar interoperabilitas",
-    ],
-  },
-];
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-function useReveal() {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.08 }
-    );
-
-    observer.observe(node);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return [ref, visible];
-}
-
-/* =========================================================
-   NAVBAR
-   ACTIVE GREEN SLIDING INDICATOR
-========================================================= */
-
-function Navbar({ activeTab, onNavigate }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const navRef = useRef(null);
-  const buttonRefs = useRef({});
-  const [indicator, setIndicator] = useState({
-    left: 0,
-    width: 0,
-    opacity: 0,
-  });
-
-  const navigate = (id) => {
-    onNavigate(id);
-    setMobileOpen(false);
-  };
-
-  const updateIndicator = () => {
-    const nav = navRef.current;
-    const activeButton = buttonRefs.current[activeTab];
-
-    if (!nav || !activeButton) return;
-
-    const navRect = nav.getBoundingClientRect();
-    const buttonRect = activeButton.getBoundingClientRect();
-
-    setIndicator({
-      left: buttonRect.left - navRect.left,
-      width: buttonRect.width,
-      opacity: 1,
-    });
-  };
-
-  useLayoutEffect(() => {
-    updateIndicator();
-  }, [activeTab]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      updateIndicator();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [activeTab]);
-
+function SectionTitle({ eyebrow, title, description, dark = false }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
-      <div className="max-w-[1440px] mx-auto px-5 lg:px-8">
-        <div className="h-[74px] flex items-center justify-between">
-
-          {/* LOGO */}
-          <button
-            onClick={() => navigate("home")}
-            className="flex items-center gap-3 shrink-0"
-          >
-            <img
-              src={logoDefault}
-              alt="Inova Medika"
-              className="h-10 w-auto object-contain"
-            />
-          </button>
-
-          {/* DESKTOP NAV */}
-          <nav
-            ref={navRef}
-            className="hidden lg:flex items-center gap-1 relative"
-          >
-            {/* MOVING GREEN BACKGROUND */}
-            <span
-              aria-hidden="true"
-              className="absolute top-1/2 -translate-y-1/2 rounded-full bg-emerald-50 pointer-events-none"
-              style={{
-                left: indicator.left,
-                width: indicator.width,
-                height: "42px",
-                opacity: indicator.opacity,
-                transition:
-                  "left 420ms cubic-bezier(0.22, 1, 0.36, 1), width 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease",
-              }}
-            />
-
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                ref={(element) => {
-                  buttonRefs.current[item.id] = element;
-                }}
-                onClick={() => navigate(item.id)}
-                className={`relative z-10 px-4 py-2.5 rounded-full text-[13px] font-medium transition-colors duration-300 ${
-                  activeTab === item.id
-                    ? "text-emerald-700"
-                    : "text-slate-600 hover:text-emerald-700"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
-
-          {/* RIGHT ACTION */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button className="p-2.5 rounded-full hover:bg-slate-100 text-slate-600 transition">
-              <Search size={18} />
-            </button>
-
-            <button
-              onClick={() => navigate("contact")}
-              className="px-5 py-2.5 rounded-full bg-emerald-700 text-white text-[13px] font-semibold hover:bg-emerald-800 transition"
-            >
-              Contact Us
-            </button>
-          </div>
-
-          {/* MOBILE MENU BUTTON */}
-          <button
-            className="lg:hidden p-2 text-slate-700"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={23} /> : <Menu size={23} />}
-          </button>
-        </div>
-
-        {/* MOBILE NAV */}
+    <div className="max-w-3xl">
+      {eyebrow && (
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            mobileOpen
-              ? "max-h-[600px] opacity-100 pb-4"
-              : "max-h-0 opacity-0"
+          className={`text-[11px] font-black uppercase tracking-[0.18em] mb-3 ${
+            dark ? "text-emerald-300" : "text-emerald-700"
           }`}
         >
-          <div className="pt-3 border-t border-slate-100 grid gap-1">
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => navigate(item.id)}
-                className={`text-left px-4 py-3 rounded-xl text-sm transition-all duration-300 ${
-                  activeTab === item.id
-                    ? "bg-emerald-50 text-emerald-700 font-semibold translate-x-1"
-                    : "text-slate-600 hover:bg-slate-50"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-
-            <button
-              onClick={() => navigate("news")}
-              className="text-left px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50"
-            >
-              News
-            </button>
-
-            <button
-              onClick={() => navigate("contact")}
-              className="mt-2 px-4 py-3 rounded-xl bg-emerald-700 text-white text-sm font-semibold"
-            >
-              Contact Us
-            </button>
-          </div>
+          {eyebrow}
         </div>
-      </div>
-    </header>
-  );
-}
+      )}
 
-/* =========================================================
-   HERO
-========================================================= */
-
-function ImageHero({ type, onBack }) {
-  const isLibrary = type === "library";
-
-  return (
-    <section className="relative min-h-[300px] lg:min-h-[350px] overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('${
-            isLibrary
-              ? "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80"
-              : "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1800&q=80"
-          }')`,
-        }}
-      />
-
-      <div className="absolute inset-0 bg-slate-950/80" />
-
-      <div className="relative max-w-[1440px] mx-auto px-6 lg:px-10 py-16 lg:py-20 flex items-center min-h-[300px] lg:min-h-[350px]">
-        <div className="max-w-3xl text-white">
-          <div className="text-[11px] font-bold tracking-[0.22em] uppercase text-emerald-300 mb-4">
-            {isLibrary ? "KNOWLEDGE CENTER" : "SUCCESS STORIES"}
-          </div>
-
-          <h1 className="text-4xl lg:text-5xl font-bold tracking-tight leading-[1.05]">
-            {isLibrary ? (
-              <>
-                Healthcare
-                <br />
-                <span className="text-emerald-300">
-                  Library Resources
-                </span>
-              </>
-            ) : (
-              <>
-                Healthcare Transformation
-                <br />
-                <span className="text-emerald-300">
-                  Case Studies
-                </span>
-              </>
-            )}
-          </h1>
-
-          <p className="mt-5 text-sm lg:text-base text-slate-200 leading-relaxed max-w-2xl">
-            {isLibrary
-              ? "Kumpulan referensi, standar, regulasi, dan publikasi yang relevan dengan transformasi digital healthcare."
-              : "Pelajari bagaimana berbagai fasilitas kesehatan di Indonesia berhasil melakukan digitalisasi operasional dan integrasi layanan medis bersama solusi kami."}
-          </p>
-
-          {onBack && (
-            <button
-              onClick={onBack}
-              className="mt-7 inline-flex items-center gap-2 text-sm text-white hover:text-emerald-300 transition"
-            >
-              <ArrowLeft size={16} />
-              Kembali
-            </button>
-          )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* =========================================================
-   TOPIC FILTER
-========================================================= */
-
-function TopicFilter({ selected, onSelect }) {
-  return (
-    <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-      <button
-        onClick={() => onSelect("ALL")}
-        className={`shrink-0 px-4 py-2 rounded-full text-xs font-semibold border transition ${
-          selected === "ALL"
-            ? "bg-emerald-700 text-white border-emerald-700"
-            : "bg-white text-slate-600 border-slate-200 hover:border-emerald-300"
+      <h2
+        className={`text-2xl md:text-4xl font-black tracking-tight ${
+          dark ? "text-white" : "text-slate-900"
         }`}
       >
-        Semua
-      </button>
+        {title}
+      </h2>
 
-      {TOPICS.map((topic) => (
-        <button
-          key={topic.id}
-          onClick={() => onSelect(topic.id)}
-          className={`shrink-0 px-4 py-2 rounded-full text-xs font-semibold border transition ${
-            selected === topic.id
-              ? "bg-emerald-700 text-white border-emerald-700"
-              : "bg-white text-slate-600 border-slate-200 hover:border-emerald-300"
+      {description && (
+        <p
+          className={`mt-4 text-sm md:text-base leading-relaxed ${
+            dark ? "text-slate-300" : "text-slate-500"
           }`}
         >
-          {topic.label}
-        </button>
-      ))}
+          {description}
+        </p>
+      )}
     </div>
   );
 }
 
-/* =========================================================
-   LIBRARY CARD
-========================================================= */
-
-function LibraryCard({ item, onReadMore }) {
-  const [ref, visible] = useReveal();
-
+function ArrowButton({ children = "Explore" }) {
   return (
-    <article
-      ref={ref}
-      className={`group bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/70 ${
-        visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-5"
-      }`}
-    >
-      <div className="h-44 overflow-hidden relative">
+    <span className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 group-hover:text-emerald-800">
+      {children}
+      <span className="transition-transform duration-300 group-hover:translate-x-1.5">
+        →
+      </span>
+    </span>
+  );
+}
+
+function HomeCard({ item }) {
+  return (
+    <article className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+      <div className="relative h-48 overflow-hidden">
         <img
           src={item.image}
           alt={item.title}
-          className="w-full h-full object-cover transition duration-700 group-hover:scale-[1.04]"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
 
-        <div className="absolute left-4 bottom-4">
-          <span className="px-2.5 py-1 rounded-full bg-white/95 text-emerald-700 text-[10px] font-bold tracking-wide">
-            {item.tag}
-          </span>
-        </div>
+        <span className="absolute bottom-4 left-4 bg-white/95 text-emerald-800 text-[10px] font-black uppercase tracking-wide px-3 py-1 rounded-full">
+          {item.category}
+        </span>
       </div>
 
-      <div className="p-5">
-        <div className="flex items-center gap-2 text-[11px] text-slate-400 mb-3">
-          <span>{item.publisher}</span>
-          <span>•</span>
-          <span>{item.year}</span>
+      <div className="p-5 space-y-3">
+        <div className="text-[10px] text-slate-400 font-bold">
+          {item.date}
         </div>
 
-        <h3 className="font-bold text-slate-900 text-base leading-snug line-clamp-2 min-h-[46px]">
+        <h3 className="font-extrabold text-slate-800 leading-snug line-clamp-3 group-hover:text-emerald-800 transition-colors">
           {item.title}
         </h3>
 
-        <p className="mt-3 text-xs text-slate-500 leading-relaxed line-clamp-3 min-h-[54px]">
-          {item.desc}
+        <ArrowButton />
+      </div>
+    </article>
+  );
+}
+
+function CaseStudyCard({ item, onClick }) {
+  return (
+    <article
+      onClick={onClick}
+      className="group cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-[0_25px_55px_-20px_rgba(15,118,110,.3)] hover:-translate-y-1 transition-all duration-500"
+    >
+      <div className="relative h-52 overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
+
+        <span className="absolute top-4 left-4 bg-white/95 text-emerald-800 text-[10px] font-black uppercase tracking-wide px-3 py-1 rounded-full">
+          {item.tag}
+        </span>
+
+        <span className="absolute bottom-4 left-4 text-white text-xs font-bold">
+          {item.industry}
+        </span>
+      </div>
+
+      <div className="p-5 space-y-3">
+        <h3 className="text-base font-black text-slate-800 leading-snug group-hover:text-emerald-800 transition-colors">
+          {item.title}
+        </h3>
+
+        <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
+          {item.description}
         </p>
 
-        <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
-            <FileText size={13} />
-            {item.fileType} · {item.pages}
-          </div>
+        <div className="pt-2">
+          <ArrowButton>Read More</ArrowButton>
+        </div>
+      </div>
+    </article>
+  );
+}
 
-          <button
-            onClick={() => onReadMore(item)}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-900 transition"
-          >
-            Read More
-            <ArrowRight size={14} />
+/* =========================================================
+   HOME
+========================================================= */
+
+function HomePage({ onCaseStudy }) {
+  return (
+    <div className="space-y-0">
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-[#061c19] text-white">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=85"
+            alt=""
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#031512]/95 via-[#06221e]/85 to-[#06221e]/60" />
+        </div>
+
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 md:py-32">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 border border-emerald-400/30 bg-emerald-400/10 rounded-full px-4 py-2 text-[10px] font-black tracking-[0.18em] uppercase text-emerald-300">
+              Inovamedika Digital Health Intelligence
+            </div>
+
+            <h1 className="mt-7 text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.02]">
+              Transformasi Digital
+              <br />
+              <span className="text-emerald-400">
+                Kesehatan Indonesia.
+              </span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl text-base md:text-lg text-slate-300 leading-relaxed">
+              Wadah informasi, insight, research, case studies, dan knowledge
+              untuk mendukung transformasi digital rumah sakit dan fasilitas
+              pelayanan kesehatan.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mt-9">
+              <button className="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm transition-all hover:-translate-y-0.5 shadow-lg shadow-emerald-950/30">
+                Explore Latest Content
+              </button>
+
+              <button className="px-6 py-3.5 rounded-xl border border-white/20 hover:bg-white/10 text-white font-bold text-sm transition-all">
+                Explore Case Studies
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED */}
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 md:py-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <SectionTitle
+            eyebrow="Featured"
+            title="Latest from Inovamedika"
+            description="Berita, insight, dan research terbaru seputar transformasi digital kesehatan."
+          />
+
+          <button className="text-sm font-bold text-emerald-700 hover:text-emerald-900">
+            View All →
           </button>
         </div>
-      </div>
-    </article>
-  );
-}
 
-/* =========================================================
-   CASE STUDY CARD
-========================================================= */
-
-function CaseStudyCard({ item, onReadMore }) {
-  const [ref, visible] = useReveal();
-
-  return (
-    <article
-      ref={ref}
-      className={`group bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-700 hover:-translate-y-1 hover:shadow-xl ${
-        visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-6"
-      }`}
-    >
-      <div className="h-52 overflow-hidden relative">
-        <img
-          src={item.image}
-          alt={item.title}
-          className="w-full h-full object-cover transition duration-700 group-hover:scale-[1.04]"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
-
-        <div className="absolute bottom-4 left-4">
-          <span className="px-3 py-1.5 bg-white/95 text-emerald-700 rounded-full text-[10px] font-bold tracking-wide">
-            {item.tag}
-          </span>
+        <div className="grid md:grid-cols-3 gap-6">
+          {HOME_FEATURED.map((item) => (
+            <HomeCard key={item.title} item={item} />
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="p-5">
-        <div className="flex items-center gap-2 text-[10px] text-slate-400 uppercase tracking-wide">
-          <span>{item.author}</span>
-          <span>•</span>
-          <span>{item.date}</span>
+      {/* TOPICS */}
+      <section className="bg-[#F0F8F5] border-y border-emerald-100">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
+          <SectionTitle
+            eyebrow="Explore Topics"
+            title="Explore Digital Healthcare Topics"
+            description="Temukan berbagai topik yang berkaitan dengan teknologi, data, sistem informasi, dan transformasi layanan kesehatan."
+          />
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-8">
+            {HOME_TOPICS.map((topic, index) => (
+              <div
+                key={topic}
+                className="group bg-white border border-emerald-100 rounded-2xl p-5 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-700 font-black mb-4">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <h3 className="font-extrabold text-sm text-slate-800 group-hover:text-emerald-800 transition-colors">
+                  {topic}
+                </h3>
+
+                <div className="text-[11px] text-slate-400 mt-2">
+                  Explore →
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RESEARCH */}
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 md:py-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <SectionTitle
+            eyebrow="Research & Insights"
+            title="Data, Insight & Research"
+            description="Konten yang membantu healthcare leaders memahami perkembangan teknologi dan digitalisasi fasilitas kesehatan."
+          />
+
+          <button className="text-sm font-bold text-emerald-700 hover:text-emerald-900">
+            Explore Research →
+          </button>
         </div>
 
-        <h3 className="mt-3 text-lg font-bold text-slate-900 leading-snug">
-          {item.title}
-        </h3>
+        <div className="grid lg:grid-cols-3 gap-6">
+          {HOME_INSIGHTS.map((item) => (
+            <article
+              key={item.title}
+              className="group border border-slate-200 rounded-2xl p-6 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+            >
+              <span className="text-[10px] font-black tracking-widest text-emerald-700 uppercase">
+                {item.category}
+              </span>
 
-        <p className="mt-2 text-xs text-slate-500 leading-relaxed line-clamp-3">
-          {item.desc}
-        </p>
+              <h3 className="mt-4 text-lg font-black text-slate-800 leading-snug group-hover:text-emerald-800">
+                {item.title}
+              </h3>
 
-        <button
-          onClick={() => onReadMore(item)}
-          className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-emerald-700 hover:text-emerald-900 transition"
-        >
-          Read Case Study
-          <ArrowRight size={14} />
-        </button>
-      </div>
-    </article>
-  );
-}
+              <p className="mt-3 text-sm text-slate-500 leading-relaxed">
+                {item.description}
+              </p>
 
-/* =========================================================
-   FILTER BAR
-========================================================= */
+              <div className="mt-6 flex items-center justify-between text-[11px]">
+                <span className="text-slate-400 font-bold">{item.date}</span>
+                <span className="text-emerald-700 font-black">
+                  Read More →
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-function FilterBar({ search, setSearch, total }) {
-  return (
-    <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
-      <div>
-        <p className="text-xs text-slate-400">
-          Menampilkan{" "}
-          <span className="font-bold text-slate-700">
-            {total}
-          </span>{" "}
-          resources
-        </p>
-      </div>
+      {/* CASE STUDIES */}
+      <section className="bg-slate-950 text-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 md:py-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-9">
+            <SectionTitle
+              dark
+              eyebrow="Case Studies"
+              title="Healthcare Transformation"
+              description="Pelajari bagaimana berbagai fasilitas kesehatan dapat memanfaatkan teknologi untuk meningkatkan proses, data, dan pengambilan keputusan."
+            />
 
-      <div className="relative w-full lg:w-[300px]">
-        <Search
-          size={16}
-          className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
-        />
+            <button className="text-sm font-bold text-emerald-400 hover:text-emerald-300">
+              View All Case Studies →
+            </button>
+          </div>
 
-        <input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search resources..."
-          className="w-full h-10 pl-10 pr-4 rounded-xl border border-slate-200 outline-none text-xs text-slate-700 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
-        />
-      </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {CASE_STUDIES.map((item) => (
+              <CaseStudyCard
+                key={item.id}
+                item={item}
+                onClick={() => onCaseStudy(item)}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* KNOWLEDGE CENTER */}
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 md:py-20">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <SectionTitle
+              eyebrow="Knowledge Center"
+              title="Resources untuk Mendukung Transformasi Digital"
+              description="Akses checklist, eBook, infographic, template, whitepaper, dan berbagai sumber pengetahuan lainnya."
+            />
+
+            <div className="flex flex-wrap gap-3 mt-7">
+              {[
+                "Checklist",
+                "eBook",
+                "Infographic",
+                "Template",
+                "Whitepaper",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="px-4 py-2.5 rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-emerald-900 to-teal-950 rounded-3xl p-8 md:p-10 text-white relative overflow-hidden">
+            <div className="absolute -right-20 -top-20 w-56 h-56 rounded-full bg-emerald-400/10" />
+            <div className="absolute -bottom-24 -left-10 w-64 h-64 rounded-full bg-teal-400/10" />
+
+            <div className="relative">
+              <span className="text-emerald-300 text-[10px] font-black uppercase tracking-widest">
+                Library
+              </span>
+
+              <h3 className="text-2xl md:text-3xl font-black mt-3">
+                Digital Healthcare Library
+              </h3>
+
+              <p className="text-sm text-emerald-50/70 mt-4 leading-relaxed">
+                Referensi regulasi, standar teknis, interoperabilitas,
+                cybersecurity, SATUSEHAT, BPJS, RME, DICOM, dan berbagai
+                kebutuhan teknologi kesehatan.
+              </p>
+
+              <button className="mt-7 bg-white text-emerald-900 px-5 py-3 rounded-xl text-sm font-black hover:bg-emerald-50 transition">
+                Explore Library →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 pb-16">
+        <div className="rounded-3xl bg-[#EAF7F0] border border-emerald-100 p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="max-w-2xl">
+            <div className="text-[10px] font-black uppercase tracking-widest text-emerald-700">
+              Digital Health Transformation
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mt-3">
+              Siap melangkah menuju transformasi digital kesehatan?
+            </h2>
+
+            <p className="text-sm text-slate-500 mt-3 leading-relaxed">
+              Eksplorasi insight, research, case studies, dan resources untuk
+              membantu memahami ekosistem digital healthcare.
+            </p>
+          </div>
+
+          <button className="shrink-0 bg-emerald-800 hover:bg-emerald-900 text-white px-6 py-3.5 rounded-xl font-black text-sm transition">
+            Request Demo →
+          </button>
+        </div>
+      </section>
     </div>
   );
 }
 
 /* =========================================================
-   LIBRARY PAGE
+   CASE STUDY DETAIL
 ========================================================= */
 
-function LibraryPage({ onReadMore }) {
-  const [topic, setTopic] = useState("ALL");
-  const [search, setSearch] = useState("");
-
-  const filtered = LIBRARY_ITEMS.filter((item) => {
-    const matchTopic =
-      topic === "ALL" ||
-      item.tag === topic ||
-      item.title.toLowerCase().includes(topic.toLowerCase());
-
-    const keyword = search.toLowerCase();
-
-    const matchSearch =
-      !keyword ||
-      item.title.toLowerCase().includes(keyword) ||
-      item.desc.toLowerCase().includes(keyword) ||
-      item.publisher.toLowerCase().includes(keyword);
-
-    return matchTopic && matchSearch;
-  });
-
+function CaseStudyDetail({ item, onBack }) {
   return (
-    <div className="bg-slate-50 min-h-screen">
-      <ImageHero type="library" />
-
-      <main className="max-w-[1440px] mx-auto px-5 lg:px-8 py-10 lg:py-12">
-        <div className="mb-7">
-          <TopicFilter
-            selected={topic}
-            onSelect={setTopic}
+    <div className="anim-page">
+      <section className="relative bg-slate-950 text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={item.image}
+            alt=""
+            className="w-full h-full object-cover opacity-30"
           />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-emerald-950/80" />
         </div>
 
-        <FilterBar
-          search={search}
-          setSearch={setSearch}
-          total={filtered.length}
-        />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
+          <div className="text-xs text-slate-400 mb-7">
+            <button onClick={onBack} className="hover:text-emerald-300">
+              Home
+            </button>
+            <span className="mx-2">›</span>
+            <button onClick={onBack} className="hover:text-emerald-300">
+              Case Studies
+            </button>
+            <span className="mx-2">›</span>
+            <span className="text-slate-300">{item.tag}</span>
+          </div>
 
-        <div className="mt-7 grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
-          {filtered.map((item) => (
-            <LibraryCard
+          <span className="inline-flex text-[10px] font-black uppercase tracking-widest text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1.5 rounded-full">
+            {item.tag}
+          </span>
+
+          <h1 className="max-w-4xl text-3xl md:text-5xl font-black leading-tight mt-5">
+            {item.title}
+          </h1>
+
+          <p className="max-w-3xl text-slate-300 text-sm md:text-base leading-relaxed mt-5">
+            {item.description}
+          </p>
+
+          <div className="flex flex-wrap gap-x-5 gap-y-2 mt-6 text-xs text-slate-400">
+            <span>✍ {item.author}</span>
+            <span>•</span>
+            <span>📅 {item.date}</span>
+          </div>
+        </div>
+      </section>
+
+      <main className="max-w-[1400px] mx-auto px-6 lg:px-10 py-12">
+        <div className="grid lg:grid-cols-12 gap-10 items-start">
+          {/* MAIN CONTENT */}
+          <div className="lg:col-span-8 space-y-8">
+            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-[300px] md:h-[420px] object-cover"
+              />
+            </div>
+
+            {/* PROJECT META */}
+            <section className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                ["Industri", item.industry],
+                ["Lokasi", item.location],
+                ["Durasi Implementasi", item.duration],
+                ["Status", item.status],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  className="bg-white border border-slate-200 rounded-xl p-4"
+                >
+                  <div className="text-[10px] uppercase tracking-wide font-black text-slate-400">
+                    {label}
+                  </div>
+
+                  <div className="text-xs md:text-sm font-extrabold text-slate-800 mt-2 leading-snug">
+                    {value}
+                  </div>
+                </div>
+              ))}
+            </section>
+
+            {/* SOLUTIONS */}
+            <section className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 md:p-8">
+              <h2 className="text-xl font-black text-emerald-950">
+                Solusi yang Digunakan
+              </h2>
+
+              <div className="grid sm:grid-cols-2 gap-3 mt-5">
+                {item.solutions.map((solution) => (
+                  <div
+                    key={solution}
+                    className="bg-white border border-emerald-100 rounded-xl px-4 py-3 text-sm font-bold text-slate-700"
+                  >
+                    <span className="text-emerald-600 mr-2">✓</span>
+                    {solution}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* RINGKASAN */}
+            <section className="space-y-5">
+              <h2 className="text-2xl font-black text-slate-900">
+                Ringkasan
+              </h2>
+
+              {item.summary.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="text-sm md:text-base text-slate-600 leading-8"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </section>
+
+            {/* TANTANGAN */}
+            <section className="space-y-5">
+              <h2 className="text-2xl font-black text-slate-900">
+                Tantangan
+              </h2>
+
+              <p className="text-sm text-slate-500">
+                Sebelum implementasi, rumah sakit menghadapi beberapa kendala,
+                antara lain:
+              </p>
+
+              <ul className="space-y-3">
+                {item.challenges.map((challenge) => (
+                  <li
+                    key={challenge}
+                    className="flex gap-3 text-sm text-slate-600 leading-relaxed"
+                  >
+                    <span className="mt-1 text-emerald-600 font-black">•</span>
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* SOLUSI */}
+            <section className="space-y-5">
+              <h2 className="text-2xl font-black text-slate-900">Solusi</h2>
+
+              <p className="text-sm md:text-base text-slate-600 leading-8">
+                {item.solutionDescription}
+              </p>
+
+              <div className="space-y-5">
+                {item.solutionAreas.map((area) => (
+                  <div
+                    key={area.title}
+                    className="border border-slate-200 rounded-2xl p-5 md:p-6"
+                  >
+                    <h3 className="font-black text-slate-800">
+                      {area.title}
+                    </h3>
+
+                    <ul className="grid sm:grid-cols-2 gap-2 mt-4">
+                      {area.items.map((point) => (
+                        <li
+                          key={point}
+                          className="text-sm text-slate-600 bg-slate-50 rounded-lg px-3 py-2"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* HASIL */}
+            <section className="space-y-5">
+              <h2 className="text-2xl font-black text-slate-900">
+                Hasil Implementasi
+              </h2>
+
+              <p className="text-sm text-slate-500">
+                Setelah dashboard digunakan, rumah sakit memperoleh beberapa
+                manfaat, antara lain:
+              </p>
+
+              <ul className="space-y-3">
+                {item.outcomes.map((outcome) => (
+                  <li
+                    key={outcome}
+                    className="flex gap-3 text-sm text-slate-600 leading-relaxed"
+                  >
+                    <span className="text-emerald-600 font-black">✓</span>
+                    {outcome}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 text-xs text-amber-900 leading-relaxed">
+                <strong>Catatan:</strong> Hasil di atas merupakan ilustrasi
+                untuk kebutuhan desain dan bukan hasil implementasi pada rumah
+                sakit tertentu.
+              </div>
+            </section>
+
+            {/* DASHBOARD */}
+            <section className="space-y-6">
+              <h2 className="text-2xl font-black text-slate-900">
+                Dashboard yang Ditampilkan
+              </h2>
+
+              {item.solutionAreas.map((area) => (
+                <div
+                  key={`dashboard-${area.title}`}
+                  className="bg-white border border-slate-200 rounded-2xl p-6"
+                >
+                  <h3 className="font-black text-slate-800">
+                    {area.title}
+                  </h3>
+
+                  <div className="grid sm:grid-cols-2 gap-2 mt-4">
+                    {area.items.map((point) => (
+                      <div
+                        key={point}
+                        className="text-xs text-slate-600 border border-slate-100 rounded-lg px-3 py-2"
+                      >
+                        {point}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </section>
+
+            {/* FACTORS */}
+            <section className="space-y-5">
+              <h2 className="text-2xl font-black text-slate-900">
+                Faktor Keberhasilan
+              </h2>
+
+              <ul className="space-y-3">
+                {item.successFactors.map((factor) => (
+                  <li
+                    key={factor}
+                    className="flex gap-3 text-sm text-slate-600 leading-relaxed"
+                  >
+                    <span className="text-emerald-600 font-black">✓</span>
+                    {factor}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* LESSONS */}
+            <section className="space-y-5">
+              <h2 className="text-2xl font-black text-slate-900">
+                Lessons Learned
+              </h2>
+
+              <div className="border-l-4 border-emerald-500 bg-emerald-50/70 rounded-r-xl p-6">
+                <p className="text-sm md:text-base text-slate-600 leading-8">
+                  {item.lessons}
+                </p>
+              </div>
+            </section>
+
+            {/* KEY OUTCOMES */}
+            <section className="space-y-5">
+              <h2 className="text-2xl font-black text-slate-900">
+                Key Outcomes
+              </h2>
+
+              <div className="overflow-x-auto border border-slate-200 rounded-2xl">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-slate-50 text-left">
+                      <th className="px-5 py-4 font-black text-slate-700">
+                        Area Dampak
+                      </th>
+                      <th className="px-5 py-4 font-black text-slate-700">
+                        Dampak
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {item.keyOutcomes.map((row) => (
+                      <tr
+                        key={row.area}
+                        className="border-t border-slate-100"
+                      >
+                        <td className="px-5 py-4 font-bold text-slate-700">
+                          {row.area}
+                        </td>
+
+                        <td className="px-5 py-4 text-slate-600">
+                          {row.impact}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* TECHNOLOGY */}
+            <section className="space-y-5">
+              <h2 className="text-2xl font-black text-slate-900">
+                Teknologi yang Digunakan
+              </h2>
+
+              <div className="flex flex-wrap gap-2">
+                {item.technologies.map((technology) => (
+                  <span
+                    key={technology}
+                    className="bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2 rounded-full text-xs font-bold"
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="lg:col-span-4 lg:sticky lg:top-28 space-y-5">
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <h3 className="font-black text-slate-900">
+                Detail Proyek
+              </h3>
+
+              <div className="mt-5 space-y-5">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-slate-400 font-black">
+                    Industri
+                  </div>
+                  <div className="text-sm font-bold text-slate-800 mt-1">
+                    {item.industry}
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-slate-400 font-black">
+                    Lokasi
+                  </div>
+                  <div className="text-sm font-bold text-slate-800 mt-1">
+                    {item.location}
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-slate-400 font-black">
+                    Durasi Implementasi
+                  </div>
+                  <div className="text-sm font-bold text-slate-800 mt-1">
+                    {item.duration}
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-slate-400 font-black">
+                    Status
+                  </div>
+                  <span className="inline-flex mt-2 bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-[10px] font-black">
+                    {item.status}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6">
+              <h3 className="font-black text-emerald-950">
+                Solusi yang Digunakan
+              </h3>
+
+              <ul className="mt-4 space-y-2">
+                {item.solutions.map((solution) => (
+                  <li
+                    key={solution}
+                    className="text-xs text-slate-700 flex gap-2"
+                  >
+                    <span className="text-emerald-600">✓</span>
+                    {solution}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <button
+              onClick={onBack}
+              className="w-full py-3 text-sm font-bold text-slate-500 hover:text-emerald-800 transition"
+            >
+              ← Kembali ke Case Studies
+            </button>
+          </aside>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+/* =========================================================
+   CASE STUDIES LIST
+========================================================= */
+
+function CaseStudiesPage({ onOpen }) {
+  return (
+    <div className="anim-page">
+      <section className="relative overflow-hidden bg-slate-950 text-white">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1800&q=85"
+            alt=""
+            className="w-full h-full object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-slate-950/85" />
+        </div>
+
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20">
+          <span className="text-[10px] font-black uppercase tracking-[0.18em] text-emerald-400">
+            Success Stories
+          </span>
+
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight mt-4">
+            Healthcare Transformation
+            <br />
+            <span className="text-emerald-400">Case Studies</span>
+          </h1>
+
+          <p className="max-w-2xl text-slate-300 mt-5 text-sm md:text-base leading-relaxed">
+            Pelajari bagaimana fasilitas kesehatan dapat memanfaatkan solusi
+            digital untuk meningkatkan operasional, pelayanan, data, dan
+            pengambilan keputusan.
+          </p>
+        </div>
+      </section>
+
+      <main className="max-w-[1400px] mx-auto px-6 lg:px-10 py-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {CASE_STUDIES.map((item) => (
+            <CaseStudyCard
               key={item.id}
               item={item}
-              onReadMore={onReadMore}
+              onClick={() => onOpen(item)}
             />
           ))}
         </div>
-
-        {filtered.length === 0 && (
-          <EmptyState text="Tidak ada resource yang sesuai dengan pencarian." />
-        )}
       </main>
     </div>
   );
@@ -1202,387 +1437,271 @@ function LibraryPage({ onReadMore }) {
 ========================================================= */
 
 function LibraryDetail({ item, onBack }) {
-  if (!item) return null;
-
   return (
-    <div className="bg-slate-50 min-h-screen">
-      <div className="bg-white border-b border-slate-200">
-        <div className="max-w-[1440px] mx-auto px-5 lg:px-8 py-5">
-          <button
-            onClick={onBack}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-emerald-700 transition"
-          >
-            <ArrowLeft size={15} />
-            Back to Library
-          </button>
+    <div className="anim-page">
+      <section className="bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-emerald-100">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-14">
+          <div className="text-xs text-slate-500 mb-7">
+            <button onClick={onBack} className="hover:text-emerald-700">
+              Home
+            </button>
+            <span className="mx-2">›</span>
+            <button onClick={onBack} className="hover:text-emerald-700">
+              Library
+            </button>
+            <span className="mx-2">›</span>
+            <span>{item.tag}</span>
+          </div>
+
+          <span className="inline-flex bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wide">
+            {item.tag}
+          </span>
+
+          <h1 className="max-w-4xl text-3xl md:text-5xl font-black text-slate-900 mt-5 leading-tight">
+            {item.title}
+          </h1>
+
+          <p className="max-w-3xl text-slate-600 mt-5 leading-relaxed">
+            {item.desc}
+          </p>
+
+          <div className="flex flex-wrap gap-4 mt-6 text-xs text-slate-500">
+            <span>
+              <strong>Penerbit:</strong> {item.publisher}
+            </span>
+            <span>
+              <strong>Tahun:</strong> {item.year}
+            </span>
+            <span>
+              <strong>Format:</strong> {item.fileType}
+            </span>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <main className="max-w-[1440px] mx-auto px-5 lg:px-8 py-7 lg:py-9">
+      <main className="max-w-[1400px] mx-auto px-6 lg:px-10 py-12">
+        <div className="grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-8 space-y-10">
+            <section>
+              <h2 className="text-2xl font-black text-slate-900">
+                Deskripsi
+              </h2>
 
-        <section className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-          <div className="grid lg:grid-cols-[300px_1fr] xl:grid-cols-[340px_1fr]">
-            <div className="relative min-h-[230px] lg:min-h-[280px]">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-
-              <div className="absolute inset-0 bg-slate-950/35" />
-
-              <div className="absolute left-5 top-5">
-                <span className="px-3 py-1.5 rounded-full bg-white text-emerald-700 text-[10px] font-bold tracking-wide">
-                  {item.tag}
-                </span>
-              </div>
-            </div>
-
-            <div className="p-6 lg:p-7 xl:p-8">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-400 mb-3">
-                <span>{item.publisher}</span>
-                <span>•</span>
-                <span>{item.year}</span>
-              </div>
-
-              <h1 className="text-2xl lg:text-3xl xl:text-[34px] font-bold tracking-tight leading-[1.12] text-slate-900 max-w-4xl">
-                {item.title}
-              </h1>
-
-              <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-4xl">
+              <p className="text-sm md:text-base text-slate-600 leading-8 mt-4">
                 {item.desc}
               </p>
 
-              <div className="mt-6 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2.5">
-                <InfoCard
-                  icon={<BookOpen size={14} />}
-                  label="Kategori"
-                  value={item.type}
-                />
-
-                <InfoCard
-                  icon={<Building2 size={14} />}
-                  label="Penerbit"
-                  value={item.publisher}
-                />
-
-                <InfoCard
-                  icon={<Clock3 size={14} />}
-                  label="Tahun"
-                  value={item.year}
-                />
-
-                <InfoCard
-                  icon={<FileText size={14} />}
-                  label="Format"
-                  value={item.fileType}
-                />
-
-                <InfoCard
-                  icon={<Globe2 size={14} />}
-                  label="Bahasa"
-                  value={item.language}
-                />
-
-                <InfoCard
-                  icon={<FileText size={14} />}
-                  label="Halaman"
-                  value={item.pages}
-                />
+              <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-5 text-xs text-amber-900 leading-relaxed">
+                <strong>Catatan:</strong> Konten halaman ini merupakan
+                ringkasan untuk kebutuhan Library. Dokumen PDF yang dirujuk
+                tetap merupakan publikasi asli dari penerbitnya.
               </div>
-            </div>
-          </div>
-        </section>
+            </section>
 
-        <div className="mt-7 grid lg:grid-cols-[minmax(0,1fr)_290px] xl:grid-cols-[minmax(0,1fr)_320px] gap-6 items-start">
+            <section>
+              <h2 className="text-2xl font-black text-slate-900">
+                Ringkasan Dokumen
+              </h2>
 
-          <article className="space-y-5">
-
-            <DetailSection title="Deskripsi">
-              <p className="text-sm text-slate-600 leading-7">
-                {item.description}
-              </p>
-
-              <EditorialNote text={item.editorialNote} />
-            </DetailSection>
-
-            <DetailSection
-              title="Ringkasan Dokumen"
-              subtitle="Poin-poin utama yang dibahas dalam publikasi."
-            >
-              <div className="grid md:grid-cols-2 gap-2.5">
-                {item.summary.map((point, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100"
+              <ul className="mt-5 space-y-3">
+                {item.keyPoints.map((point) => (
+                  <li
+                    key={point}
+                    className="flex gap-3 text-sm text-slate-600"
                   >
-                    <CheckCircle2
-                      size={16}
-                      className="text-emerald-600 shrink-0 mt-0.5"
-                    />
+                    <span className="text-emerald-600 font-black">✓</span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-                    <p className="text-xs text-slate-600 leading-relaxed">
+            <section>
+              <h2 className="text-2xl font-black text-slate-900">
+                Cakupan Pembahasan
+              </h2>
+
+              <div className="mt-5 space-y-4">
+                {item.keyPoints.map((point, index) => (
+                  <div
+                    key={point}
+                    className="border border-slate-200 rounded-xl p-5"
+                  >
+                    <div className="text-[10px] font-black text-emerald-700 uppercase">
+                      Section {String(index + 1).padStart(2, "0")}
+                    </div>
+
+                    <h3 className="font-black text-slate-800 mt-2">
                       {point}
+                    </h3>
+
+                    <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                      Pembahasan ini menjadi bagian dari konteks teknologi dan
+                      transformasi digital healthcare yang relevan dengan
+                      dokumen.
                     </p>
                   </div>
                 ))}
               </div>
-            </DetailSection>
+            </section>
 
-            <DetailSection
-              title="Cakupan Pembahasan"
-              subtitle="Struktur utama dan area pembahasan dalam dokumen."
-            >
-              <div className="space-y-2.5">
-                {item.scope.map((section, index) => (
+            <section>
+              <h2 className="text-2xl font-black text-slate-900">
+                Relevansi untuk Digital Healthcare
+              </h2>
+
+              <p className="text-sm text-slate-600 leading-8 mt-4">
+                Dokumen dapat digunakan sebagai referensi untuk memahami
+                kebutuhan teknologi, proses digitalisasi, interoperabilitas,
+                keamanan informasi, serta tata kelola data dalam lingkungan
+                fasilitas pelayanan kesehatan.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-black text-slate-900">
+                Dokumen Ini Cocok Untuk
+              </h2>
+
+              <div className="grid sm:grid-cols-2 gap-3 mt-5">
+                {[
+                  "Hospital CIO",
+                  "IT Manager",
+                  "Healthcare IT Team",
+                  "System Architect",
+                  "Software Engineer",
+                  "System Analyst",
+                  "Digital Health Consultant",
+                  "IT Governance Team",
+                  "Risk & Compliance Team",
+                ].map((role) => (
                   <div
-                    key={index}
-                    className="border border-slate-200 rounded-xl overflow-hidden"
+                    key={role}
+                    className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-700"
                   >
-                    <div className="px-4 py-3 bg-slate-50 flex items-center gap-3">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0">
-                        {section.number ||
-                          String(index + 1).padStart(2, "0")}
-                      </div>
-
-                      <h3 className="font-bold text-sm text-slate-800">
-                        {section.title}
-                      </h3>
-                    </div>
-
-                    <div className="p-4 grid md:grid-cols-2 gap-x-6 gap-y-2">
-                      {section.items.map((point, pointIndex) => (
-                        <div
-                          key={pointIndex}
-                          className="flex gap-2 items-start text-xs text-slate-600 leading-relaxed"
-                        >
-                          <ChevronRight
-                            size={13}
-                            className="text-emerald-600 shrink-0 mt-0.5"
-                          />
-
-                          <span>{point}</span>
-                        </div>
-                      ))}
-                    </div>
+                    {role}
                   </div>
                 ))}
               </div>
-            </DetailSection>
+            </section>
 
-            <DetailSection
-              title="Relevansi untuk Digital Healthcare"
-              subtitle="Hubungan konsep dokumen dengan ekosistem teknologi kesehatan."
-            >
-              <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-5">
-                <div className="flex flex-wrap items-center gap-2 mb-5">
-                  {[
-                    "Secure Connectivity",
-                    "Identity Management",
-                    "Data Protection",
-                    "Interoperability",
-                    "Testing",
-                  ].map((step, index) => (
-                    <React.Fragment key={step}>
-                      <span className="px-3 py-1.5 bg-white rounded-full text-[10px] font-bold text-emerald-700 border border-emerald-100">
-                        {step}
-                      </span>
+            <section>
+              <h2 className="text-2xl font-black text-slate-900">
+                Metadata Dokumen
+              </h2>
 
-                      {index < 4 && (
-                        <ArrowRight
-                          size={13}
-                          className="text-emerald-400 hidden sm:block"
-                        />
-                      )}
-                    </React.Fragment>
-                  ))}
-                </div>
-
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-                  {item.healthcareRelevance.map((topic, index) => (
-                    <div
-                      key={index}
-                      className="bg-white border border-emerald-100 rounded-lg px-3 py-2.5 text-xs font-medium text-slate-700"
-                    >
-                      {topic}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </DetailSection>
-
-            <DetailSection
-              title="Dokumen Ini Cocok Untuk"
-              subtitle="Profil profesional yang dapat menggunakan dokumen sebagai referensi."
-            >
-              <div className="flex flex-wrap gap-2">
-                {item.suitableFor.map((role, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium"
-                  >
-                    <Users size={13} />
-                    {role}
-                  </span>
-                ))}
-              </div>
-            </DetailSection>
-
-            <DetailSection title="Metadata Dokumen">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
-                <table className="w-full text-left">
+              <div className="overflow-x-auto border border-slate-200 rounded-2xl mt-5">
+                <table className="w-full text-sm">
                   <tbody>
-                    <MetadataRow
-                      label="Title"
-                      value={item.title}
-                    />
-
-                    <MetadataRow
-                      label="Category"
-                      value={item.type}
-                    />
-
-                    <MetadataRow
-                      label="Publisher"
-                      value={item.publisher}
-                    />
-
-                    <MetadataRow
-                      label="Authors"
-                      value={item.authors}
-                    />
-
-                    <MetadataRow
-                      label="Year"
-                      value={item.year}
-                    />
-
-                    <MetadataRow
-                      label="Format"
-                      value={item.fileType}
-                    />
-
-                    <MetadataRow
-                      label="Language"
-                      value={item.language}
-                    />
-
-                    <MetadataRow
-                      label="Pages"
-                      value={item.pages}
-                    />
-
-                    <MetadataRow
-                      label="Document Type"
-                      value={item.documentType}
-                    />
-
-                    <MetadataRow
-                      label="Source"
-                      value={item.source}
-                    />
+                    {[
+                      ["Title", item.title],
+                      ["Category", item.type],
+                      ["Publisher", item.publisher],
+                      ["Year", item.year],
+                      ["Format", item.fileType],
+                      ["Language", item.language],
+                      ["Pages", item.pages],
+                      ["File Size", item.size],
+                    ].map(([key, value]) => (
+                      <tr key={key} className="border-b last:border-b-0">
+                        <td className="px-5 py-4 bg-slate-50 font-black text-slate-600 w-1/3">
+                          {key}
+                        </td>
+                        <td className="px-5 py-4 text-slate-600">
+                          {value}
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
-            </DetailSection>
+            </section>
 
-            <DetailSection title="Referensi">
-              <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {item.reference}
-                </p>
+            <section>
+              <h2 className="text-2xl font-black text-slate-900">
+                Referensi
+              </h2>
 
-                <p className="mt-3 text-[11px] text-slate-400">
-                  Dokumen sumber tersedia melalui publikasi resmi penerbit.
-                </p>
+              <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mt-5 text-sm text-slate-600 leading-relaxed">
+                {item.publisher}
+                <br />
+                <em>{item.title}</em>
+                <br />
+                Tahun {item.year}.
+                <br />
+                Dokumen sumber tersedia melalui publikasi resmi penerbit.
               </div>
-            </DetailSection>
+            </section>
 
-            <DetailSection title="Catatan Editorial">
-              <div className="flex gap-3 p-4 rounded-xl bg-amber-50 border border-amber-100">
-                <ShieldCheck
-                  size={17}
-                  className="text-amber-600 shrink-0 mt-0.5"
-                />
+            <section className="bg-emerald-50 border border-emerald-100 rounded-2xl p-7">
+              <h2 className="text-xl font-black text-emerald-950">
+                Request Download
+              </h2>
 
-                <p className="text-xs text-amber-900/75 leading-relaxed">
-                  Halaman Library ini berfungsi sebagai informasi dan
-                  ringkasan dokumen. Metadata seperti publisher, judul,
-                  author, dan tahun mengacu pada dokumen sumber. PDF yang
-                  ditampilkan atau diunduh dari halaman ini tetap menggunakan
-                  dokumen asli dari penerbitnya.
-                </p>
-              </div>
-            </DetailSection>
-          </article>
-
-          <aside className="lg:sticky lg:top-[95px] space-y-4">
-            <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
-                  <FileText size={17} />
-                </div>
-
-                <div>
-                  <p className="text-xs font-bold text-slate-800">
-                    Document
-                  </p>
-
-                  <p className="text-[10px] text-slate-400">
-                    Original publication
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-3 text-xs">
-                <InfoRow label="Format" value={item.fileType} />
-                <InfoRow label="Pages" value={item.pages} />
-                <InfoRow label="Language" value={item.language} />
-                <InfoRow label="Publisher" value={item.publisher} />
-                <InfoRow label="Year" value={item.year} />
-              </div>
+              <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                Untuk kebutuhan desain prototype, tombol berikut dapat
+                digunakan sebagai placeholder proses request dokumen asli.
+              </p>
 
               <a
-                href={item.pdfUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition"
+                href="mailto:info@inovamedika.com?subject=Request%20Original%20Document"
+                className="inline-flex mt-5 bg-emerald-800 hover:bg-emerald-900 text-white px-5 py-3 rounded-xl text-sm font-black transition"
               >
-                <Download size={15} />
-                Download Original Document
+                Download / Request Original Document
               </a>
+            </section>
 
-              <p className="mt-3 text-[10px] text-slate-400 text-center leading-relaxed">
-                Anda akan diarahkan ke dokumen sumber/publikasi asli.
+            <section>
+              <h2 className="text-2xl font-black text-slate-900">
+                Catatan Editorial
+              </h2>
+
+              <p className="text-sm text-slate-600 leading-8 mt-4">
+                Halaman Library ini berfungsi sebagai informasi dan ringkasan
+                dokumen. Metadata seperti publisher, judul, author, dan tahun
+                mengacu pada dokumen sumber. PDF yang ditampilkan atau diunduh
+                dari halaman ini tetap menggunakan dokumen asli dari penerbitnya.
               </p>
-            </div>
+            </section>
+          </div>
 
-            <div className="bg-slate-900 rounded-2xl p-5 text-white">
-              <div className="flex items-center gap-2">
-                <Database
-                  size={17}
-                  className="text-emerald-300"
-                />
+          <aside className="lg:col-span-4 lg:sticky lg:top-28">
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <div className="w-24 h-32 mx-auto bg-slate-50 border border-emerald-200 rounded-xl flex flex-col items-center justify-center">
+                <div className="text-[9px] font-black text-emerald-800 uppercase text-center px-2">
+                  {item.publisher}
+                </div>
 
-                <span className="text-xs font-bold">
-                  Library Resource
+                <div className="text-3xl mt-3">📄</div>
+
+                <span className="mt-3 bg-emerald-800 text-white px-2 py-1 rounded text-[9px] font-black">
+                  PDF
                 </span>
               </div>
 
-              <p className="mt-3 text-[11px] text-slate-300 leading-relaxed">
-                Gunakan dokumen ini sebagai referensi untuk memahami konsep,
-                standar, regulasi, dan teknologi dalam transformasi digital
-                healthcare.
-              </p>
+              <h3 className="font-black text-slate-800 text-sm mt-6">
+                {item.title}
+              </h3>
 
-              <button
-                onClick={onBack}
-                className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold text-emerald-300"
-              >
-                Explore More Resources
-                <ArrowRight size={13} />
+              <div className="text-xs text-slate-500 mt-3">
+                {item.fileType} • {item.pages}
+              </div>
+
+              <button className="w-full mt-6 bg-emerald-800 hover:bg-emerald-900 text-white py-3 rounded-xl text-xs font-black transition">
+                📥 Download PDF
+              </button>
+
+              <button className="w-full mt-3 border border-slate-200 text-slate-700 hover:bg-slate-50 py-3 rounded-xl text-xs font-bold transition">
+                🔗 Bagikan Dokumen
               </button>
             </div>
+
+            <button
+              onClick={onBack}
+              className="w-full mt-5 text-xs font-bold text-slate-500 hover:text-emerald-800"
+            >
+              ← Kembali ke Library
+            </button>
           </aside>
         </div>
       </main>
@@ -1591,176 +1710,194 @@ function LibraryDetail({ item, onBack }) {
 }
 
 /* =========================================================
-   CASE STUDIES PAGE
+   LIBRARY LIST
 ========================================================= */
 
-function CaseStudiesPage({ onReadMore }) {
-  const [search, setSearch] = useState("");
+function LibraryPage({
+  searchQuery,
+  setSearchQuery,
+  selectedTopic,
+  setSelectedTopic,
+  onOpen,
+}) {
+  const filteredLibrary = LIBRARY_ITEMS.filter((item) => {
+    const matchesTopic = selectedTopic
+      ? item.tag === selectedTopic
+      : true;
 
-  const filtered = CASE_STUDIES.filter((item) => {
-    const keyword = search.toLowerCase();
+    const query = searchQuery.toLowerCase();
 
-    return (
-      !keyword ||
-      item.title.toLowerCase().includes(keyword) ||
-      item.desc.toLowerCase().includes(keyword) ||
-      item.tag.toLowerCase().includes(keyword)
-    );
+    const matchesSearch =
+      item.title.toLowerCase().includes(query) ||
+      item.desc.toLowerCase().includes(query);
+
+    return matchesTopic && matchesSearch;
   });
 
   return (
-    <div className="bg-slate-50 min-h-screen">
-      <ImageHero type="case-studies" />
+    <div className="anim-page">
+      <section className="relative text-white overflow-hidden bg-slate-950">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=85"
+            alt=""
+            className="w-full h-full object-cover opacity-30"
+          />
 
-      <main className="max-w-[1440px] mx-auto px-5 lg:px-8 py-10 lg:py-12">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-emerald-700">
-              OUR WORK
-            </p>
+          <div className="absolute inset-0 bg-slate-950/85" />
+        </div>
 
-            <h2 className="mt-1 text-2xl font-bold text-slate-900">
-              Healthcare Transformation Stories
-            </h2>
-          </div>
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20">
+          <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400">
+            Library Resources
+          </span>
 
-          <div className="relative w-full lg:w-[300px]">
-            <Search
-              size={16}
-              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
-            />
+          <h1 className="text-4xl md:text-6xl font-black mt-4">
+            Digital Healthcare
+            <br />
+            <span className="text-emerald-400">
+              Resources
+            </span>
+          </h1>
+
+          <div className="max-w-2xl mt-7 bg-white rounded-xl p-2 flex shadow-2xl">
+            <span className="px-3 flex items-center text-slate-400">
+              🔍
+            </span>
 
             <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search case studies..."
-              className="w-full h-10 pl-10 pr-4 rounded-xl border border-slate-200 outline-none text-xs focus:border-emerald-400"
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Cari judul, topik, atau kata kunci..."
+              className="flex-1 text-sm text-slate-800 outline-none px-2"
             />
+
+            <button className="bg-emerald-800 text-white px-5 py-2.5 rounded-lg text-xs font-black">
+              Cari
+            </button>
           </div>
         </div>
+      </section>
 
-        <div className="mt-7 grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-          {filtered.map((item) => (
-            <CaseStudyCard
-              key={item.id}
-              item={item}
-              onReadMore={onReadMore}
-            />
-          ))}
-        </div>
-      </main>
-    </div>
-  );
-}
+      <main className="max-w-[1400px] mx-auto px-6 lg:px-10 py-14 space-y-12">
+        <section>
+          <div className="flex items-end justify-between gap-4 mb-5">
+            <div>
+              <h2 className="text-xl font-black text-slate-900">
+                Browse by Topic
+              </h2>
 
-/* =========================================================
-   CASE STUDY DETAIL
-========================================================= */
-
-function CaseStudyDetail({ item, onBack }) {
-  if (!item) return null;
-
-  return (
-    <div className="bg-slate-50 min-h-screen">
-      <main className="max-w-[1200px] mx-auto px-5 lg:px-8 py-8">
-        <button
-          onClick={onBack}
-          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-emerald-700 mb-6"
-        >
-          <ArrowLeft size={15} />
-          Back to Case Studies
-        </button>
-
-        <section className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-          <div className="h-[280px] lg:h-[360px] relative">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-full object-cover"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
-
-            <div className="absolute left-6 bottom-6 text-white">
-              <span className="inline-flex px-3 py-1.5 bg-white text-emerald-700 rounded-full text-[10px] font-bold mb-3">
-                {item.tag}
-              </span>
-
-              <h1 className="text-3xl lg:text-4xl font-bold max-w-3xl leading-tight">
-                {item.title}
-              </h1>
+              <p className="text-xs text-slate-500 mt-1">
+                Klik topik untuk menyaring dokumen.
+              </p>
             </div>
+
+            {selectedTopic && (
+              <button
+                onClick={() => setSelectedTopic(null)}
+                className="text-xs font-bold text-emerald-800 bg-emerald-50 px-3 py-2 rounded-full"
+              >
+                ✕ Tampilkan Semua
+              </button>
+            )}
           </div>
 
-          <div className="p-6 lg:p-8">
-            <div className="grid md:grid-cols-3 gap-3">
-              <InfoCard
-                label="Client"
-                value={item.client}
-              />
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+            {TOPICS.map((topic) => {
+              const active = selectedTopic === topic.id;
 
-              <InfoCard
-                label="Duration"
-                value={item.duration}
-              />
+              return (
+                <button
+                  key={topic.id}
+                  onClick={() =>
+                    setSelectedTopic(active ? null : topic.id)
+                  }
+                  className={`rounded-xl border p-4 transition-all ${
+                    active
+                      ? "bg-emerald-800 text-white border-emerald-800 shadow-md"
+                      : "bg-white border-slate-200 text-slate-700 hover:border-emerald-300 hover:-translate-y-1"
+                  }`}
+                >
+                  <div className="text-2xl">{topic.icon}</div>
 
-              <InfoCard
-                label="Status"
-                value={item.status}
-              />
+                  <div className="text-xs font-bold mt-2">
+                    {topic.label}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+
+        <section>
+          <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-6">
+            <h2 className="text-lg font-black text-slate-800">
+              {selectedTopic
+                ? `Topik: "${selectedTopic}"`
+                : "Semua Sumber Daya"}
+            </h2>
+
+            <span className="text-xs font-bold text-slate-400">
+              {filteredLibrary.length} Dokumen
+            </span>
+          </div>
+
+          {filteredLibrary.length === 0 ? (
+            <div className="bg-white border border-slate-200 rounded-2xl p-12 text-center">
+              <div className="text-4xl">🔎</div>
+              <h3 className="font-black text-slate-800 mt-4">
+                Dokumen tidak ditemukan
+              </h3>
+              <p className="text-sm text-slate-500 mt-2">
+                Coba gunakan kata kunci lain.
+              </p>
             </div>
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {filteredLibrary.map((item) => (
+                <article
+                  key={item.id}
+                  onClick={() => onOpen(item)}
+                  className="group cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                >
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
 
-            <div className="mt-7 grid lg:grid-cols-[1fr_300px] gap-7">
-              <div>
-                <h2 className="text-xl font-bold text-slate-900">
-                  Overview
-                </h2>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
 
-                <p className="mt-3 text-sm text-slate-600 leading-7">
-                  {item.content}
-                </p>
+                    <span className="absolute top-3 left-3 bg-white/95 text-emerald-800 text-[10px] font-black px-3 py-1 rounded-full">
+                      {item.tag}
+                    </span>
+                  </div>
 
-                <h2 className="mt-7 text-xl font-bold text-slate-900">
-                  Key Impacts
-                </h2>
+                  <div className="p-5">
+                    <h3 className="font-black text-sm text-slate-800 leading-snug line-clamp-2 group-hover:text-emerald-800">
+                      {item.title}
+                    </h3>
 
-                <div className="mt-4 space-y-2.5">
-                  {item.impacts.map((impact, index) => (
-                    <div
-                      key={index}
-                      className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100"
-                    >
-                      <CheckCircle2
-                        size={16}
-                        className="text-emerald-600 mt-0.5"
-                      />
+                    <p className="text-xs text-slate-500 leading-relaxed line-clamp-3 mt-3">
+                      {item.desc}
+                    </p>
 
-                      <p className="text-xs text-slate-600">
-                        {impact}
-                      </p>
+                    <div className="flex items-center justify-between mt-5 pt-4 border-t border-slate-100">
+                      <span className="text-[10px] text-slate-400 font-bold">
+                        {item.fileType} • {item.pages}
+                      </span>
+
+                      <span className="text-[10px] font-black text-emerald-700 group-hover:translate-x-1 transition-transform">
+                        Buka Detail →
+                      </span>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-emerald-50 rounded-2xl p-5">
-                <Activity
-                  size={19}
-                  className="text-emerald-700"
-                />
-
-                <h3 className="mt-3 text-sm font-bold text-emerald-950">
-                  Transformation Focus
-                </h3>
-
-                <p className="mt-2 text-xs text-emerald-900/70 leading-relaxed">
-                  Studi kasus ini menunjukkan bagaimana teknologi dapat
-                  digunakan untuk meningkatkan efisiensi workflow dan
-                  integrasi data kesehatan.
-                </p>
-              </div>
+                  </div>
+                </article>
+              ))}
             </div>
-          </div>
+          )}
         </section>
       </main>
     </div>
@@ -1768,285 +1905,32 @@ function CaseStudyDetail({ item, onBack }) {
 }
 
 /* =========================================================
-   HOME
+   PLACEHOLDER PAGES
 ========================================================= */
 
-function HomePage({ onNavigate }) {
+function PlaceholderPage({ title, eyebrow, description }) {
   return (
-    <div className="bg-white">
-      <section className="relative min-h-[620px] overflow-hidden flex items-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80')",
-          }}
-        />
+    <div className="anim-page">
+      <section className="min-h-[620px] flex items-center justify-center bg-gradient-to-br from-emerald-50 via-white to-teal-50 px-6">
+        <div className="max-w-2xl text-center">
+          <span className="text-[10px] uppercase tracking-[0.2em] font-black text-emerald-700">
+            {eyebrow}
+          </span>
 
-        <div className="absolute inset-0 bg-slate-950/75" />
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 mt-4">
+            {title}
+          </h1>
 
-        <div className="relative max-w-[1440px] mx-auto w-full px-6 lg:px-10 py-24">
-          <div className="max-w-3xl text-white">
-            <p className="text-xs font-bold tracking-[0.22em] text-emerald-300">
-              INNOVATING HEALTHCARE
-            </p>
-
-            <h1 className="mt-5 text-5xl lg:text-7xl font-bold tracking-tight leading-[0.98]">
-              Digital Healthcare
-              <br />
-              <span className="text-emerald-300">
-                Transformation
-              </span>
-            </h1>
-
-            <p className="mt-6 text-base lg:text-lg text-slate-200 leading-relaxed max-w-2xl">
-              Membangun ekosistem teknologi kesehatan yang terintegrasi,
-              interoperabel, aman, dan berorientasi pada kebutuhan fasilitas
-              kesehatan di Indonesia.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <button
-                onClick={() => onNavigate("library")}
-                className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold transition"
-              >
-                Explore Library
-              </button>
-
-              <button
-                onClick={() => onNavigate("case-studies")}
-                className="px-6 py-3 rounded-full border border-white/30 bg-white/10 hover:bg-white/15 text-white text-sm font-bold transition"
-              >
-                View Case Studies
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-[1440px] mx-auto px-6 lg:px-10 py-14">
-        <div className="grid md:grid-cols-3 gap-5">
-          <FeatureCard
-            icon={<Activity />}
-            title="Digital Healthcare"
-            text="Solusi teknologi untuk mendukung transformasi proses pelayanan kesehatan."
-          />
-
-          <FeatureCard
-            icon={<Globe2 />}
-            title="Interoperability"
-            text="Integrasi sistem dan pertukaran data menggunakan standar teknologi kesehatan."
-          />
-
-          <FeatureCard
-            icon={<ShieldCheck />}
-            title="Secure & Reliable"
-            text="Pendekatan teknologi dengan perhatian pada keamanan dan keandalan sistem."
-          />
-        </div>
-      </section>
-
-      <section className="bg-slate-50 py-16">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
-          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-5">
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-emerald-700">
-                CASE STUDIES
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-slate-900">
-                Healthcare Transformation Case Studies
-              </h2>
-
-              <p className="mt-3 text-sm text-slate-500 max-w-2xl">
-                Pelajari implementasi teknologi digital healthcare melalui
-                berbagai studi kasus transformasi.
-              </p>
-            </div>
-
-            <button
-              onClick={() => onNavigate("case-studies")}
-              className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700"
-            >
-              View All
-              <ArrowRight size={15} />
-            </button>
-          </div>
-
-          <div className="mt-7 grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {CASE_STUDIES.slice(0, 3).map((item) => (
-              <CaseStudyCard
-                key={item.id}
-                item={item}
-                onReadMore={() => onNavigate("case-studies")}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-[1440px] mx-auto px-6 lg:px-10 py-16">
-        <div className="rounded-3xl bg-emerald-900 px-7 lg:px-12 py-12 text-white flex flex-col lg:flex-row justify-between lg:items-center gap-8">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-emerald-300 font-bold">
-              KNOWLEDGE CENTER
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold">
-              Explore Healthcare Resources
-            </h2>
-
-            <p className="mt-3 text-sm text-emerald-100/75 max-w-xl">
-              Temukan referensi mengenai SATUSEHAT, BPJS, RME, HL7 FHIR,
-              DICOM, cybersecurity, regulasi, dan teknologi healthcare.
-            </p>
-          </div>
-
-          <button
-            onClick={() => onNavigate("library")}
-            className="shrink-0 px-6 py-3 rounded-full bg-white text-emerald-900 text-sm font-bold"
-          >
-            Open Library
-          </button>
-        </div>
-      </section>
-    </div>
-  );
-}
-
-/* =========================================================
-   SMALL COMPONENTS
-========================================================= */
-
-function FeatureCard({ icon, title, text }) {
-  return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition">
-      <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
-        {React.cloneElement(icon, { size: 19 })}
-      </div>
-
-      <h3 className="mt-5 font-bold text-slate-900">
-        {title}
-      </h3>
-
-      <p className="mt-2 text-xs text-slate-500 leading-relaxed">
-        {text}
-      </p>
-    </div>
-  );
-}
-
-function DetailSection({ title, subtitle, children }) {
-  return (
-    <section className="bg-white border border-slate-200 rounded-2xl p-5 lg:p-6">
-      <div className="mb-5">
-        <h2 className="text-lg lg:text-xl font-bold text-slate-900">
-          {title}
-        </h2>
-
-        {subtitle && (
-          <p className="mt-1 text-xs text-slate-400">
-            {subtitle}
+          <p className="text-slate-500 mt-5 leading-relaxed">
+            {description}
           </p>
-        )}
-      </div>
 
-      {children}
-    </section>
-  );
-}
-
-function EditorialNote({ text }) {
-  return (
-    <div className="mt-5 flex gap-3 rounded-xl bg-emerald-50 border border-emerald-100 p-4">
-      <ShieldCheck
-        size={16}
-        className="text-emerald-700 shrink-0 mt-0.5"
-      />
-
-      <p className="text-xs text-emerald-900/75 leading-relaxed">
-        <strong className="text-emerald-900">
-          Catatan:
-        </strong>{" "}
-        {text}
-      </p>
-    </div>
-  );
-}
-
-function InfoCard({ icon, label, value }) {
-  return (
-    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 min-w-0">
-      <div className="flex items-center gap-1.5 text-[10px] text-slate-400 font-medium">
-        {icon}
-        <span>{label}</span>
-      </div>
-
-      <p className="mt-1.5 text-[11px] font-bold text-slate-700 leading-snug break-words">
-        {value}
-      </p>
-    </div>
-  );
-}
-
-function InfoRow({ label, value }) {
-  return (
-    <div className="flex justify-between gap-4 py-2 border-b border-slate-100 last:border-0">
-      <span className="text-slate-400">
-        {label}
-      </span>
-
-      <span className="text-right font-semibold text-slate-700">
-        {value}
-      </span>
-    </div>
-  );
-}
-
-function MetadataRow({ label, value }) {
-  return (
-    <tr className="border-b last:border-b-0 border-slate-100">
-      <td className="w-[150px] lg:w-[180px] px-4 py-3 bg-slate-50 text-[11px] font-semibold text-slate-500">
-        {label}
-      </td>
-
-      <td className="px-4 py-3 text-xs text-slate-700 leading-relaxed">
-        {value}
-      </td>
-    </tr>
-  );
-}
-
-function EmptyState({ text }) {
-  return (
-    <div className="py-20 text-center">
-      <div className="mx-auto w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400">
-        <Search size={20} />
-      </div>
-
-      <p className="mt-4 text-sm font-semibold text-slate-600">
-        {text}
-      </p>
-    </div>
-  );
-}
-
-function PlaceholderPage({ title }) {
-  return (
-    <div className="min-h-[65vh] bg-slate-50 flex items-center justify-center px-6">
-      <div className="text-center">
-        <div className="w-14 h-14 mx-auto rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
-          <BookOpen size={24} />
+          <div className="mt-8 inline-flex items-center gap-2 bg-white border border-emerald-100 rounded-full px-5 py-3 text-xs font-bold text-slate-600 shadow-sm">
+            Content placeholder untuk prototype
+            <span className="text-emerald-600">→</span>
+          </div>
         </div>
-
-        <h1 className="mt-5 text-2xl font-bold text-slate-900">
-          {title}
-        </h1>
-
-        <p className="mt-2 text-sm text-slate-500">
-          Halaman ini sedang dalam pengembangan.
-        </p>
-      </div>
+      </section>
     </div>
   );
 }
@@ -2057,32 +1941,42 @@ function PlaceholderPage({ title }) {
 
 function Footer({ onNavigate }) {
   return (
-    <footer className="bg-[#EAF7F0] text-emerald-950 pt-14 pb-10 border-t border-emerald-200 text-xs">
-      <div className="max-w-[1400px] mx-auto px-6 space-y-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-[#EAF7F0] text-emerald-950 border-t border-emerald-200 mt-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-14">
+        <div className="grid md:grid-cols-4 gap-10">
+          <div>
+            <img
+              src={logoDefault}
+              alt="Inova Medika"
+              className="h-9 w-auto object-contain mb-5"
+            />
 
-          <div className="space-y-3">
-            <h4 className="font-bold text-sm text-emerald-900">
-              About Us
-            </h4>
-
-            <p className="text-slate-600 leading-relaxed text-[11px]">
+            <p className="text-xs text-slate-600 leading-relaxed">
               PT. Inova Medika Solusindo adalah penyedia solusi teknologi
               informasi kesehatan terintegrasi di Indonesia, berfokus pada
               e-Health, SIMRS, dan interoperabilitas data.
             </p>
           </div>
 
-          <div className="space-y-2">
-            <h4 className="font-bold text-sm text-emerald-900">
+          <div>
+            <h4 className="font-black text-sm text-emerald-900 mb-4">
               Explore
             </h4>
 
-            <ul className="space-y-2 text-slate-600 text-[11px]">
+            <ul className="space-y-2 text-xs text-slate-600">
+              <li>
+                <button
+                  onClick={() => onNavigate("home")}
+                  className="hover:text-emerald-800"
+                >
+                  Home
+                </button>
+              </li>
+
               <li>
                 <button
                   onClick={() => onNavigate("case-studies")}
-                  className="hover:text-emerald-700 transition"
+                  className="hover:text-emerald-800"
                 >
                   Case Studies
                 </button>
@@ -2091,7 +1985,7 @@ function Footer({ onNavigate }) {
               <li>
                 <button
                   onClick={() => onNavigate("library")}
-                  className="hover:text-emerald-700 transition"
+                  className="hover:text-emerald-800"
                 >
                   Library Resources
                 </button>
@@ -2099,137 +1993,46 @@ function Footer({ onNavigate }) {
 
               <li>
                 <button
-                  onClick={() => onNavigate("news")}
-                  className="hover:text-emerald-700 transition"
+                  onClick={() => onNavigate("research")}
+                  className="hover:text-emerald-800"
                 >
-                  News & Articles
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => onNavigate("events")}
-                  className="hover:text-emerald-700 transition"
-                >
-                  Events & Webinar
+                  Research
                 </button>
               </li>
             </ul>
           </div>
 
-          <div className="space-y-2">
-            <h4 className="font-bold text-sm text-emerald-900">
+          <div>
+            <h4 className="font-black text-sm text-emerald-900 mb-4">
               Contact
             </h4>
 
-            <p className="text-slate-600 leading-relaxed text-[11px]">
+            <p className="text-xs text-slate-600 leading-relaxed">
               Email: info@inovamedika.com
               <br />
               Website: www.inovamedika.com
+              <br />
+              Bandung, Jawa Barat
             </p>
           </div>
 
-          <div className="space-y-3">
-            <h4 className="font-bold text-sm text-emerald-900">
+          <div>
+            <h4 className="font-black text-sm text-emerald-900 mb-4">
               Inova Medika
             </h4>
 
-            <p className="text-slate-600 leading-relaxed text-[11px]">
-              © {new Date().getFullYear()} PT. Inova Medika Solusindo.
-              All rights reserved.
+            <p className="text-xs text-slate-500 leading-relaxed">
+              Transformasi Digital Kesehatan Indonesia, Dimulai dari Sini.
+            </p>
+
+            <p className="text-[11px] text-slate-400 mt-6">
+              © {new Date().getFullYear()} PT. Inova Medika Solusindo. All
+              rights reserved.
             </p>
           </div>
-
         </div>
       </div>
     </footer>
-  );
-}
-
-/* =========================================================
-   GLOBAL STYLES
-========================================================= */
-
-function GlobalStyles() {
-  return (
-    <style>{`
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system,
-          BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: #ffffff;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      ::selection {
-        background: rgba(16, 185, 129, 0.18);
-      }
-
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-
-      button,
-      a,
-      input {
-        font-family: inherit;
-      }
-
-      /* ================================================
-         PAGE ENTER ANIMATION
-      ================================================= */
-
-      .page-transition {
-        animation: pageEnter 520ms cubic-bezier(0.22, 1, 0.36, 1)
-          both;
-        transform-origin: top center;
-      }
-
-      @keyframes pageEnter {
-        0% {
-          opacity: 0;
-          transform: translateY(18px) scale(0.992);
-          filter: blur(3px);
-        }
-
-        55% {
-          opacity: 0.8;
-          filter: blur(0);
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-          filter: blur(0);
-        }
-      }
-
-      /* ================================================
-         REDUCE MOTION
-      ================================================= */
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-
-        .page-transition {
-          animation: none;
-        }
-      }
-    `}</style>
   );
 }
 
@@ -2240,25 +2043,68 @@ function GlobalStyles() {
 export default function App() {
   const [activeTab, setActiveTab] = useState("home");
 
-  const [selectedLibraryItem, setSelectedLibraryItem] =
-    useState(null);
+  const [selectedTopic, setSelectedTopic] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const [selectedCaseStudy, setSelectedCaseStudy] =
-    useState(null);
+  const [selectedDocument, setSelectedDocument] = useState(null);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
 
-  /*
-   * Digunakan sebagai key untuk memicu entrance animation
-   * setiap kali halaman berubah.
-   */
-  const [pageTransitionKey, setPageTransitionKey] =
-    useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleTabChange = (tab) => {
-    setSelectedLibraryItem(null);
+  const [navigationVersion, setNavigationVersion] = useState(0);
+
+  /* Navbar indicator */
+  const navRef = useRef(null);
+  const navItemRefs = useRef({});
+
+  const [indicator, setIndicator] = useState({
+    left: 0,
+    width: 0,
+  });
+
+  const [indicatorReady, setIndicatorReady] = useState(false);
+
+  useEffect(() => {
+    const updateIndicator = () => {
+      const container = navRef.current;
+      const activeItem = navItemRefs.current[activeTab];
+
+      if (!container || !activeItem) return;
+
+      const containerRect = container.getBoundingClientRect();
+      const itemRect = activeItem.getBoundingClientRect();
+
+      setIndicator({
+        left: itemRect.left - containerRect.left,
+        width: itemRect.width,
+      });
+
+      setIndicatorReady(true);
+    };
+
+    updateIndicator();
+
+    window.addEventListener("resize", updateIndicator);
+
+    return () => {
+      window.removeEventListener("resize", updateIndicator);
+    };
+  }, [activeTab]);
+
+  const clearDetails = () => {
+    setSelectedDocument(null);
     setSelectedCaseStudy(null);
-    setActiveTab(tab);
+  };
 
-    setPageTransitionKey((prev) => prev + 1);
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+    clearDetails();
+    setSelectedTopic(null);
+    setSearchQuery("");
+
+    setNavigationVersion((value) => value + 1);
+
+    setIsMobileMenuOpen(false);
 
     window.scrollTo({
       top: 0,
@@ -2266,12 +2112,10 @@ export default function App() {
     });
   };
 
-  const openLibraryDetail = (item) => {
-    setSelectedLibraryItem(item);
+  const openLibrary = (item) => {
+    setSelectedDocument(item);
     setSelectedCaseStudy(null);
-    setActiveTab("library");
-
-    setPageTransitionKey((prev) => prev + 1);
+    setNavigationVersion((value) => value + 1);
 
     window.scrollTo({
       top: 0,
@@ -2279,12 +2123,10 @@ export default function App() {
     });
   };
 
-  const openCaseStudyDetail = (item) => {
+  const openCaseStudy = (item) => {
     setSelectedCaseStudy(item);
-    setSelectedLibraryItem(null);
-    setActiveTab("case-studies");
-
-    setPageTransitionKey((prev) => prev + 1);
+    setSelectedDocument(null);
+    setNavigationVersion((value) => value + 1);
 
     window.scrollTo({
       top: 0,
@@ -2292,23 +2134,10 @@ export default function App() {
     });
   };
 
-  const backFromLibraryDetail = () => {
-    setSelectedLibraryItem(null);
-    setActiveTab("library");
+  const backToCurrentSection = () => {
+    clearDetails();
 
-    setPageTransitionKey((prev) => prev + 1);
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const backFromCaseDetail = () => {
-    setSelectedCaseStudy(null);
-    setActiveTab("case-studies");
-
-    setPageTransitionKey((prev) => prev + 1);
+    setNavigationVersion((value) => value + 1);
 
     window.scrollTo({
       top: 0,
@@ -2316,95 +2145,344 @@ export default function App() {
     });
   };
 
-  let content = null;
+  const pageKey = [
+    activeTab,
+    selectedDocument?.id || "",
+    selectedCaseStudy?.id || "",
+    navigationVersion,
+  ].join("-");
 
-  if (selectedLibraryItem) {
-    content = (
-      <LibraryDetail
-        item={selectedLibraryItem}
-        onBack={backFromLibraryDetail}
-      />
-    );
-  } else if (selectedCaseStudy) {
-    content = (
-      <CaseStudyDetail
-        item={selectedCaseStudy}
-        onBack={backFromCaseDetail}
-      />
-    );
-  } else if (activeTab === "library") {
-    content = (
-      <LibraryPage
-        onReadMore={openLibraryDetail}
-      />
-    );
-  } else if (activeTab === "case-studies") {
-    content = (
-      <CaseStudiesPage
-        onReadMore={openCaseStudyDetail}
-      />
-    );
-  } else if (activeTab === "home") {
-    content = (
-      <HomePage
-        onNavigate={handleTabChange}
-      />
-    );
-  } else if (activeTab === "contact") {
-    content = (
-      <PlaceholderPage title="Contact Us" />
-    );
-  } else if (activeTab === "news") {
-    content = (
-      <PlaceholderPage title="News & Articles" />
-    );
-  } else if (activeTab === "research") {
-    content = (
-      <PlaceholderPage title="Research" />
-    );
-  } else if (activeTab === "events") {
-    content = (
-      <PlaceholderPage title="Events" />
-    );
-  } else if (activeTab === "community") {
-    content = (
-      <PlaceholderPage title="Community" />
-    );
-  } else {
-    content = (
-      <HomePage
-        onNavigate={handleTabChange}
-      />
-    );
-  }
+  const renderContent = () => {
+    if (selectedCaseStudy) {
+      return (
+        <CaseStudyDetail
+          key={pageKey}
+          item={selectedCaseStudy}
+          onBack={backToCurrentSection}
+        />
+      );
+    }
+
+    if (selectedDocument) {
+      return (
+        <LibraryDetail
+          key={pageKey}
+          item={selectedDocument}
+          onBack={backToCurrentSection}
+        />
+      );
+    }
+
+    switch (activeTab) {
+      case "home":
+        return (
+          <HomePage
+            key={pageKey}
+            onCaseStudy={openCaseStudy}
+          />
+        );
+
+      case "case-studies":
+        return (
+          <CaseStudiesPage
+            key={pageKey}
+            onOpen={openCaseStudy}
+          />
+        );
+
+      case "library":
+        return (
+          <LibraryPage
+            key={pageKey}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            selectedTopic={selectedTopic}
+            setSelectedTopic={setSelectedTopic}
+            onOpen={openLibrary}
+          />
+        );
+
+      case "news":
+        return (
+          <PlaceholderPage
+            key={pageKey}
+            eyebrow="News"
+            title="Latest News"
+            description="Berita dan perkembangan terbaru seputar digital healthcare, rumah sakit, teknologi kesehatan, dan ekosistem kesehatan Indonesia."
+          />
+        );
+
+      case "insights":
+        return (
+          <PlaceholderPage
+            key={pageKey}
+            eyebrow="Insights"
+            title="Healthcare Insights"
+            description="Insight dan analisis mengenai perkembangan teknologi, data, sistem informasi, dan transformasi digital healthcare."
+          />
+        );
+
+      case "research":
+        return (
+          <PlaceholderPage
+            key={pageKey}
+            eyebrow="Research"
+            title="Research & Reports"
+            description="Research, benchmark, report, dan kajian yang membantu memahami perkembangan digitalisasi fasilitas kesehatan."
+          />
+        );
+
+      case "events":
+        return (
+          <PlaceholderPage
+            key={pageKey}
+            eyebrow="Events"
+            title="Events & Webinar"
+            description="Conference, training, webinar, workshop, dan berbagai kegiatan seputar digital healthcare."
+          />
+        );
+
+      case "community":
+        return (
+          <PlaceholderPage
+            key={pageKey}
+            eyebrow="Community"
+            title="Digital Health Community"
+            description="Ruang untuk healthcare IT professionals, hospital CIO, digital health practitioners, dan komunitas teknologi kesehatan."
+          />
+        );
+
+      default:
+        return (
+          <HomePage
+            key={pageKey}
+            onCaseStudy={openCaseStudy}
+          />
+        );
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-white">
-      <GlobalStyles />
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans overflow-x-hidden">
+      {/* =====================================================
+          GLOBAL ANIMATION
+      ===================================================== */}
 
-      <Navbar
-        activeTab={activeTab}
-        onNavigate={handleTabChange}
-      />
+      <style>{`
+        @keyframes pageEnter {
+          from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.992);
+            filter: blur(3px);
+          }
 
-      {/* 
-        Key berubah setiap navigasi.
-        React akan membuat ulang wrapper ini sehingga
-        page-enter animation dimainkan kembali.
-      */}
-      <div
-        key={pageTransitionKey}
-        className="page-transition"
-      >
-        {content}
-      </div>
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+          }
+        }
 
-      {!selectedLibraryItem &&
-        !selectedCaseStudy && (
-          <Footer
-            onNavigate={handleTabChange}
-          />
+        @keyframes mobileMenu {
+          from {
+            opacity: 0;
+            transform: translateY(-12px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes floatSoft {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+
+        .anim-page {
+          animation:
+            pageEnter
+            0.62s
+            cubic-bezier(0.22, 1, 0.36, 1)
+            both;
+        }
+
+        .mobile-menu-animation {
+          animation:
+            mobileMenu
+            0.28s
+            cubic-bezier(0.22, 1, 0.36, 1)
+            both;
+        }
+
+        .floating-soft {
+          animation:
+            floatSoft
+            4s
+            ease-in-out
+            infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
+      `}</style>
+
+      {/* =====================================================
+          NAVBAR
+      ===================================================== */}
+
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm">
+        <div className="max-w-[1500px] mx-auto px-5 lg:px-8 h-[76px] flex items-center justify-between">
+          {/* LOGO */}
+          <button
+            onClick={() => handleTabChange("home")}
+            className="shrink-0 flex items-center"
+          >
+            <img
+              src={logoDefault}
+              alt="Inova Medika"
+              className="h-9 md:h-10 w-auto object-contain"
+            />
+          </button>
+
+          {/* DESKTOP NAV */}
+          <nav
+            ref={navRef}
+            className="hidden lg:flex relative items-center gap-1"
+          >
+            {/* SLIDING GREEN INDICATOR */}
+            <div
+              className="absolute top-1/2 -translate-y-1/2 h-10 rounded-full bg-emerald-700 shadow-[0_8px_25px_rgba(5,150,105,.20)] pointer-events-none transition-[left,width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              style={{
+                left: indicator.left,
+                width: indicator.width,
+                opacity: indicatorReady ? 1 : 0,
+              }}
+            />
+
+            {NAV_ITEMS.map((item) => {
+              const active = activeTab === item.id;
+
+              return (
+                <button
+                  key={item.id}
+                  ref={(element) => {
+                    navItemRefs.current[item.id] = element;
+                  }}
+                  onClick={() => handleTabChange(item.id)}
+                  className={`relative z-10 px-3.5 py-2.5 rounded-full text-xs xl:text-sm font-bold transition-colors duration-300 ${
+                    active
+                      ? "text-white"
+                      : "text-slate-700 hover:text-emerald-700"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* RIGHT SIDE */}
+          <div className="flex items-center gap-3">
+            <button className="hidden md:flex bg-emerald-800 hover:bg-emerald-900 text-white px-4 py-2.5 rounded-xl text-xs font-black transition">
+              Request Demo
+            </button>
+
+            {/* MOBILE BUTTON */}
+            <button
+              onClick={() => setIsMobileMenuOpen((value) => !value)}
+              className="lg:hidden p-2.5 rounded-xl hover:bg-slate-100 transition"
+              aria-label="Toggle navigation"
+            >
+              {isMobileMenuOpen ? (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* MOBILE MENU */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden mobile-menu-animation border-t border-slate-100 bg-white px-5 py-5 shadow-xl">
+            <div className="grid gap-1">
+              {NAV_ITEMS.map((item) => {
+                const active = activeTab === item.id;
+
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleTabChange(item.id)}
+                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-bold transition ${
+                      active
+                        ? "bg-emerald-700 text-white"
+                        : "text-slate-700 hover:bg-slate-50"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <button className="w-full mt-4 bg-emerald-800 text-white py-3 rounded-xl text-sm font-black">
+              Request Demo
+            </button>
+          </div>
         )}
+      </header>
+
+      {/* =====================================================
+          PAGE CONTENT
+      ===================================================== */}
+
+      <div key={pageKey}>{renderContent()}</div>
+
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+
+      <Footer onNavigate={handleTabChange} />
     </div>
   );
 }
