@@ -27,6 +27,7 @@ import {
 
 import logoDefault from "./assets/logo-default.png";
 
+
 /* =========================================================
    DATA
 ========================================================= */
@@ -1173,7 +1174,7 @@ function Navbar({ activeTab, onNavigate }) {
                   itemRefs.current[item.id] = node;
                 }}
                 onClick={() => navigate(item.id)}
-                className={`relative z-10 px-3.5 py-2.5 rounded-full text-[10px] font-semibold whitespace-nowrap transition-colors duration-300 ${
+                className={`relative z-10 px-3.5 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap transition-colors duration-300 ${
                   activeTab === item.id
                     ? 'text-emerald-900'
                     : 'text-slate-700 hover:text-emerald-800'
@@ -1187,14 +1188,14 @@ function Navbar({ activeTab, onNavigate }) {
             <div className="relative ml-1">
               <button
                 onClick={() => setMoreOpen((value) => !value)}
-                className={`relative z-10 inline-flex items-center gap-1 px-3.5 py-2.5 rounded-full text-[10px] font-semibold whitespace-nowrap transition-colors duration-300 ${
+                className={`relative z-10 inline-flex items-center gap-1 px-3.5 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap transition-colors duration-300 ${
                   moreOpen
                     ? 'bg-emerald-100 text-emerald-900'
                     : 'text-slate-700 hover:bg-slate-50 hover:text-emerald-800'
                 }`}
               >
                 More
-                <span className={`text-[9px] transition-transform duration-300 ${moreOpen ? 'rotate-180' : ''}`}>
+                <span className={`text-[11px] transition-transform duration-300 ${moreOpen ? 'rotate-180' : ''}`}>
                   ▾
                 </span>
               </button>
@@ -1245,7 +1246,7 @@ function Navbar({ activeTab, onNavigate }) {
               <button
                 key={item.id}
                 onClick={() => navigate(item.id)}
-                className={`text-left px-4 py-2.5 rounded-lg text-xs transition ${
+                className={`text-left px-4 py-3 rounded-lg text-sm transition ${
                   activeTab === item.id
                     ? 'bg-emerald-100 text-emerald-900 font-semibold'
                     : 'text-slate-600 hover:bg-slate-50'
@@ -3011,7 +3012,7 @@ function EmptyState({ text }) {
   );
 }
 
-function KnowledgeCenterPage({ onNavigate }) {
+function KnowledgeCenterPage({ onNavigate, onReadMore }) {
   const [selectedType, setSelectedType] = useState("ALL");
   const [searchTerm, setSearchTerm] = useState("");
   const types = ["ALL", "CHECKLIST", "EBOOK", "INFOGRAPHIC", "TEMPLATE", "WHITEPAPER"];
@@ -3022,7 +3023,7 @@ function KnowledgeCenterPage({ onNavigate }) {
   });
 
   return (
-    <div className="min-h-screen bg-[#F7FCFA] text-slate-800">
+    <div className="knowledge-center min-h-screen bg-[#F7FCFA] text-emerald-900">
       <section className="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-800 text-white">
         <div className="absolute -right-20 -top-24 h-80 w-80 rounded-full bg-emerald-400/15 blur-3xl" />
         <div className="absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-teal-300/10 blur-3xl" />
@@ -3068,10 +3069,10 @@ function KnowledgeCenterPage({ onNavigate }) {
             <div className="flex flex-1 flex-col p-5">
               <div className="text-[10px] font-semibold uppercase tracking-wider text-emerald-800/70">{item.publisher} <span className="px-1">·</span> {item.year}</div>
               <h3 className="mt-3 line-clamp-3 text-lg font-extrabold leading-6 text-emerald-950">{item.title}</h3>
-              <p className="mt-3 line-clamp-4 text-sm leading-6 text-slate-600">{item.desc}</p>
+              <p className="mt-3 line-clamp-4 text-sm leading-6 text-emerald-800">{item.desc}</p>
               <div className="mt-auto flex items-center justify-between gap-2 border-t border-emerald-900/10 pt-5 mt-5">
-                <span className="text-xs text-slate-600"><FileText size={13} className="mr-1 inline"/>{item.fileType}</span>
-                <button onClick={() => onNavigate('library')} className="inline-flex items-center gap-1.5 rounded-full bg-emerald-800 px-3.5 py-2 text-[10px] font-bold text-white transition hover:bg-emerald-950">Read More <ArrowRight size={13}/></button>
+                <span className="text-xs text-emerald-800"><FileText size={13} className="mr-1 inline"/>{item.fileType}</span>
+                <button onClick={() => onReadMore(item)} className="inline-flex items-center gap-1.5 rounded-full bg-emerald-800 px-3.5 py-2 text-[10px] font-bold text-white transition hover:bg-emerald-950 disabled:cursor-wait disabled:opacity-70">Read More <ArrowRight size={13}/></button>
               </div>
             </div>
           </article>)}
@@ -3083,6 +3084,28 @@ function KnowledgeCenterPage({ onNavigate }) {
         </div>
       </main>
     </div>
+  );
+}
+
+function KnowledgeCenterDetail({ item, onBack }) {
+  return (
+    <main className="min-h-[70vh] bg-[#F7FCFA] px-5 py-12 text-emerald-900 lg:px-8">
+      <div className="mx-auto max-w-5xl">
+        <button onClick={onBack} className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2.5 text-sm font-bold text-emerald-800 transition hover:bg-emerald-50"><ArrowLeft size={16}/> Kembali ke Knowledge Center</button>
+        <div className="overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-xl shadow-emerald-950/5">
+          <div className="grid md:grid-cols-[.9fr_1.1fr]">
+            <div className="min-h-[260px] bg-emerald-50"><img src={item.image} alt={item.title} className="h-full min-h-[260px] w-full object-cover"/></div>
+            <div className="p-7 lg:p-10">
+              <span className="rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-extrabold tracking-wide text-emerald-800">{item.tag} · {item.fileType}</span>
+              <h1 className="mt-5 text-3xl font-extrabold leading-tight text-emerald-950 lg:text-4xl">{item.title}</h1>
+              <p className="mt-4 text-sm leading-7 text-emerald-800">{item.desc}</p>
+              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-emerald-100 pt-5 text-xs text-emerald-700"><span>{item.publisher}</span><span>{item.year}</span><span>{item.pages || 'Materi digital'}</span></div>
+            </div>
+          </div>
+          <section className="border-t border-emerald-100 p-7 lg:p-10"><h2 className="text-xl font-extrabold text-emerald-950">Tentang materi</h2><p className="mt-3 max-w-3xl text-sm leading-7 text-emerald-800">{item.description || item.desc}</p>{item.summary?.length > 0 && <><h3 className="mt-7 text-base font-extrabold text-emerald-950">Ringkasan utama</h3><ul className="mt-3 space-y-3">{item.summary.map((point, index) => <li key={index} className="flex gap-3 text-sm leading-6 text-emerald-800"><CheckCircle2 size={17} className="mt-1 shrink-0 text-emerald-600"/>{point}</li>)}</ul></>}</section>
+        </div>
+      </div>
+    </main>
   );
 }
 
@@ -3155,6 +3178,17 @@ function GlobalStyles() {
         background: rgba(16, 185, 129, 0.18);
       }
 
+      /* Unified readable Inovamedika green typography across every page */
+      .text-slate-950, .text-slate-900 { color: #075e49 !important; }
+      .text-slate-800, .text-slate-700 { color: #176b55 !important; }
+      .text-slate-600, .text-slate-500 { color: #397765 !important; }
+      .text-slate-400 { color: #5d8a7c !important; }
+      .text-gray-900, .text-gray-800 { color: #075e49 !important; }
+      .text-gray-700, .text-gray-600 { color: #176b55 !important; }
+      .text-gray-500, .text-gray-400 { color: #397765 !important; }
+      .resource-card, .case-study-card { transition: transform 320ms cubic-bezier(.22,1,.36,1), box-shadow 320ms ease; }
+      .resource-card:hover, .case-study-card:hover { transform: translateY(-7px); box-shadow: 0 20px 42px rgba(6,95,70,.14); }
+
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
@@ -3199,6 +3233,31 @@ function GlobalStyles() {
         }
       }
 
+      /* Knowledge Center cards: gentle entrance + interactive lift */
+      .knowledge-center article {
+        animation: cardRise 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+        transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms ease, border-color 320ms ease, background 320ms ease;
+      }
+      .knowledge-center article:hover {
+        transform: translateY(-8px) scale(1.012);
+        box-shadow: 0 22px 48px rgba(6, 95, 70, .14);
+      }
+      .knowledge-center main h2, .knowledge-center main h3 { color: #075e49; }
+      .knowledge-center main p { color: #286b5a; }
+      .knowledge-center main { color: #17634f; }
+      .knowledge-center h1, .knowledge-center section { text-wrap: pretty; }
+      @keyframes cardRise {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .logo-loader-wrap { position: relative; width: 92px; height: 92px; display: grid; place-items: center; }
+      .logo-loader-ring { position: absolute; inset: 0; border: 3px solid #d9f3e9; border-top-color: #087f5b; border-right-color: #31b58a; border-radius: 9999px; animation: logoSpin 1.05s linear infinite; }
+      .logo-loader-image { width: 62px; height: 62px; object-fit: contain; animation: logoPulse 1.5s ease-in-out infinite; }
+      .loading-progress { display: block; width: 40%; height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#087f5b,#53c7a0); animation: progressSweep 950ms ease-in-out infinite; }
+      @keyframes logoSpin { to { transform: rotate(360deg); } }
+      @keyframes logoPulse { 0%,100% { transform: scale(.94); opacity: .82; } 50% { transform: scale(1.04); opacity: 1; } }
+      @keyframes progressSweep { from { transform: translateX(-110%); } to { transform: translateX(260%); } }
+
       /* ================================================
          REDUCE MOTION
       ================================================= */
@@ -3209,7 +3268,7 @@ function GlobalStyles() {
           scroll-behavior: auto;
         }
 
-        .page-transition {
+        .page-transition, .knowledge-center article, .logo-loader-ring, .logo-loader-image, .loading-progress {
           animation: none;
         }
 
@@ -3231,6 +3290,8 @@ export default function App() {
 
   const [selectedCaseStudy, setSelectedCaseStudy] =
     useState(null);
+  const [selectedKnowledgeItem, setSelectedKnowledgeItem] = useState(null);
+  const [loadingMessage, setLoadingMessage] = useState("");
 
   const [pageTransitionKey, setPageTransitionKey] =
     useState(0);
@@ -3238,6 +3299,7 @@ export default function App() {
   const handleTabChange = (tab) => {
     setSelectedLibraryItem(null);
     setSelectedCaseStudy(null);
+    setSelectedKnowledgeItem(null);
     setActiveTab(tab);
 
     setPageTransitionKey((prev) => prev + 1);
@@ -3298,9 +3360,33 @@ export default function App() {
     });
   };
 
+  const showLoadingThen = (message, callback, item) => {
+    setLoadingMessage(message);
+    window.setTimeout(() => {
+      setLoadingMessage("");
+      callback(item);
+    }, 900);
+  };
+  const openKnowledgeDetail = (item) => {
+    setSelectedKnowledgeItem(item);
+    setSelectedLibraryItem(null);
+    setSelectedCaseStudy(null);
+    setActiveTab("knowledge-center");
+    setPageTransitionKey((prev) => prev + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const backFromKnowledgeDetail = () => {
+    setSelectedKnowledgeItem(null);
+    setActiveTab("knowledge-center");
+    setPageTransitionKey((prev) => prev + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   let content = null;
 
-  if (selectedLibraryItem) {
+  if (selectedKnowledgeItem) {
+    content = <KnowledgeCenterDetail item={selectedKnowledgeItem} onBack={backFromKnowledgeDetail} />;
+  } else if (selectedLibraryItem) {
 
     content = (
       <LibraryDetail
@@ -3322,7 +3408,7 @@ export default function App() {
 
     content = (
       <LibraryPage
-        onReadMore={openLibraryDetail}
+        onReadMore={(item) => showLoadingThen("Membuka detail Library...", openLibraryDetail, item)}
       />
     );
 
@@ -3330,7 +3416,7 @@ export default function App() {
 
     content = (
       <CaseStudiesPage
-        onReadMore={openCaseStudyDetail}
+        onReadMore={(item) => showLoadingThen("Menyiapkan Case Study...", openCaseStudyDetail, item)}
       />
     );
 
@@ -3363,6 +3449,7 @@ export default function App() {
     content = (
       <KnowledgeCenterPage
         onNavigate={handleTabChange}
+        onReadMore={(item) => showLoadingThen("Menyiapkan materi Knowledge Center...", openKnowledgeDetail, item)}
       />
     );
 
@@ -3411,8 +3498,16 @@ export default function App() {
         {content}
       </div>
 
-      {!selectedLibraryItem &&
-        !selectedCaseStudy && (
+      {loadingMessage && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-white/85 px-5 backdrop-blur-sm" role="status" aria-live="polite">
+          <div className="flex min-w-[260px] flex-col items-center rounded-3xl border border-emerald-100 bg-white px-10 py-9 shadow-2xl shadow-emerald-900/10">
+            <div className="logo-loader-wrap"><span className="logo-loader-ring"/><img src="/inovamedika.png" alt="Inovamedika" className="logo-loader-image" onError={(e) => { e.currentTarget.style.display = "none"; }}/></div>
+            <p className="mt-6 text-sm font-extrabold text-emerald-800">{loadingMessage}</p><p className="mt-2 text-xs text-emerald-700/70">Mohon tunggu sebentar</p><div className="mt-5 h-1.5 w-40 overflow-hidden rounded-full bg-emerald-100"><span className="loading-progress"/></div>
+          </div>
+        </div>
+      )}
+
+      {!selectedLibraryItem && !selectedCaseStudy && !selectedKnowledgeItem && (
           <Footer
             onNavigate={handleTabChange}
           />
