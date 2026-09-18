@@ -32,7 +32,8 @@ import logoDefault from "./assets/logo-default.png";
 ========================================================= */
 
 const NAV_ITEMS = [
-  { id: "home", label: "Home" },
+  { id: "news", label: "News" },
+  { id: "insights", label: "Insights" },
   { id: "research", label: "Research" },
   { id: "case-studies", label: "Case Studies" },
   { id: "library", label: "Library" },
@@ -575,15 +576,376 @@ const LIBRARY_ITEMS = [
 const CASE_STUDIES = [
   {
     id: 1,
-    tag: "SMART HOSPITAL",
-    title:
-      "Smart Hospital Dashboard untuk Monitoring Operasional",
-
+    tag: "KLINIK",
+    title: "Digitalisasi Sistem Informasi Klinik",
     desc:
-      "Implementasi dashboard rumah sakit terintegrasi untuk membantu manajemen memantau indikator pelayanan, kapasitas, dan operasional secara lebih cepat melalui data yang terpusat.",
+      "Transformasi proses pendaftaran, rekam medis, antrean, farmasi, dan administrasi melalui sistem informasi klinik yang terintegrasi.",
 
     author: "TIM EDITORIAL INOVAMEDIKA",
-    date: "JULY 22, 2026",
+    date: "SEPTEMBER 18, 2026",
+
+    image:
+      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
+
+    industry: "Klinik Pratama",
+    location: "Indonesia (Dummy Project)",
+    client: "Klinik Pratama",
+    duration: "3 Bulan",
+    status: "Completed",
+
+    solutions: [
+      "SIM Klinik",
+      "Electronic Medical Record (EMR)",
+      "Appointment & Queue Management",
+      "Pharmacy Management",
+      "BPJS Integration",
+      "Operational Dashboard",
+    ],
+
+    summary:
+      "Sebuah klinik menghadapi kebutuhan untuk meningkatkan efisiensi pelayanan pasien karena proses pendaftaran, pemeriksaan, farmasi, dan administrasi masih menggunakan beberapa sistem yang belum terintegrasi.\n\nMelalui implementasi Integrated Clinic Information System, seluruh proses pelayanan pasien diintegrasikan dalam satu platform. Sistem membantu tenaga medis dan staf administrasi mengakses informasi pasien secara lebih cepat sekaligus meningkatkan visibilitas terhadap aktivitas operasional klinik.",
+
+    challenges: [
+      "Proses pendaftaran pasien masih membutuhkan input data berulang.",
+      "Data rekam medis belum terintegrasi dengan proses pelayanan lainnya.",
+      "Pengelolaan antrean pasien belum terpusat.",
+      "Informasi ketersediaan obat sulit dipantau secara real-time.",
+      "Proses administrasi dan pelaporan membutuhkan waktu cukup lama.",
+      "Integrasi dengan layanan eksternal membutuhkan proses manual.",
+    ],
+
+    solutionDescription:
+      "Klinik mengimplementasikan sistem informasi terintegrasi yang menghubungkan proses pelayanan pasien mulai dari pendaftaran hingga farmasi.\n\nSistem mencakup beberapa area utama, seperti:\n\n• Pendaftaran pasien baru dan pasien lama.\n• Manajemen antrean dan jadwal dokter.\n• Electronic Medical Record (EMR).\n• Pemeriksaan dan pencatatan hasil pelayanan.\n• Electronic prescription dan pelayanan farmasi.\n• Pengelolaan stok obat.\n• Integrasi layanan BPJS.\n• Laporan operasional dan manajemen.\n• Dashboard aktivitas pelayanan klinik.\n\nData pelayanan dapat digunakan oleh unit terkait sehingga proses administrasi dan pelayanan berjalan melalui sumber data yang lebih terintegrasi.",
+
+    dashboard: {
+      pelayanan: [
+        "Jumlah Kunjungan Pasien",
+        "Kunjungan Berdasarkan Poli",
+        "Kunjungan Dokter",
+        "Status Antrean",
+        "Tren Kunjungan Pasien",
+      ],
+      farmasi: [
+        "Resep Hari Ini",
+        "Obat Terjual",
+        "Stok Obat",
+        "Obat dengan Stok Minimum",
+        "Aktivitas Farmasi",
+      ],
+      manajemen: [
+        "Pendapatan Harian",
+        "Tren Kunjungan",
+        "Produktivitas Dokter",
+        "KPI Klinik",
+      ],
+    },
+
+    implementationResults: [
+      "Proses pendaftaran dan pelayanan menjadi lebih terstruktur.",
+      "Informasi pasien dapat diakses melalui rekam medis elektronik.",
+      "Monitoring antrean menjadi lebih mudah.",
+      "Pengelolaan obat dan transaksi farmasi lebih terintegrasi.",
+      "Pelaporan operasional menjadi lebih efisien.",
+      "Informasi pelayanan dapat dipantau melalui dashboard.",
+    ],
+
+    successFactors: [
+      "Pemetaan proses bisnis klinik.",
+      "Integrasi antar unit pelayanan.",
+      "Standarisasi data pasien dan pelayanan.",
+      "Pelatihan pengguna.",
+      "Keterlibatan dokter dan staf dalam proses implementasi.",
+      "Evaluasi sistem secara berkala.",
+    ],
+
+    lessonsLearned:
+      "Digitalisasi klinik perlu dilakukan dengan mempertimbangkan alur pelayanan secara menyeluruh. Sistem yang baik tidak hanya menggantikan proses manual, tetapi juga memastikan informasi pasien, pelayanan, farmasi, dan administrasi dapat terhubung sehingga setiap unit bekerja menggunakan data yang konsisten.",
+
+    keyOutcomes: [
+      {
+        area: "Pelayanan",
+        impact: "Proses pelayanan pasien lebih terstruktur",
+      },
+      {
+        area: "Rekam Medis",
+        impact: "Informasi pasien tersimpan dalam EMR",
+      },
+      {
+        area: "Antrean",
+        impact: "Monitoring antrean lebih mudah",
+      },
+      {
+        area: "Farmasi",
+        impact: "Data resep dan stok lebih terintegrasi",
+      },
+      {
+        area: "Pelaporan",
+        impact: "Laporan operasional lebih efisien",
+      },
+    ],
+
+    technologies: [
+      "SIM Klinik",
+      "Electronic Medical Record (EMR)",
+      "BPJS Integration",
+      "Pharmacy Management",
+      "Queue Management",
+      "Operational Dashboard",
+    ],
+  },
+
+  {
+    id: 2,
+    tag: "LABORATORIUM",
+    title: "Laboratory Information System",
+    desc:
+      "Digitalisasi alur pemeriksaan laboratorium mulai dari pendaftaran dan pengambilan sampel hingga validasi dan distribusi hasil.",
+
+    author: "TIM EDITORIAL INOVAMEDIKA",
+    date: "SEPTEMBER 18, 2026",
+
+    image:
+      "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80",
+
+    industry: "Laboratorium Klinik",
+    location: "Indonesia (Dummy Project)",
+    client: "Laboratorium Klinik",
+    duration: "4 Bulan",
+    status: "Completed",
+
+    solutions: [
+      "Laboratory Information System (LIS)",
+      "Laboratory Workflow Management",
+      "Electronic Medical Record",
+      "Result Management",
+      "Inventory Management",
+      "Business Intelligence",
+    ],
+
+    summary:
+      "Sebuah laboratorium klinik membutuhkan sistem yang dapat mengintegrasikan proses pemeriksaan mulai dari pendaftaran pasien, pengambilan sampel, pemeriksaan laboratorium, validasi hasil, hingga penyampaian hasil kepada pasien.\n\nImplementasi Laboratory Information System (LIS) membantu menghubungkan setiap tahapan proses laboratorium dalam satu sistem sehingga informasi pemeriksaan dapat dikelola secara lebih terstruktur dan mudah dipantau.",
+
+    challenges: [
+      "Data pasien dan pemeriksaan berasal dari beberapa sumber.",
+      "Pencatatan sampel masih membutuhkan proses manual.",
+      "Status pemeriksaan sulit dipantau oleh petugas.",
+      "Validasi hasil membutuhkan koordinasi antar petugas.",
+      "Pengelolaan stok reagen belum terintegrasi.",
+      "Penyusunan laporan pemeriksaan membutuhkan waktu.",
+    ],
+
+    solutionDescription:
+      "Laboratorium mengimplementasikan Laboratory Information System (LIS) untuk mengintegrasikan seluruh alur pemeriksaan laboratorium.\n\nSistem mencakup beberapa area utama, seperti:\n\n• Pendaftaran dan order pemeriksaan.\n• Pengelolaan data pasien.\n• Barcode dan identifikasi sampel.\n• Monitoring status pemeriksaan.\n• Input dan validasi hasil laboratorium.\n• Pencetakan dan distribusi hasil pemeriksaan.\n• Pengelolaan stok reagen dan bahan laboratorium.\n• Laporan pemeriksaan.\n• Dashboard operasional laboratorium.\n\nSistem juga dapat dirancang untuk mendukung integrasi dengan sistem informasi fasilitas kesehatan lainnya.",
+
+    dashboard: {
+      pemeriksaan: [
+        "Total Pemeriksaan",
+        "Pemeriksaan Hari Ini",
+        "Pemeriksaan Berdasarkan Jenis",
+        "Status Sampel",
+        "Turnaround Time (TAT)",
+      ],
+      laboratorium: [
+        "Sampel Masuk",
+        "Sampel Selesai",
+        "Sampel Pending",
+        "Pemeriksaan per Unit",
+        "Produktivitas Petugas",
+      ],
+      manajemen: [
+        "Tren Pemeriksaan",
+        "Volume Pemeriksaan",
+        "Utilisasi Laboratorium",
+        "Penggunaan Reagen",
+        "KPI Laboratorium",
+      ],
+    },
+
+    implementationResults: [
+      "Alur pemeriksaan lebih terstruktur.",
+      "Status sampel lebih mudah dipantau.",
+      "Proses input dan validasi hasil lebih efisien.",
+      "Risiko duplikasi pencatatan dapat dikurangi.",
+      "Monitoring penggunaan reagen menjadi lebih mudah.",
+      "Manajemen memperoleh informasi operasional melalui dashboard.",
+    ],
+
+    successFactors: [
+      "Standardisasi alur pemeriksaan laboratorium.",
+      "Identifikasi sampel yang konsisten.",
+      "Integrasi antara order dan hasil pemeriksaan.",
+      "Pengelolaan data yang terstruktur.",
+      "Pelatihan petugas laboratorium.",
+      "Monitoring kualitas data secara berkala.",
+    ],
+
+    lessonsLearned:
+      "Sistem laboratorium yang efektif membutuhkan integrasi antara proses administratif dan proses teknis pemeriksaan. Selain mempercepat pengelolaan hasil, sistem harus mampu menjaga konsistensi identitas pasien, sampel, pemeriksaan, dan hasil agar informasi yang dihasilkan dapat digunakan dengan baik oleh tenaga kesehatan maupun manajemen.",
+
+    keyOutcomes: [
+      {
+        area: "Workflow",
+        impact: "Proses pemeriksaan lebih terstruktur",
+      },
+      {
+        area: "Sampel",
+        impact: "Monitoring status sampel lebih mudah",
+      },
+      {
+        area: "Hasil",
+        impact: "Input dan validasi hasil lebih efisien",
+      },
+      {
+        area: "Inventory",
+        impact: "Pengelolaan reagen lebih terkontrol",
+      },
+      {
+        area: "Reporting",
+        impact: "Laporan pemeriksaan lebih mudah dibuat",
+      },
+    ],
+
+    technologies: [
+      "Laboratory Information System (LIS)",
+      "Electronic Medical Record",
+      "Barcode Integration",
+      "Result Management",
+      "Inventory Management",
+      "Business Intelligence Dashboard",
+    ],
+  },
+
+  {
+    id: 3,
+    tag: "RADIOLOGI",
+    title: "Digital Radiology & PACS Integration",
+    desc:
+      "Integrasi workflow radiologi, medical imaging, PACS, dan rekam medis untuk mendukung pengelolaan pemeriksaan secara digital.",
+
+    author: "TIM EDITORIAL INOVAMEDIKA",
+    date: "SEPTEMBER 18, 2026",
+
+    image:
+      "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=80",
+
+    industry: "Layanan Radiologi",
+    location: "Indonesia (Dummy Project)",
+    client: "Layanan Radiologi",
+    duration: "5 Bulan",
+    status: "Completed",
+
+    solutions: [
+      "Radiology Information System (RIS)",
+      "Picture Archiving and Communication System (PACS)",
+      "DICOM Integration",
+      "Electronic Medical Record",
+      "Reporting System",
+      "Radiology Dashboard",
+    ],
+
+    summary:
+      "Sebuah unit radiologi membutuhkan sistem yang mampu mengelola pemeriksaan pencitraan medis secara lebih terintegrasi. Data pemeriksaan berasal dari berbagai modalitas seperti X-Ray, CT Scan, dan USG sehingga diperlukan mekanisme untuk menghubungkan hasil pemeriksaan dengan informasi pasien dan laporan radiologi.\n\nMelalui implementasi Digital Radiology & PACS Integration, informasi pemeriksaan radiologi dapat dikelola secara digital dan dihubungkan dengan sistem informasi kesehatan yang digunakan oleh fasilitas pelayanan kesehatan.",
+
+    challenges: [
+      "Data pemeriksaan berasal dari berbagai perangkat.",
+      "Hasil pencitraan belum terpusat.",
+      "Pencarian pemeriksaan sebelumnya membutuhkan waktu.",
+      "Informasi pasien dan hasil radiologi belum sepenuhnya terintegrasi.",
+      "Proses distribusi hasil masih membutuhkan langkah manual.",
+      "Monitoring beban kerja radiologi belum optimal.",
+    ],
+
+    solutionDescription:
+      "Implementasi dilakukan dengan mengintegrasikan RIS dan PACS untuk mengelola workflow pemeriksaan radiologi dan penyimpanan citra medis.\n\nSistem mencakup beberapa area utama, seperti:\n\n• Registrasi dan order pemeriksaan radiologi.\n• Integrasi perangkat menggunakan standar DICOM.\n• Penyimpanan dan pengelolaan citra medis melalui PACS.\n• Monitoring status pemeriksaan.\n• Pelaporan hasil radiologi.\n• Integrasi hasil pemeriksaan dengan rekam medis elektronik.\n• Pencarian riwayat pemeriksaan pasien.\n• Dashboard operasional radiologi.\n\nDengan integrasi tersebut, dokter dan petugas dapat mengakses informasi pemeriksaan dari sistem yang terhubung tanpa harus bergantung pada proses pencatatan manual.",
+
+    dashboard: {
+      pemeriksaan: [
+        "Jumlah Pemeriksaan Radiologi",
+        "Pemeriksaan X-Ray",
+        "Pemeriksaan CT Scan",
+        "Pemeriksaan USG",
+        "Pemeriksaan MRI",
+        "Status Pemeriksaan",
+      ],
+      workflow: [
+        "Order Masuk",
+        "Pemeriksaan Berlangsung",
+        "Pemeriksaan Selesai",
+        "Reporting Pending",
+        "Turnaround Time (TAT)",
+      ],
+      manajemen: [
+        "Volume Pemeriksaan",
+        "Tren Pemeriksaan",
+        "Produktivitas Radiolog",
+        "Utilisasi Modalitas",
+        "KPI Radiologi",
+      ],
+    },
+
+    implementationResults: [
+      "Akses terhadap citra medis menjadi lebih terstruktur.",
+      "Riwayat pemeriksaan pasien lebih mudah ditelusuri.",
+      "Workflow pemeriksaan radiologi lebih terorganisasi.",
+      "Distribusi hasil pemeriksaan menjadi lebih efisien.",
+      "Integrasi perangkat radiologi menjadi lebih terstandarisasi.",
+      "Manajemen memperoleh informasi operasional melalui dashboard.",
+    ],
+
+    successFactors: [
+      "Standardisasi komunikasi menggunakan DICOM.",
+      "Integrasi RIS dan PACS.",
+      "Pemetaan workflow radiologi.",
+      "Integrasi dengan sistem informasi rumah sakit.",
+      "Ketersediaan infrastruktur penyimpanan.",
+      "Pelatihan radiolog dan petugas terkait.",
+    ],
+
+    lessonsLearned:
+      "Digitalisasi radiologi membutuhkan integrasi antara perangkat medis, sistem informasi, dan workflow tenaga kesehatan. Penggunaan standar seperti DICOM menjadi bagian penting dalam memastikan informasi pencitraan dapat dipertukarkan antara berbagai perangkat dan sistem secara konsisten.",
+
+    keyOutcomes: [
+      {
+        area: "Imaging",
+        impact: "Citra medis dikelola secara digital",
+      },
+      {
+        area: "Workflow",
+        impact: "Proses pemeriksaan lebih terstruktur",
+      },
+      {
+        area: "Interoperability",
+        impact: "Perangkat mendukung komunikasi berbasis DICOM",
+      },
+      {
+        area: "Reporting",
+        impact: "Pelaporan hasil lebih terintegrasi",
+      },
+      {
+        area: "Monitoring",
+        impact: "Aktivitas radiologi dapat dipantau melalui dashboard",
+      },
+    ],
+
+    technologies: [
+      "Radiology Information System (RIS)",
+      "Picture Archiving and Communication System (PACS)",
+      "DICOM",
+      "Electronic Medical Record",
+      "Digital Imaging",
+      "Radiology Dashboard",
+    ],
+  },
+
+  {
+    id: 4,
+    tag: "RUMAH SAKIT",
+    title: "Smart Hospital Dashboard & Business Intelligence",
+    desc:
+      "Dashboard rumah sakit terintegrasi untuk membantu manajemen memantau indikator pelayanan, kapasitas, dan operasional melalui data yang terpusat.",
+
+    author: "TIM EDITORIAL INOVAMEDIKA",
+    date: "SEPTEMBER 18, 2026",
 
     image:
       "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
@@ -614,7 +976,7 @@ const CASE_STUDIES = [
     ],
 
     solutionDescription:
-      "Rumah sakit mengembangkan dashboard operasional yang mengintegrasikan data dari berbagai layanan, sehingga informasi dapat dipantau melalui satu tampilan yang terpusat.\n\nDashboard mencakup beberapa area utama dan menyajikan informasi operasional secara terstruktur sehingga pimpinan rumah sakit dapat melihat kondisi pelayanan tanpa harus membuka berbagai sistem secara terpisah.\n\nSeluruh data diperbarui secara berkala sehingga memberikan gambaran kondisi operasional yang lebih aktual.",
+      "Rumah sakit mengembangkan dashboard operasional yang mengintegrasikan data dari berbagai layanan, sehingga informasi dapat dipantau melalui satu tampilan yang terpusat.\n\nDashboard mencakup beberapa area utama, seperti:\n\n• Bed Occupancy Rate (BOR) dan ketersediaan tempat tidur.\n• Jumlah kunjungan pasien rawat jalan dan rawat inap.\n• Status pelayanan Instalasi Gawat Darurat (IGD).\n• Aktivitas kamar operasi.\n• Pemeriksaan laboratorium dan radiologi.\n• Monitoring antrean pelayanan.\n• Pendapatan dan indikator operasional harian.\n• Dashboard eksekutif untuk pimpinan rumah sakit.\n\nSeluruh data diperbarui secara berkala sehingga memberikan gambaran kondisi operasional yang lebih aktual.",
 
     dashboard: {
       operasional: [
@@ -623,7 +985,6 @@ const CASE_STUDIES = [
         "Turn Over Interval (TOI)",
         "Bed Turn Over (BTO)",
       ],
-
       pelayanan: [
         "Kunjungan Rawat Jalan",
         "Rawat Inap",
@@ -632,7 +993,6 @@ const CASE_STUDIES = [
         "Laboratorium",
         "Radiologi",
       ],
-
       manajemen: [
         "Pendapatan Harian",
         "Tren Kunjungan",
@@ -658,13 +1018,12 @@ const CASE_STUDIES = [
     ],
 
     lessonsLearned:
-      "Implementasi dashboard bukan hanya mengenai visualisasi data, tetapi juga memastikan bahwa data yang digunakan memiliki kualitas yang baik dan dapat dipercaya.\n\nDashboard yang efektif harus menyajikan informasi yang relevan, mudah dipahami, dan mendukung proses pengambilan keputusan di berbagai tingkat manajemen.",
+      "Implementasi dashboard bukan hanya mengenai visualisasi data, tetapi juga memastikan bahwa data yang digunakan memiliki kualitas yang baik dan dapat dipercaya. Dashboard yang efektif harus menyajikan informasi yang relevan, mudah dipahami, dan mendukung proses pengambilan keputusan di berbagai tingkat manajemen.",
 
     keyOutcomes: [
       {
         area: "Monitoring Operasional",
-        impact:
-          "Informasi lebih mudah dipantau melalui dashboard terintegrasi",
+        impact: "Informasi lebih mudah dipantau melalui dashboard terintegrasi",
       },
       {
         area: "Pelaporan",
@@ -672,18 +1031,15 @@ const CASE_STUDIES = [
       },
       {
         area: "Pengambilan Keputusan",
-        impact:
-          "Didukung oleh data operasional yang lebih aktual",
+        impact: "Didukung oleh data operasional yang lebih aktual",
       },
       {
         area: "Koordinasi",
-        impact:
-          "Antar unit menggunakan sumber data yang sama",
+        impact: "Antar unit menggunakan sumber data yang sama",
       },
       {
         area: "Transparansi",
-        impact:
-          "KPI operasional lebih mudah dimonitor oleh manajemen",
+        impact: "KPI operasional lebih mudah dimonitor oleh manajemen",
       },
     ],
 
@@ -696,350 +1052,15 @@ const CASE_STUDIES = [
       "Executive Dashboard",
     ],
   },
-
-  {
-    id: 2,
-    tag: "KLINIK",
-    title: "Digitalisasi Operasional Klinik Terpadu",
-
-    desc:
-      "Transformasi proses pendaftaran, rekam medis, farmasi, dan pelaporan melalui sistem terintegrasi.",
-
-    author: "TIM EDITORIAL INOVAMEDIKA",
-    date: "JUNE 12, 2026",
-
-    image:
-      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
-
-    industry: "Klinik Utama",
-    location: "Indonesia (Dummy Project)",
-    client: "Jaringan Klinik Mitra",
-    duration: "4 Bulan",
-    status: "Completed",
-
-    solutions: [
-      "Clinic Management System",
-      "Online Registration",
-      "Electronic Medical Record",
-      "Appointment Management",
-      "Pharmacy Inventory",
-    ],
-
-    summary:
-      "Sebuah jaringan klinik membutuhkan sistem yang mampu mengintegrasikan proses pelayanan mulai dari registrasi pasien hingga distribusi hasil pelayanan. Proses yang sebelumnya tersebar pada beberapa bagian membuat monitoring operasional dan pelaporan membutuhkan waktu lebih panjang.\n\nImplementasi sistem manajemen klinik terintegrasi membantu menghubungkan proses pendaftaran, pelayanan dokter, rekam medis, appointment, hingga pengelolaan persediaan obat dalam satu workflow digital.",
-
-    challenges: [
-      "Antrean pendaftaran pasien masih cukup tinggi.",
-      "Penjadwalan dokter belum terintegrasi.",
-      "Dokumentasi rekam medis masih membutuhkan proses manual.",
-      "Monitoring persediaan obat belum optimal.",
-      "Laporan operasional membutuhkan konsolidasi dari beberapa bagian.",
-    ],
-
-    solutionDescription:
-      "Klinik menerapkan sistem digital yang mencakup online registration, appointment management, rekam medis elektronik, serta modul inventaris obat.\n\nSeluruh workflow pelayanan dirancang agar data dapat digunakan kembali oleh modul lain tanpa perlu melakukan input berulang. Dengan pendekatan ini, proses administrasi dan pelayanan menjadi lebih terstruktur.",
-
-    dashboard: {
-      operasional: [
-        "Jumlah Pasien",
-        "Jadwal Dokter",
-        "Waktu Tunggu",
-        "Utilisasi Ruang Pelayanan",
-      ],
-
-      pelayanan: [
-        "Registrasi Online",
-        "Pemeriksaan Dokter",
-        "Rekam Medis Elektronik",
-        "Farmasi",
-      ],
-
-      manajemen: [
-        "Tren Kunjungan",
-        "Produktivitas Dokter",
-        "Persediaan Obat",
-        "KPI Klinik",
-      ],
-    },
-
-    implementationResults: [
-      "Mengurangi antrean pendaftaran fisik.",
-      "Rekam medis pasien lebih mudah diakses oleh tenaga medis.",
-      "Penjadwalan pelayanan menjadi lebih terstruktur.",
-      "Stok obat dapat dipantau secara lebih akurat.",
-    ],
-
-    successFactors: [
-      "Adopsi pengguna yang konsisten.",
-      "Standardisasi proses pelayanan.",
-      "Integrasi modul pelayanan dan farmasi.",
-      "Pelatihan tenaga medis dan administrasi.",
-    ],
-
-    lessonsLearned:
-      "Digitalisasi klinik perlu memperhatikan alur kerja pengguna secara keseluruhan. Sistem yang sederhana dan terintegrasi akan membantu meningkatkan adopsi teknologi oleh tenaga kesehatan maupun staf administrasi.",
-
-    keyOutcomes: [
-      {
-        area: "Registrasi",
-        impact:
-          "Proses pendaftaran menjadi lebih cepat dan terstruktur",
-      },
-      {
-        area: "Rekam Medis",
-        impact:
-          "Informasi pasien dapat diakses secara digital",
-      },
-      {
-        area: "Farmasi",
-        impact:
-          "Stok obat lebih mudah dipantau",
-      },
-      {
-        area: "Manajemen",
-        impact:
-          "Informasi operasional tersedia secara lebih terpusat",
-      },
-    ],
-
-    technologies: [
-      "Clinic Management System",
-      "Electronic Medical Record",
-      "Cloud Application",
-      "Appointment Management",
-      "Inventory Management",
-    ],
-  },
-
-  {
-    id: 3,
-    tag: "SIMRS",
-    title: "Integrasi SIMRS dan Sistem Layanan Terpadu",
-
-    desc:
-      "Pengembangan integrasi sistem untuk menyatukan data pelayanan rumah sakit dan mendukung workflow digital.",
-
-    author: "TIM EDITORIAL INOVAMEDIKA",
-    date: "MAY 04, 2026",
-
-    image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-
-    industry: "Rumah Sakit Umum",
-    location: "Indonesia (Dummy Project)",
-    client: "Rumah Sakit Regional",
-    duration: "7 Bulan",
-    status: "Completed",
-
-    solutions: [
-      "SIMRS",
-      "System Integration",
-      "Centralized Data",
-      "Operational Dashboard",
-      "API Integration",
-    ],
-
-    summary:
-      "Rumah sakit memiliki berbagai modul sistem informasi yang digunakan oleh unit pelayanan dan administrasi. Seiring bertambahnya kebutuhan digital, diperlukan pendekatan integrasi agar data dari berbagai modul dapat digunakan secara konsisten.\n\nImplementasi integrasi SIMRS dilakukan untuk menyatukan informasi pelayanan sehingga proses monitoring dan pelaporan dapat dilakukan dari sumber data yang lebih terpusat.",
-
-    challenges: [
-      "Data pelayanan tersebar di berbagai modul.",
-      "Input data berulang masih ditemukan pada beberapa workflow.",
-      "Pelaporan membutuhkan konsolidasi manual.",
-      "Informasi antar unit belum selalu tersedia secara konsisten.",
-    ],
-
-    solutionDescription:
-      "Platform integrasi digunakan untuk menghubungkan berbagai modul SIMRS. Data pelayanan dikonsolidasikan melalui mekanisme integrasi sehingga unit terkait dapat memperoleh informasi yang dibutuhkan tanpa melakukan input ulang.\n\nDashboard operasional kemudian digunakan untuk memberikan gambaran mengenai kondisi pelayanan rumah sakit.",
-
-    dashboard: {
-      operasional: [
-        "Jumlah Kunjungan",
-        "Status Pelayanan",
-        "Kapasitas Tempat Tidur",
-        "Aktivitas Unit",
-      ],
-
-      pelayanan: [
-        "Rawat Jalan",
-        "Rawat Inap",
-        "IGD",
-        "Farmasi",
-        "Laboratorium",
-        "Radiologi",
-      ],
-
-      manajemen: [
-        "Tren Kunjungan",
-        "Kinerja Unit",
-        "Utilisasi Layanan",
-        "KPI Rumah Sakit",
-      ],
-    },
-
-    implementationResults: [
-      "Data pelayanan menjadi lebih terintegrasi.",
-      "Mengurangi input data berulang.",
-      "Meningkatkan visibilitas operasional rumah sakit.",
-      "Pelaporan menjadi lebih terstruktur.",
-    ],
-
-    successFactors: [
-      "Pemahaman workflow masing-masing unit.",
-      "Standarisasi data.",
-      "Integrasi antar modul SIMRS.",
-      "Keterlibatan tim IT dan pengguna.",
-    ],
-
-    lessonsLearned:
-      "Integrasi SIMRS membutuhkan pemahaman menyeluruh terhadap workflow pelayanan. Integrasi tidak hanya berfokus pada pertukaran data, tetapi juga memastikan bahwa data yang diterima setiap modul memiliki struktur dan konteks yang konsisten.",
-
-    keyOutcomes: [
-      {
-        area: "Integrasi Data",
-        impact:
-          "Data pelayanan tersedia secara lebih terpusat",
-      },
-      {
-        area: "Workflow",
-        impact:
-          "Proses antar unit menjadi lebih terhubung",
-      },
-      {
-        area: "Pelaporan",
-        impact:
-          "Konsolidasi informasi menjadi lebih terstruktur",
-      },
-      {
-        area: "Monitoring",
-        impact:
-          "Manajemen memperoleh visibilitas operasional yang lebih baik",
-      },
-    ],
-
-    technologies: [
-      "SIMRS",
-      "API Integration",
-      "System Integration",
-      "Centralized Database",
-      "Operational Dashboard",
-    ],
-  },
-
-  {
-    id: 4,
-    tag: "INTEROPERABILITY",
-    title: "Healthcare Interoperability Platform",
-
-    desc:
-      "Implementasi platform integrasi untuk mendukung pertukaran data kesehatan melalui API dan standar interoperabilitas.",
-
-    author: "TIM EDITORIAL INOVAMEDIKA",
-    date: "APRIL 18, 2026",
-
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80",
-
-    industry: "Healthcare Network",
-    location: "Indonesia (Dummy Project)",
-    client: "Healthcare Network",
-    duration: "8 Bulan",
-    status: "Completed",
-
-    solutions: [
-      "Healthcare Integration Platform",
-      "API Gateway",
-      "HL7 FHIR",
-      "Data Interoperability",
-      "Integration Monitoring",
-    ],
-
-    summary:
-      "Sebuah jaringan fasilitas kesehatan membutuhkan platform yang dapat menghubungkan beberapa sistem informasi kesehatan dengan pendekatan interoperabilitas.\n\nPlatform integrasi digunakan sebagai lapisan penghubung untuk mengelola pertukaran data antar sistem melalui API dan standar data kesehatan.",
-
-    challenges: [
-      "Sistem menggunakan struktur data yang berbeda.",
-      "Integrasi point-to-point sulit dikelola ketika jumlah sistem bertambah.",
-      "Monitoring transaksi integrasi belum terpusat.",
-      "Pengelolaan error membutuhkan proses manual.",
-    ],
-
-    solutionDescription:
-      "Platform interoperabilitas digunakan sebagai lapisan integrasi antar sistem informasi kesehatan. Setiap transaksi dapat dikelola melalui API sehingga pertukaran data menjadi lebih terstruktur.\n\nPlatform juga menyediakan monitoring terhadap transaksi, status request, serta proses penanganan error sehingga tim IT dapat melakukan troubleshooting dengan lebih mudah.",
-
-    dashboard: {
-      operasional: [
-        "Transaction Volume",
-        "API Request",
-        "Success Rate",
-        "Error Monitoring",
-      ],
-
-      pelayanan: [
-        "Patient Data Exchange",
-        "Clinical Data Exchange",
-        "Healthcare API",
-        "FHIR Resources",
-      ],
-
-      manajemen: [
-        "Integration KPI",
-        "Transaction Trends",
-        "System Availability",
-        "Integration Performance",
-      ],
-    },
-
-    implementationResults: [
-      "Integrasi sistem menjadi lebih terstruktur.",
-      "Pertukaran data lebih mudah dimonitor.",
-      "Pengelolaan transaksi API menjadi lebih terpusat.",
-      "Mendukung implementasi standar interoperabilitas.",
-    ],
-
-    successFactors: [
-      "Standarisasi format data.",
-      "Penggunaan API yang konsisten.",
-      "Penerapan standar interoperabilitas.",
-      "Monitoring transaksi secara berkala.",
-    ],
-
-    lessonsLearned:
-      "Interoperabilitas membutuhkan lebih dari sekadar koneksi antar sistem. Struktur data, standar pertukaran informasi, monitoring transaksi, keamanan, serta pengelolaan error perlu dirancang sebagai satu kesatuan.",
-
-    keyOutcomes: [
-      {
-        area: "Interoperability",
-        impact:
-          "Pertukaran data antar sistem menjadi lebih terstruktur",
-      },
-      {
-        area: "API Management",
-        impact:
-          "Transaksi API dapat dipantau melalui satu platform",
-      },
-      {
-        area: "Monitoring",
-        impact:
-          "Status integrasi lebih mudah dipantau oleh tim IT",
-      },
-      {
-        area: "Scalability",
-        impact:
-          "Penambahan sistem baru dapat dikelola melalui layer integrasi",
-      },
-    ],
-
-    technologies: [
-      "HL7 FHIR",
-      "REST API",
-      "API Gateway",
-      "Integration Platform",
-      "Transaction Monitoring",
-      "Healthcare Interoperability",
-    ],
-  },
 ];
+const CASE_STUDY_CATEGORIES = [
+  { id: "ALL", label: "Semua" },
+  { id: "RUMAH SAKIT", label: "Rumah Sakit" },
+  { id: "KLINIK", label: "Klinik" },
+  { id: "LABORATORIUM", label: "Laboratorium" },
+  { id: "RADIOLOGI", label: "Radiologi" },
+];
+
 
 /* =========================================================
    REVEAL
@@ -1077,130 +1098,146 @@ function useReveal() {
 
 function Navbar({ activeTab, onNavigate }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const [moreOpen, setMoreOpen] = useState(false);
+  const [indicator, setIndicator] = useState({ left: 0, width: 0, visible: false });
   const navRef = useRef(null);
-  const buttonRefs = useRef({});
-
-  const [indicator, setIndicator] = useState({
-    left: 0,
-    width: 0,
-    opacity: 0,
-  });
+  const itemRefs = useRef({});
 
   const navigate = (id) => {
     onNavigate(id);
     setMobileOpen(false);
-  };
-
-  const updateIndicator = () => {
-    const nav = navRef.current;
-    const activeButton = buttonRefs.current[activeTab];
-
-    if (!nav || !activeButton) return;
-
-    const navRect = nav.getBoundingClientRect();
-    const buttonRect = activeButton.getBoundingClientRect();
-
-    setIndicator({
-      left: buttonRect.left - navRect.left,
-      width: buttonRect.width,
-      opacity: 1,
-    });
+    setMoreOpen(false);
   };
 
   useLayoutEffect(() => {
+    const updateIndicator = () => {
+      const nav = navRef.current;
+      const active = itemRefs.current[activeTab];
+      if (!nav || !active) {
+        setIndicator((prev) => ({ ...prev, visible: false }));
+        return;
+      }
+
+      const navBox = nav.getBoundingClientRect();
+      const activeBox = active.getBoundingClientRect();
+
+      setIndicator({
+        left: activeBox.left - navBox.left,
+        width: activeBox.width,
+        visible: true,
+      });
+    };
+
     updateIndicator();
-  }, [activeTab]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      updateIndicator();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    window.addEventListener('resize', updateIndicator);
+    return () => window.removeEventListener('resize', updateIndicator);
   }, [activeTab]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
-      <div className="max-w-[1440px] mx-auto px-5 lg:px-8">
-        <div className="h-[74px] flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-100">
+      <div className="max-w-[1280px] mx-auto px-5 lg:px-7">
+        <div className="relative h-[68px] flex items-center justify-center">
 
+          {/* LOGO - tetap di kiri */}
           <button
-            onClick={() => navigate("home")}
-            className="flex items-center gap-3 shrink-0"
+            onClick={() => navigate('home')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 shrink-0 flex items-center"
+            aria-label="Go to Home"
           >
             <img
               src={logoDefault}
               alt="Inova Medika"
-              className="h-10 w-auto object-contain"
+              className="h-[40px] w-auto object-contain"
             />
           </button>
 
+          {/* DESKTOP NAV - CENTER */}
           <nav
             ref={navRef}
-            className="hidden lg:flex items-center gap-1 relative"
+            className="hidden lg:flex relative items-center gap-1"
           >
-            <span
-              aria-hidden="true"
-              className="absolute top-1/2 -translate-y-1/2 rounded-full bg-emerald-50 pointer-events-none"
+            {/* GREEN ACTIVE PILL: bergerak mengikuti menu yang dipilih */}
+            <div
+              className="absolute top-0 bottom-0 rounded-full bg-emerald-100 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
               style={{
                 left: indicator.left,
                 width: indicator.width,
-                height: "42px",
-                opacity: indicator.opacity,
-                transition:
-                  "left 420ms cubic-bezier(0.22, 1, 0.36, 1), width 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease",
+                opacity: indicator.visible ? 1 : 0,
               }}
             />
 
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
-                ref={(element) => {
-                  buttonRefs.current[item.id] = element;
+                ref={(node) => {
+                  itemRefs.current[item.id] = node;
                 }}
                 onClick={() => navigate(item.id)}
-                className={`relative z-10 px-4 py-2.5 rounded-full text-[13px] font-medium transition-colors duration-300 ${
+                className={`relative z-10 px-3.5 py-2.5 rounded-full text-[10px] font-semibold whitespace-nowrap transition-colors duration-300 ${
                   activeTab === item.id
-                    ? "text-emerald-700"
-                    : "text-slate-600 hover:text-emerald-700"
+                    ? 'text-emerald-900'
+                    : 'text-slate-700 hover:text-emerald-800'
                 }`}
               >
                 {item.label}
               </button>
             ))}
+
+            {/* MORE */}
+            <div className="relative ml-1">
+              <button
+                onClick={() => setMoreOpen((value) => !value)}
+                className={`relative z-10 inline-flex items-center gap-1 px-3.5 py-2.5 rounded-full text-[10px] font-semibold whitespace-nowrap transition-colors duration-300 ${
+                  moreOpen
+                    ? 'bg-emerald-100 text-emerald-900'
+                    : 'text-slate-700 hover:bg-slate-50 hover:text-emerald-800'
+                }`}
+              >
+                More
+                <span className={`text-[9px] transition-transform duration-300 ${moreOpen ? 'rotate-180' : ''}`}>
+                  ▾
+                </span>
+              </button>
+
+              {moreOpen && (
+                <div className="absolute right-0 top-[46px] w-[170px] overflow-hidden rounded-xl border border-emerald-100 bg-emerald-950 shadow-xl animate-[fadeIn_.2s_ease-out]">
+                  <button
+                    onClick={() => navigate('knowledge-center')}
+                    className="block w-full px-4 py-3 text-left text-[10px] font-semibold text-white hover:bg-emerald-900 transition"
+                  >
+                    Knowledge Center
+                  </button>
+                  <button
+                    onClick={() => navigate('digital-health-talk')}
+                    className="block w-full px-4 py-3 text-left text-[10px] font-semibold text-white hover:bg-emerald-900 transition"
+                  >
+                    Digital Health Talk
+                  </button>
+                  <button
+                    onClick={() => navigate('about')}
+                    className="block w-full px-4 py-3 text-left text-[10px] font-semibold text-white hover:bg-emerald-900 transition"
+                  >
+                    About
+                  </button>
+                </div>
+              )}
+            </div>
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <button className="p-2.5 rounded-full hover:bg-slate-100 text-slate-600 transition">
-              <Search size={18} />
-            </button>
-
-            <button
-              onClick={() => navigate("contact")}
-              className="px-5 py-2.5 rounded-full bg-emerald-700 text-white text-[13px] font-semibold hover:bg-emerald-800 transition"
-            >
-              Contact Us
-            </button>
-          </div>
-
+          {/* MOBILE */}
           <button
-            className="lg:hidden p-2 text-slate-700"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            className="absolute right-0 lg:hidden p-2 text-slate-700"
+            onClick={() => setMobileOpen((value) => !value)}
+            aria-label="Toggle navigation"
           >
-            {mobileOpen ? <X size={23} /> : <Menu size={23} />}
+            {mobileOpen ? <X size={21} /> : <Menu size={21} />}
           </button>
         </div>
 
+        {/* MOBILE NAV */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            mobileOpen
-              ? "max-h-[600px] opacity-100 pb-4"
-              : "max-h-0 opacity-0"
+            mobileOpen ? 'max-h-[760px] opacity-100 pb-4' : 'max-h-0 opacity-0'
           }`}
         >
           <div className="pt-3 border-t border-slate-100 grid gap-1">
@@ -1208,29 +1245,48 @@ function Navbar({ activeTab, onNavigate }) {
               <button
                 key={item.id}
                 onClick={() => navigate(item.id)}
-                className={`text-left px-4 py-3 rounded-xl text-sm transition-all duration-300 ${
+                className={`text-left px-4 py-2.5 rounded-lg text-xs transition ${
                   activeTab === item.id
-                    ? "bg-emerald-50 text-emerald-700 font-semibold translate-x-1"
-                    : "text-slate-600 hover:bg-slate-50"
+                    ? 'bg-emerald-100 text-emerald-900 font-semibold'
+                    : 'text-slate-600 hover:bg-slate-50'
                 }`}
               >
                 {item.label}
               </button>
             ))}
 
-            <button
-              onClick={() => navigate("news")}
-              className="text-left px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50"
-            >
-              News
-            </button>
+            <div className="pt-2">
+              <button
+                onClick={() => setMoreOpen((value) => !value)}
+                className="w-full flex items-center justify-between text-left px-4 py-2.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-50"
+              >
+                <span>More</span>
+                <span className={moreOpen ? 'rotate-180' : ''}>▾</span>
+              </button>
 
-            <button
-              onClick={() => navigate("contact")}
-              className="mt-2 px-4 py-3 rounded-xl bg-emerald-700 text-white text-sm font-semibold"
-            >
-              Contact Us
-            </button>
+              {moreOpen && (
+                <div className="ml-3 mt-1 border-l-2 border-emerald-100 pl-2 grid gap-1">
+                  <button
+                    onClick={() => navigate('knowledge-center')}
+                    className="text-left px-3 py-2 rounded-lg text-xs text-slate-500 hover:bg-emerald-50 hover:text-emerald-800"
+                  >
+                    Knowledge Center
+                  </button>
+                  <button
+                    onClick={() => navigate('digital-health-talk')}
+                    className="text-left px-3 py-2 rounded-lg text-xs text-slate-500 hover:bg-emerald-50 hover:text-emerald-800"
+                  >
+                    Digital Health Talk
+                  </button>
+                  <button
+                    onClick={() => navigate('about')}
+                    className="text-left px-3 py-2 rounded-lg text-xs text-slate-500 hover:bg-emerald-50 hover:text-emerald-800"
+                  >
+                    About
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -1949,17 +2005,26 @@ function LibraryDetail({ item, onBack }) {
 ========================================================= */
 
 function CaseStudiesPage({ onReadMore }) {
+  const [category, setCategory] = useState("ALL");
   const [search, setSearch] = useState("");
 
   const filtered = CASE_STUDIES.filter((item) => {
-    const keyword = search.toLowerCase();
+    const keyword = search.trim().toLowerCase();
 
-    return (
+    const matchCategory =
+      category === "ALL" || item.tag === category;
+
+    const matchSearch =
       !keyword ||
       item.title.toLowerCase().includes(keyword) ||
       item.desc.toLowerCase().includes(keyword) ||
-      item.tag.toLowerCase().includes(keyword)
-    );
+      item.tag.toLowerCase().includes(keyword) ||
+      item.industry.toLowerCase().includes(keyword) ||
+      item.solutions.some((solution) =>
+        solution.toLowerCase().includes(keyword)
+      );
+
+    return matchCategory && matchSearch;
   });
 
   return (
@@ -1967,7 +2032,8 @@ function CaseStudiesPage({ onReadMore }) {
       <ImageHero type="case-studies" />
 
       <main className="max-w-[1440px] mx-auto px-5 lg:px-8 py-10 lg:py-12">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
           <div>
             <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-emerald-700">
               OUR WORK
@@ -1976,6 +2042,10 @@ function CaseStudiesPage({ onReadMore }) {
             <h2 className="mt-1 text-2xl font-bold text-slate-900">
               Healthcare Transformation Stories
             </h2>
+
+            <p className="mt-2 text-xs text-slate-500">
+              Pilih kategori untuk melihat studi kasus berdasarkan jenis layanan dan solusi healthcare.
+            </p>
           </div>
 
           <div className="relative w-full lg:w-[300px]">
@@ -1988,12 +2058,38 @@ function CaseStudiesPage({ onReadMore }) {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search case studies..."
-              className="w-full h-10 pl-10 pr-4 rounded-xl border border-slate-200 outline-none text-xs focus:border-emerald-400"
+              className="w-full h-10 pl-10 pr-4 rounded-xl border border-slate-200 bg-white outline-none text-xs text-slate-700 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
             />
           </div>
         </div>
 
-        <div className="mt-7 grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div className="mt-6 flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+          {CASE_STUDY_CATEGORIES.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setCategory(item.id)}
+              className={`shrink-0 px-4 py-2.5 rounded-full text-xs font-semibold border transition ${
+                category === item.id
+                  ? "bg-emerald-700 text-white border-emerald-700 shadow-sm"
+                  : "bg-white text-slate-600 border-slate-200 hover:border-emerald-300 hover:text-emerald-700"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-5 flex items-center justify-between">
+          <p className="text-xs text-slate-400">
+            Menampilkan{" "}
+            <span className="font-bold text-slate-700">
+              {filtered.length}
+            </span>{" "}
+            case studies
+          </p>
+        </div>
+
+        <div className="mt-5 grid md:grid-cols-2 xl:grid-cols-3 gap-5">
           {filtered.map((item) => (
             <CaseStudyCard
               key={item.id}
@@ -2004,7 +2100,7 @@ function CaseStudiesPage({ onReadMore }) {
         </div>
 
         {filtered.length === 0 && (
-          <EmptyState text="Tidak ada case study yang sesuai dengan pencarian." />
+          <EmptyState text="Tidak ada case study yang sesuai dengan kategori atau pencarian." />
         )}
       </main>
     </div>
@@ -2483,7 +2579,9 @@ function BulletList({ items }) {
   );
 }
 
-function DashboardGroup({ title, items, icon }) {
+function DashboardGroup({ title, items = [], icon }) {
+  const safeItems = Array.isArray(items) ? items : [];
+
   return (
     <div className="rounded-xl border border-slate-200 overflow-hidden">
 
@@ -2501,7 +2599,7 @@ function DashboardGroup({ title, items, icon }) {
 
       <div className="p-5 grid sm:grid-cols-2 gap-2.5">
 
-        {items.map((item, index) => (
+        {safeItems.map((item, index) => (
           <div
             key={index}
             className="flex items-center gap-2.5 p-3 rounded-lg bg-white border border-slate-100"
@@ -2544,125 +2642,224 @@ function HomePage({ onNavigate }) {
   return (
     <div className="bg-white">
 
-      <section className="relative min-h-[620px] overflow-hidden flex items-center">
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-[#F3FCF8]">
+        <div className="max-w-[1180px] mx-auto px-6 lg:px-8">
+          <div className="min-h-[430px] lg:min-h-[470px] grid lg:grid-cols-[0.9fr_1.1fr] items-center gap-8 lg:gap-12 py-10 lg:py-12">
 
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80')",
-          }}
-        />
+            {/* LEFT CONTENT */}
+            <div className="relative z-10">
+              <p className="text-[10px] font-bold tracking-[0.18em] text-emerald-700 uppercase">
+                INNOVAMEDIKA
+              </p>
 
-        <div className="absolute inset-0 bg-slate-950/75" />
+              <h1 className="mt-4 text-[38px] sm:text-[46px] lg:text-[54px] font-extrabold leading-[1.08] tracking-tight text-emerald-950">
+                Inovamedika
+                <br />
+                Digital Health
+                <br />
+                Intelligence
+              </h1>
 
-        <div className="relative max-w-[1440px] mx-auto w-full px-6 lg:px-10 py-24">
-
-          <div className="max-w-3xl text-white">
-
-            <p className="text-xs font-bold tracking-[0.22em] text-emerald-300">
-              INNOVATING HEALTHCARE
-            </p>
-
-            <h1 className="mt-5 text-5xl lg:text-7xl font-bold tracking-tight leading-[0.98]">
-              Digital Healthcare
-              <br />
-              <span className="text-emerald-300">
-                Transformation
-              </span>
-            </h1>
-
-            <p className="mt-6 text-base lg:text-lg text-slate-200 leading-relaxed max-w-2xl">
-              Membangun ekosistem teknologi kesehatan yang terintegrasi,
-              interoperabel, aman, dan berorientasi pada kebutuhan fasilitas
-              kesehatan di Indonesia.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
+              <p className="mt-5 max-w-[470px] text-[13px] leading-6 text-slate-600">
+                Wadah informasi untuk mendukung transformasi digital rumah
+                sakit dan fasilitas pelayanan kesehatan.
+              </p>
 
               <button
-                onClick={() => onNavigate("library")}
-                className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold transition"
+                onClick={() => onNavigate("research")}
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-emerald-800 px-5 py-3 text-[11px] font-bold text-white shadow-sm transition hover:bg-emerald-900"
               >
-                Explore Library
+                Explore Research
+                <ArrowRight size={13} />
               </button>
 
-              <button
-                onClick={() => onNavigate("case-studies")}
-                className="px-6 py-3 rounded-full border border-white/30 bg-white/10 hover:bg-white/15 text-white text-sm font-bold transition"
-              >
-                View Case Studies
-              </button>
-
+              <div className="mt-4 flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
+                <span className="h-1.5 w-3.5 rounded-full bg-emerald-700" />
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
+              </div>
             </div>
 
+            {/* INLINE HEALTHCARE ILLUSTRATION — NO EXTERNAL IMAGE */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              <div className="absolute right-[5%] top-[8%] h-[330px] w-[330px] rounded-[55px] bg-[#D8F7E9]" />
+              <div className="absolute right-[10%] top-[18%] h-[270px] w-[270px] rounded-full bg-[#EEF7FF]" />
+
+              <svg
+                viewBox="0 0 620 430"
+                className="relative z-10 w-full max-w-[610px] drop-shadow-sm"
+                aria-label="Digital healthcare illustration"
+              >
+                {/* decorative leaves */}
+                <g opacity="0.35" fill="none" stroke="#8BCDB5" strokeWidth="3">
+                  <path d="M90 55 C145 28, 178 38, 205 77 C153 68, 121 65, 90 55Z" />
+                  <path d="M92 55 C115 91, 140 106, 179 107" />
+                  <path d="M500 60 C545 40, 568 54, 580 92 C540 82, 519 73, 500 60Z" />
+                  <path d="M500 60 C520 98, 545 112, 577 117" />
+                  <path d="M65 335 C104 311, 133 317, 150 350 C115 348, 89 344, 65 335Z" />
+                  <path d="M65 335 C85 365, 109 378, 142 381" />
+                </g>
+
+                {/* hospital monitor */}
+                <rect x="315" y="92" width="172" height="116" rx="13" fill="#FFFFFF" stroke="#B9D5EF" strokeWidth="4" />
+                <rect x="333" y="108" width="136" height="82" rx="8" fill="#DDEBFF" />
+                <path d="M350 164 L371 150 L390 158 L413 132 L433 145 L452 124" fill="none" stroke="#5B79D8" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="350" cy="164" r="5" fill="#5B79D8" />
+                <rect x="388" y="208" width="25" height="12" rx="4" fill="#9CB6D6" />
+                <rect x="362" y="220" width="78" height="9" rx="4.5" fill="#AFC6DD" />
+
+                {/* bed */}
+                <rect x="182" y="287" width="315" height="72" rx="18" fill="#D6E8F8" />
+                <rect x="164" y="300" width="48" height="75" rx="16" fill="#D1E3F2" />
+                <rect x="215" y="267" width="120" height="57" rx="22" fill="#FFFFFF" />
+                <rect x="330" y="283" width="164" height="18" rx="9" fill="#B9D6ED" />
+                <line x1="206" y1="359" x2="206" y2="390" stroke="#7B99B4" strokeWidth="7" />
+                <line x1="477" y1="359" x2="477" y2="390" stroke="#7B99B4" strokeWidth="7" />
+                <circle cx="206" cy="395" r="8" fill="#64859E" />
+                <circle cx="477" cy="395" r="8" fill="#64859E" />
+
+                {/* patient head */}
+                <circle cx="250" cy="239" r="24" fill="#F1B08C" />
+                <path d="M226 238 C227 212, 260 202, 275 226 C264 221, 247 225, 226 238Z" fill="#26364B" />
+                <path d="M249 263 C285 254, 318 260, 345 282 L319 313 L250 302Z" fill="#5B79D8" />
+                <path d="M303 276 L350 303" stroke="#F1B08C" strokeWidth="14" strokeLinecap="round" />
+                <path d="M267 292 L305 320" stroke="#F1B08C" strokeWidth="14" strokeLinecap="round" />
+
+                {/* doctor */}
+                <circle cx="516" cy="142" r="25" fill="#F1B08C" />
+                <path d="M493 141 C496 113, 531 106, 544 132 C534 127, 514 127, 493 141Z" fill="#26364B" />
+                <path d="M483 178 C500 157, 532 157, 548 179 L560 259 L492 259Z" fill="#FFFFFF" stroke="#D5E2EC" strokeWidth="3" />
+                <path d="M493 182 L463 235" stroke="#FFFFFF" strokeWidth="17" strokeLinecap="round" />
+                <path d="M545 183 L570 225" stroke="#FFFFFF" strokeWidth="17" strokeLinecap="round" />
+                <rect x="476" y="206" width="45" height="34" rx="5" fill="#DDEBFF" stroke="#9CB8D3" strokeWidth="2" />
+                <path d="M483 222 L491 218 L498 225 L508 211" fill="none" stroke="#5B79D8" strokeWidth="3" />
+
+                {/* small tablet */}
+                <rect x="423" y="242" width="55" height="76" rx="8" fill="#32445D" transform="rotate(-8 423 242)" />
+                <rect x="431" y="250" width="39" height="56" rx="4" fill="#DDEBFF" transform="rotate(-8 431 250)" />
+
+                {/* shoes */}
+                <path d="M479 259 L501 257 L511 280 L484 283Z" fill="#E85B63" />
+                <path d="M540 258 L558 258 L569 279 L541 283Z" fill="#E85B63" />
+
+                {/* floor shadow */}
+                <ellipse cx="352" cy="399" rx="190" ry="12" fill="#B8E5D2" opacity="0.55" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOME TOPIC ICONS */}
+      <section className="bg-white">
+        <div className="max-w-[1180px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
+          <div className="grid grid-cols-5 items-center gap-5 max-w-[820px] mx-auto">
+            {/*
+              GANTI PATH GAMBAR DI BAWAH SESUAI FILE KAMU.
+              Contoh: /assets/home-icon-1.png
+              File diletakkan di folder public/assets/
+            */}
+            {[
+              '/assets/home-icon-1.png',
+              '/assets/home-icon-2.png',
+              '/assets/home-icon-3.png',
+              '/assets/home-icon-4.png',
+              '/assets/home-icon-5.png',
+            ].map((src, index) => (
+              <div key={src} className="flex justify-center">
+                <div className="w-[58px] h-[58px] rounded-full flex items-center justify-center transition-transform duration-300 hover:-translate-y-1">
+                  <img
+                    src={src}
+                    alt={`Healthcare topic ${index + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTENT PREVIEW */}
+      <section className="bg-[#F8FCFA] py-14">
+        <div className="max-w-[1180px] mx-auto px-6 lg:px-8">
+
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-700">
+                EXPLORE
+              </p>
+              <h2 className="mt-2 text-2xl lg:text-3xl font-bold text-emerald-950">
+                Digital Healthcare Knowledge
+              </h2>
+              <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-500">
+                Jelajahi research, case studies, dan library mengenai
+                transformasi digital healthcare.
+              </p>
+            </div>
+
+            <button
+              onClick={() => onNavigate("library")}
+              className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700"
+            >
+              Open Library
+              <ArrowRight size={14} />
+            </button>
           </div>
 
+          <div className="mt-7 grid md:grid-cols-3 gap-5">
+            <FeatureCard
+              icon={<Activity />}
+              title="Digital Healthcare"
+              text="Solusi teknologi untuk mendukung transformasi proses pelayanan kesehatan."
+            />
+            <FeatureCard
+              icon={<Globe2 />}
+              title="Interoperability"
+              text="Integrasi sistem dan pertukaran data menggunakan standar teknologi kesehatan."
+            />
+            <FeatureCard
+              icon={<ShieldCheck />}
+              title="Secure & Reliable"
+              text="Pendekatan teknologi dengan perhatian pada keamanan dan keandalan sistem."
+            />
+          </div>
         </div>
-
       </section>
 
-      <section className="max-w-[1440px] mx-auto px-6 lg:px-10 py-14">
+      {/* CASE STUDIES PREVIEW */}
+      <section className="bg-white py-14">
+        <div className="max-w-[1180px] mx-auto px-6 lg:px-8">
 
-        <div className="grid md:grid-cols-3 gap-5">
-
-          <FeatureCard
-            icon={<Activity />}
-            title="Digital Healthcare"
-            text="Solusi teknologi untuk mendukung transformasi proses pelayanan kesehatan."
-          />
-
-          <FeatureCard
-            icon={<Globe2 />}
-            title="Interoperability"
-            text="Integrasi sistem dan pertukaran data menggunakan standar teknologi kesehatan."
-          />
-
-          <FeatureCard
-            icon={<ShieldCheck />}
-            title="Secure & Reliable"
-            text="Pendekatan teknologi dengan perhatian pada keamanan dan keandalan sistem."
-          />
-
-        </div>
-
-      </section>
-
-      <section className="bg-slate-50 py-16">
-
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
-
-          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-5">
-
+          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-4">
             <div>
-
-              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-emerald-700">
+              <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-700">
                 CASE STUDIES
               </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-slate-900">
-                Healthcare Transformation Case Studies
+              <h2 className="mt-2 text-2xl lg:text-3xl font-bold text-emerald-950">
+                Healthcare Transformation Stories
               </h2>
-
-              <p className="mt-3 text-sm text-slate-500 max-w-2xl">
-                Pelajari implementasi teknologi digital healthcare melalui
-                berbagai studi kasus transformasi.
+              <p className="mt-2 text-xs text-slate-500 max-w-2xl">
+                Pelajari contoh implementasi teknologi digital healthcare
+                melalui berbagai studi kasus.
               </p>
-
             </div>
 
             <button
               onClick={() => onNavigate("case-studies")}
-              className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700"
+              className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700"
             >
               View All
-              <ArrowRight size={15} />
+              <ArrowRight size={14} />
             </button>
-
           </div>
 
           <div className="mt-7 grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-
             {CASE_STUDIES.slice(0, 3).map((item) => (
               <CaseStudyCard
                 key={item.id}
@@ -2670,43 +2867,8 @@ function HomePage({ onNavigate }) {
                 onReadMore={() => onNavigate("case-studies")}
               />
             ))}
-
           </div>
-
         </div>
-
-      </section>
-
-      <section className="max-w-[1440px] mx-auto px-6 lg:px-10 py-16">
-
-        <div className="rounded-3xl bg-emerald-900 px-7 lg:px-12 py-12 text-white flex flex-col lg:flex-row justify-between lg:items-center gap-8">
-
-          <div>
-
-            <p className="text-[11px] uppercase tracking-[0.2em] text-emerald-300 font-bold">
-              KNOWLEDGE CENTER
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold">
-              Explore Healthcare Resources
-            </h2>
-
-            <p className="mt-3 text-sm text-emerald-100/75 max-w-xl">
-              Temukan referensi mengenai SATUSEHAT, BPJS, RME, HL7 FHIR,
-              DICOM, cybersecurity, regulasi, dan teknologi healthcare.
-            </p>
-
-          </div>
-
-          <button
-            onClick={() => onNavigate("library")}
-            className="shrink-0 px-6 py-3 rounded-full bg-white text-emerald-900 text-sm font-bold"
-          >
-            Open Library
-          </button>
-
-        </div>
-
       </section>
 
     </div>
@@ -2849,26 +3011,93 @@ function EmptyState({ text }) {
   );
 }
 
+function KnowledgeCenterPage({ onNavigate }) {
+  const [selectedType, setSelectedType] = useState("ALL");
+  const [searchTerm, setSearchTerm] = useState("");
+  const types = ["ALL", "CHECKLIST", "EBOOK", "INFOGRAPHIC", "TEMPLATE", "WHITEPAPER"];
+  const visibleItems = LIBRARY_ITEMS.filter((item) => {
+    const matchesType = selectedType === "ALL" || item.tag.toUpperCase() === selectedType || item.type.toUpperCase() === selectedType;
+    const haystack = `${item.title} ${item.desc} ${item.tag} ${item.type}`.toLowerCase();
+    return matchesType && haystack.includes(searchTerm.toLowerCase());
+  });
+
+  return (
+    <div className="min-h-screen bg-[#F7FCFA] text-slate-800">
+      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-800 text-white">
+        <div className="absolute -right-20 -top-24 h-80 w-80 rounded-full bg-emerald-400/15 blur-3xl" />
+        <div className="absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-teal-300/10 blur-3xl" />
+        <div className="relative mx-auto max-w-[1280px] px-6 py-14 lg:px-10 lg:py-20">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[.2em] text-emerald-100">
+              <BookOpen size={14} /> Knowledge Center
+            </div>
+            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">Knowledge for a<br/><span className="text-emerald-300">Smarter Healthcare Future</span></h1>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-emerald-50/85 lg:text-base">Temukan panduan, checklist, ebook, infografik, template, dan referensi untuk mendukung transformasi digital fasilitas kesehatan.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button onClick={() => onNavigate('library')} className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-xs font-bold text-emerald-950 shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-50">Jelajahi Library <ArrowRight size={15}/></button>
+              <button onClick={() => onNavigate('case-studies')} className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-xs font-bold text-white transition hover:bg-white/10">Lihat Case Studies</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <main className="mx-auto max-w-[1280px] px-5 py-10 lg:px-8 lg:py-14">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-[10px] font-extrabold uppercase tracking-[.22em] text-emerald-700">Explore resources</p>
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-emerald-950 lg:text-3xl">Knowledge, siap digunakan.</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">Pilih kategori atau cari materi yang kamu butuhkan.</p>
+          </div>
+          <div className="relative w-full lg:max-w-sm">
+            <Search size={17} className="absolute left-4 top-1/2 -translate-y-1/2 text-emerald-700" />
+            <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Cari resource..." className="h-12 w-full rounded-2xl border border-emerald-100 bg-white pl-11 pr-4 text-sm outline-none transition focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100" />
+          </div>
+        </div>
+
+        <div className="mt-7 flex gap-2 overflow-x-auto pb-2">
+          {types.map((type) => <button key={type} onClick={() => setSelectedType(type)} className={`shrink-0 rounded-lg px-4 py-3 text-[10px] font-extrabold tracking-wide transition ${selectedType === type ? 'bg-emerald-800 text-white shadow-md shadow-emerald-900/15' : 'border border-emerald-100 bg-white text-emerald-900 hover:border-emerald-300 hover:bg-emerald-50'}`}>{type === 'ALL' ? `ALL (${LIBRARY_ITEMS.length})` : type}</button>)}
+        </div>
+
+        <div className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          {visibleItems.map((item) => <article key={item.id} className="group flex min-h-[370px] flex-col overflow-hidden rounded-2xl border border-emerald-100/80 bg-[#DDF7EE] shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:bg-[#D5F4E9] hover:shadow-xl hover:shadow-emerald-950/10">
+            <div className="relative h-40 overflow-hidden bg-emerald-100">
+              <img src={item.image} alt={item.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/65 via-transparent to-transparent" />
+              <span className="absolute bottom-3 left-4 rounded-md bg-white/95 px-2.5 py-1.5 text-[9px] font-extrabold tracking-wider text-emerald-800">{item.tag}</span>
+            </div>
+            <div className="flex flex-1 flex-col p-5">
+              <div className="text-[10px] font-semibold uppercase tracking-wider text-emerald-800/70">{item.publisher} <span className="px-1">·</span> {item.year}</div>
+              <h3 className="mt-3 line-clamp-3 text-lg font-extrabold leading-6 text-emerald-950">{item.title}</h3>
+              <p className="mt-3 line-clamp-4 text-sm leading-6 text-slate-600">{item.desc}</p>
+              <div className="mt-auto flex items-center justify-between gap-2 border-t border-emerald-900/10 pt-5 mt-5">
+                <span className="text-xs text-slate-600"><FileText size={13} className="mr-1 inline"/>{item.fileType}</span>
+                <button onClick={() => onNavigate('library')} className="inline-flex items-center gap-1.5 rounded-full bg-emerald-800 px-3.5 py-2 text-[10px] font-bold text-white transition hover:bg-emerald-950">Read More <ArrowRight size={13}/></button>
+              </div>
+            </div>
+          </article>)}
+        </div>
+        {visibleItems.length === 0 && <div className="mt-8 rounded-2xl border border-dashed border-emerald-200 bg-white p-12 text-center text-sm text-slate-500">Tidak ada resource yang cocok. Coba kata kunci atau kategori lain.</div>}
+        <div className="mt-12 flex flex-col items-start justify-between gap-5 rounded-3xl bg-emerald-950 p-7 text-white sm:flex-row sm:items-center lg:p-9">
+          <div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-emerald-300">Inovamedika Knowledge Hub</p><h2 className="mt-2 text-xl font-extrabold lg:text-2xl">Satu ruang untuk terus berkembang.</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-emerald-50/75">Akses materi dan referensi untuk mendukung langkah transformasi digital layanan kesehatan.</p></div>
+          <button onClick={() => onNavigate('library')} className="shrink-0 rounded-full bg-emerald-300 px-5 py-3 text-xs font-extrabold text-emerald-950 transition hover:bg-white">Buka Library <ArrowRight size={14} className="ml-1 inline"/></button>
+        </div>
+      </main>
+    </div>
+  );
+}
+
 function PlaceholderPage({ title }) {
   return (
     <div className="min-h-[65vh] bg-slate-50 flex items-center justify-center px-6">
-
       <div className="text-center">
-
         <div className="w-14 h-14 mx-auto rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
           <BookOpen size={24} />
         </div>
-
-        <h1 className="mt-5 text-2xl font-bold text-slate-900">
-          {title}
-        </h1>
-
+        <h1 className="mt-5 text-2xl font-bold text-slate-900">{title}</h1>
         <p className="mt-2 text-sm text-slate-500">
           Halaman ini sedang dalam pengembangan.
         </p>
-
       </div>
-
     </div>
   );
 }
@@ -2879,105 +3108,22 @@ function PlaceholderPage({ title }) {
 
 function Footer({ onNavigate }) {
   return (
-    <footer className="bg-[#EAF7F0] text-emerald-950 pt-14 pb-10 border-t border-emerald-200 text-xs">
-
-      <div className="max-w-[1400px] mx-auto px-6 space-y-10">
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-
-          <div className="space-y-3">
-
-            <h4 className="font-bold text-sm text-emerald-900">
-              About Us
-            </h4>
-
-            <p className="text-slate-600 leading-relaxed text-[11px]">
-              PT. Inova Medika Solusindo adalah penyedia solusi teknologi
-              informasi kesehatan terintegrasi di Indonesia, berfokus pada
-              e-Health, SIMRS, dan interoperabilitas data.
-            </p>
-
-          </div>
-
-          <div className="space-y-2">
-
-            <h4 className="font-bold text-sm text-emerald-900">
-              Explore
-            </h4>
-
-            <ul className="space-y-2 text-slate-600 text-[11px]">
-
-              <li>
-                <button
-                  onClick={() => onNavigate("case-studies")}
-                  className="hover:text-emerald-700 transition"
-                >
-                  Case Studies
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => onNavigate("library")}
-                  className="hover:text-emerald-700 transition"
-                >
-                  Library Resources
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => onNavigate("news")}
-                  className="hover:text-emerald-700 transition"
-                >
-                  News & Articles
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => onNavigate("events")}
-                  className="hover:text-emerald-700 transition"
-                >
-                  Events & Webinar
-                </button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <div className="space-y-2">
-
-            <h4 className="font-bold text-sm text-emerald-900">
-              Contact
-            </h4>
-
-            <p className="text-slate-600 leading-relaxed text-[11px]">
-              Email: info@inovamedika.com
-              <br />
-              Website: www.inovamedika.com
-            </p>
-
-          </div>
-
-          <div className="space-y-3">
-
-            <h4 className="font-bold text-sm text-emerald-900">
-              Inova Medika
-            </h4>
-
-            <p className="text-slate-600 leading-relaxed text-[11px]">
-              © {new Date().getFullYear()} PT. Inova Medika Solusindo.
-              All rights reserved.
-            </p>
-
-          </div>
-
+    <footer className="bg-[#E5F7F1] text-emerald-950">
+      <div className="mx-auto max-w-[1240px] px-6 pb-8 pt-12 lg:px-10 lg:pt-16">
+        <div className="grid gap-10 border-b border-emerald-900/10 pb-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+          <div><h4 className="text-sm font-extrabold">About</h4><p className="mt-4 max-w-xs text-xs leading-6 text-slate-600">PT. Inova Medika Solusindo — mendukung transformasi digital kesehatan Indonesia.</p></div>
+          <div><h4 className="text-sm font-extrabold">Explore</h4><ul className="mt-4 space-y-3 text-xs text-slate-600">
+            <li><button onClick={() => onNavigate('news')} className="transition hover:text-emerald-800">News</button></li><li><button onClick={() => onNavigate('insights')} className="transition hover:text-emerald-800">Insights</button></li><li><button onClick={() => onNavigate('research')} className="transition hover:text-emerald-800">Research</button></li><li><button onClick={() => onNavigate('case-studies')} className="transition hover:text-emerald-800">Case Studies</button></li><li><button onClick={() => onNavigate('library')} className="transition hover:text-emerald-800">Knowledge Center</button></li></ul></div>
+          <div><h4 className="text-sm font-extrabold">Topic</h4><ul className="mt-4 space-y-3 text-xs text-slate-600"><li>SATUSEHAT</li><li>Rekam Medis Elektronik</li><li>SIMRS</li><li>Interoperabilitas</li><li>Cybersecurity</li></ul></div>
+          <div><h4 className="text-sm font-extrabold">Dapatkan Berita Terbaru</h4><p className="mt-4 text-xs leading-5 text-slate-600">Masukan email Anda dan bergabung dengan newsletter kami.</p><form className="mt-4" onSubmit={(e) => e.preventDefault()}><input type="email" placeholder="Your Email Address" className="h-10 w-full rounded-md border border-emerald-900/5 bg-white/50 px-3 text-xs outline-none focus:border-emerald-600"/><button type="submit" className="mt-3 rounded-full bg-emerald-800 px-4 py-2 text-[10px] font-bold text-white transition hover:bg-emerald-950">Subscribe To Newsletter</button></form></div>
         </div>
-
+        <div className="grid gap-9 py-9 md:grid-cols-[1fr_1.2fr_1fr] md:items-center">
+          <div><h4 className="text-xs font-extrabold">Waktu Pelayanan</h4><p className="mt-3 flex gap-2 text-[11px] leading-5 text-slate-600"><Clock3 size={14} className="mt-0.5 shrink-0"/><span>Senin - Jumat<br/>08:00 WIB - 17:00 WIB</span></p><h4 className="mt-5 text-xs font-extrabold">Social Media</h4><div className="mt-3 flex gap-2"><a href="https://www.facebook.com/" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center rounded-full border border-emerald-900/10 text-[10px] hover:bg-white">f</a><a href="https://www.instagram.com/" aria-label="Instagram" className="flex h-8 w-8 items-center justify-center rounded-full border border-emerald-900/10 text-[10px] hover:bg-white">◎</a><a href="https://www.linkedin.com/" aria-label="LinkedIn" className="flex h-8 w-8 items-center justify-center rounded-full border border-emerald-900/10 text-[10px] hover:bg-white">in</a></div></div>
+          <div className="text-center"><p className="text-base font-extrabold leading-6 text-emerald-950">“Transformasi Digital Kesehatan<br className="hidden lg:block"/> Indonesia, Dimulai dari Sini”</p></div>
+          <div className="md:justify-self-end"><h4 className="text-xs font-extrabold">Contact Info</h4><div className="mt-3 space-y-2 text-[11px] leading-5 text-slate-600"><p><span className="mr-2">☎</span>(022) 87505214</p><p><span className="mr-2">▯</span>+62 812-2418-4753</p><p><span className="mr-2">＠</span>info@inovamedika.com</p><p><span className="mr-2">⌖</span>Metro Indah Mall (MIM) Blok I3<br/>Jl. Soekarno Hatta, Bandung,<br/>Jawa Barat</p></div></div>
+        </div>
+        <div className="flex flex-col gap-3 border-t border-emerald-900/10 pt-6 text-[10px] text-slate-500 sm:flex-row sm:items-center sm:justify-between"><span>Copyright © {new Date().getFullYear()} - PT. Inova Medika Solusindo</span><div className="flex gap-4"><a href="#cookie-policy" className="underline underline-offset-2 hover:text-emerald-800">Cookie Policy</a><span>|</span><a href="#privacy-policy" className="underline underline-offset-2 hover:text-emerald-800">Privacy Policy</a></div></div>
       </div>
-
     </footer>
   );
 }
@@ -3078,7 +3224,7 @@ function GlobalStyles() {
 ========================================================= */
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("home");
+  const [activeTab, setActiveTab] = useState("knowledge-center");
 
   const [selectedLibraryItem, setSelectedLibraryItem] =
     useState(null);
@@ -3188,14 +3334,6 @@ export default function App() {
       />
     );
 
-  } else if (activeTab === "home") {
-
-    content = (
-      <HomePage
-        onNavigate={handleTabChange}
-      />
-    );
-
   } else if (activeTab === "contact") {
 
     content = (
@@ -3214,6 +3352,32 @@ export default function App() {
       <PlaceholderPage title="Research" />
     );
 
+  } else if (activeTab === "insights") {
+
+    content = (
+      <PlaceholderPage title="Insights" />
+    );
+
+  } else if (activeTab === "knowledge-center") {
+
+    content = (
+      <KnowledgeCenterPage
+        onNavigate={handleTabChange}
+      />
+    );
+
+  } else if (activeTab === "digital-health-talk") {
+
+    content = (
+      <PlaceholderPage title="Digital Health Talk" />
+    );
+
+  } else if (activeTab === "about") {
+
+    content = (
+      <PlaceholderPage title="About" />
+    );
+
   } else if (activeTab === "events") {
 
     content = (
@@ -3227,13 +3391,7 @@ export default function App() {
     );
 
   } else {
-
-    content = (
-      <HomePage
-        onNavigate={handleTabChange}
-      />
-    );
-
+    content = <KnowledgeCenterPage onNavigate={handleTabChange} />;
   }
 
   return (
