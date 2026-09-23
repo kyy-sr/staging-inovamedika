@@ -33,6 +33,7 @@ import logoDefault from "./assets/logo-default.png";
 ========================================================= */
 
 const NAV_ITEMS = [
+  { id: "home", label: "Home" },
   { id: "news", label: "News" },
   { id: "insights", label: "Insights" },
   { id: "research", label: "Research" },
@@ -40,6 +41,14 @@ const NAV_ITEMS = [
   { id: "library", label: "Library" },
   { id: "events", label: "Events" },
   { id: "community", label: "Community" },
+];
+
+const RESEARCH_ITEMS = [
+  { id: 1, category: "AI & Teknologi", tag: "AI READINESS INDEX", title: "AI Readiness Index 2026: Kesiapan Organisasi dalam Mengadopsi dan Mengembangkan Artificial Intelligence", desc: "Gambaran kesiapan organisasi dalam mengadopsi, mengembangkan, dan meningkatkan pemanfaatan AI untuk operasional, inovasi, produktivitas, dan pengambilan keputusan.", date: "18 September 2026", author: "Tim Editorial Inovamedika", design: "Quantitative benchmarking dan capability maturity assessment.", collection: ["Survei organisasi", "Assessment kesiapan teknologi", "Evaluasi strategi AI dan data infrastructure", "Evaluasi governance dan kesiapan tenaga kerja", "Benchmarking organisasi"], framework: ["AI Strategy", "Infrastructure", "Data", "Governance", "Talent", "Organizational Culture"], scope: ["Rumah sakit", "Klinik", "Laboratorium", "Perusahaan teknologi kesehatan", "Institusi pemerintahan dan organisasi pelayanan kesehatan"], outputs: ["AI Readiness Score", "AI Maturity Profile", "Organizational Readiness Assessment", "AI Implementation Gap Analysis", "AI Transformation Roadmap"], note: "Seluruh skor, assessment, dan hasil merupakan dummy content untuk kebutuhan desain website, bukan hasil penelitian aktual.", reference: "Cisco AI Readiness Index 2025 – Realizing the Value of AI", publisher: "Cisco · 2025", url: "https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf" },
+  { id: 2, category: "Cybersecurity", tag: "CYBERSECURITY REPORT", title: "Cybersecurity Report 2026: Tren Ancaman Siber dan Kesiapan Keamanan Digital Indonesia", desc: "Gambaran perkembangan ancaman keamanan siber serta kesiapan organisasi dan masyarakat menghadapi risiko digital, termasuk ransomware, phishing, DDoS, dan ancaman berbasis AI.", date: "18 September 2026", author: "Tim Editorial Inovamedika", design: "Descriptive analysis menggunakan data sekunder dari laporan dan sumber keamanan siber.", collection: ["Laporan keamanan siber nasional dan internasional", "Threat intelligence", "Studi literatur dan laporan industri", "Statistik insiden", "Publikasi lembaga keamanan dan teknologi"], framework: ["Threat Landscape", "Cybersecurity Awareness", "Data Protection", "Identity & Access Management", "Network Security", "Incident Response", "Organizational Resilience", "Security Governance"], scope: ["Kondisi global, Asia Tenggara, dan Indonesia", "Ransomware, phishing, DDoS, malware, social engineering", "AI-enabled cyber threats", "Proyeksi tren ancaman 2026"], outputs: ["Cybersecurity Threat Landscape", "Threat Trend Analysis", "Risk Area Mapping", "Security Awareness Profile", "Cybersecurity Outlook 2026"], note: "Data, statistik, dan analisis merupakan dummy content untuk kebutuhan desain website dan bukan hasil penelitian Inovamedika.", reference: "Your Data Your Security: Laporan Keamanan Siber 2025 & Proyeksi 2026", publisher: "BLSDM Komdigi Yogyakarta · 2026", url: "https://bpsdm.komdigi.go.id/upt/yogyakarta/downloads/5/20260909113731-Buklet-Cyber-Security-2026.pdf" },
+  { id: 3, category: "Digital Health", tag: "DIGITAL HEALTH REPORT", title: "Digital Health Transformation in Indonesia: Workforce Readiness, Education, and Digital Health Literacy", desc: "Membahas kesiapan SDM untuk transformasi kesehatan digital di Indonesia, dengan fokus pada kompetensi digital health dalam pendidikan tenaga kesehatan.", date: "18 September 2026", author: "Tim Editorial Inovamedika", design: "Studi kasus kualitatif mengenai pengembangan, implementasi, dan adopsi kurikulum digital health.", collection: ["Wawancara stakeholder", "Focus group discussion", "Studi dokumen dan analisis kebijakan", "Review kurikulum", "Data pilot implementation dan studi literatur"], framework: ["Digital Health Literacy", "Health Data Management", "Data Privacy", "Electronic Health Records", "Interoperability", "Digital Health Technology", "Digital Health Policy", "Workforce Readiness"], scope: ["Institusi pendidikan kesehatan", "Mahasiswa dan tenaga kesehatan", "Pemerintah dan organisasi profesi", "Institusi akademik dan stakeholder digital health"], outputs: ["Digital Health Workforce Profile", "Digital Health Literacy Assessment", "Curriculum Readiness Analysis", "Workforce Capability Gap", "Digital Health Education Roadmap"], note: "Artikel merupakan dummy content untuk desain website. Data dari sumber asli tetap menjadi hak dan tanggung jawab penerbitnya.", reference: "Digital Health Curriculum Reform in Indonesia", publisher: "Transform Health · 2025", url: "https://transformhealthcoalition.org/wp-content/uploads/2025/04/Digital-Health-Curriculum-Reform-in-Indonesia.pdf" },
+  { id: 4, category: "Digital Health", tag: "REGIONAL DIGITALIZATION", title: "Regional Health Digitalization Report 2026: Digital Transformation and Health Innovation in Indonesia", desc: "Pemetaan inisiatif transformasi digital untuk sektor kesehatan dan pembangunan berkelanjutan di Indonesia, termasuk kolaborasi Indonesia–Australia.", date: "18 September 2026", author: "Tim Editorial Inovamedika", design: "Research project mapping dan thematic analysis berdasarkan sektor, lokasi, teknologi, dan tujuan implementasi.", collection: ["Profil dan proposal proyek penelitian", "Dokumentasi program", "Data lokasi dan deskripsi teknologi", "Informasi mitra penelitian", "Dokumentasi program KONEKSI"], framework: ["Digital Health", "Digital Infrastructure", "Data & Analytics", "Artificial Intelligence", "Digital Inclusion", "Healthcare Innovation", "Community Empowerment", "Policy & Governance"], scope: ["Digital healthcare, primary care, mental health", "Maternal health, nutrition, medical AI", "Health data dan community health technology", "Jawa, Bali, Sumatera, Kalimantan, Sulawesi, dan wilayah lain"], outputs: ["Regional Digital Health Map", "Research Project Landscape", "Technology Adoption Profile", "Regional Innovation Profile", "Digital Transformation Opportunity Map"], note: "Konten dan pemetaan merupakan dummy content untuk desain website. Informasi proyek asli merujuk pada publikasi sumber.", reference: "Digital Transformation in Health, Energy, and Food Security, including Blue Economy", publisher: "KONEKSI · Program Digital Transformation 2023–24", url: "https://koneksi-kpp.id/cdn/koneksi/file/1/7/0/digital-transformations-booklet-2026-version.pdf?1581166962" },
+  { id: 5, category: "Smart Hospital", tag: "SMART HOSPITAL INDEX", title: "Smart Hospital Index 2026: Kesiapan dan Pengembangan Konsep Smart Hospital di Indonesia", desc: "Framework untuk memahami kesiapan rumah sakit dalam teknologi informasi, pengelolaan data, proses pelayanan, dan pengembangan kompetensi organisasi.", date: "18 September 2026", author: "Tim Editorial Inovamedika", design: "Assessment dan knowledge development melalui identifikasi kebutuhan, strategi pendampingan, dan evaluasi pemahaman stakeholder.", collection: ["Survei kebutuhan rumah sakit", "Wawancara manajemen", "Assessment teknologi dan digital maturity", "Pre-test/post-test", "Observasi proses dan review SIMRS"], framework: ["Digital Governance", "Hospital Information System", "Clinical Digitalization", "Smart Infrastructure", "Data Management", "Analytics & Decision Support", "Patient Experience", "Human Resources", "Innovation"], scope: ["Rumah sakit umum, khusus, pendidikan", "Rumah sakit swasta dan pemerintah", "Teknologi informasi, layanan, infrastruktur, data, SDM, manajemen, dan patient experience"], outputs: ["Smart Hospital Readiness Score", "Digital Maturity Profile", "Technology Gap Analysis", "Hospital Transformation Roadmap", "Smart Hospital Capability Map"], note: "Smart Hospital Index ini merupakan framework dummy untuk kebutuhan desain website, bukan indeks resmi institusi penelitian.", reference: "Seminar Smart Hospital sebagai Upaya Pendampingan Pengembangan RSK Mojowarno, Kabupaten Jombang", publisher: "Universitas Ciputra Surabaya · 2023", url: "https://jurnal.unimed.ac.id/2012/index.php/jpkm/article/download/40896/pdf" }
 ];
 
 const TOPICS = [
@@ -54,525 +63,12 @@ const TOPICS = [
 ];
 
 const LIBRARY_ITEMS = [
-  {
-    id: 1,
-    tag: "REGULASI",
-    title:
-      "Peraturan Menteri Kesehatan tentang Rekam Medis Elektronik",
-    desc:
-      "Regulasi nasional yang mengatur penyelenggaraan Rekam Medis Elektronik pada fasilitas pelayanan kesehatan.",
-    publisher: "Kementerian Kesehatan RI",
-    year: "2026",
-    type: "Regulasi",
-    fileType: "PDF",
-    pages: "24 Halaman",
-    size: "2.4 MB",
-    uploadedDate: "12 Januari 2026",
-    language: "Indonesia",
-    authors: "Kementerian Kesehatan Republik Indonesia",
-    source: "Kementerian Kesehatan Republik Indonesia",
-    documentType: "Regulasi Kesehatan",
-    image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Dokumen regulasi yang membahas penyelenggaraan Rekam Medis Elektronik pada fasilitas pelayanan kesehatan, termasuk aspek tata kelola, keamanan, kerahasiaan, dan interoperabilitas data kesehatan.",
-    editorialNote:
-      "Konten halaman ini merupakan ringkasan untuk kebutuhan Library. Dokumen PDF yang dirujuk tetap merupakan publikasi asli dari penerbitnya.",
-    summary: [
-      "Mengatur penyelenggaraan Rekam Medis Elektronik di fasilitas pelayanan kesehatan.",
-      "Menetapkan prinsip keamanan dan kerahasiaan informasi kesehatan.",
-      "Mendukung interoperabilitas dan pertukaran data kesehatan.",
-      "Menjelaskan tanggung jawab fasilitas pelayanan kesehatan dalam pengelolaan rekam medis.",
-    ],
-    scope: [
-      {
-        title: "Penyelenggaraan Rekam Medis Elektronik",
-        items: [
-          "Kebijakan penyelenggaraan RME",
-          "Pengelolaan data pasien",
-          "Hak akses pengguna",
-          "Pengelolaan informasi kesehatan",
-        ],
-      },
-      {
-        title: "Keamanan dan Kerahasiaan",
-        items: [
-          "Perlindungan informasi pasien",
-          "Pengendalian akses",
-          "Kerahasiaan data",
-          "Audit dan pengawasan sistem",
-        ],
-      },
-      {
-        title: "Interoperabilitas Data",
-        items: [
-          "Pertukaran data antar sistem",
-          "Standar data kesehatan",
-          "Integrasi dengan platform kesehatan nasional",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "Rekam Medis Elektronik",
-      "SIMRS",
-      "SATUSEHAT",
-      "Healthcare Interoperability",
-      "Patient Data Management",
-    ],
-    suitableFor: [
-      "Hospital CIO",
-      "IT Manager",
-      "Medical Record Team",
-      "System Analyst",
-      "Healthcare IT Team",
-      "Digital Health Consultant",
-    ],
-    reference:
-      "Kementerian Kesehatan Republik Indonesia. Peraturan Menteri Kesehatan tentang Rekam Medis Elektronik.",
-    pdfUrl: "#",
-  },
-
-  {
-    id: 2,
-    tag: "SATUSEHAT",
-    title: "SATUSEHAT Platform Implementation Guide",
-    desc:
-      "Panduan implementasi integrasi sistem informasi kesehatan dengan platform SATUSEHAT.",
-    publisher: "Kementerian Kesehatan RI",
-    year: "2025",
-    type: "Implementation Guide",
-    fileType: "PDF",
-    pages: "68 Halaman",
-    size: "5.8 MB",
-    uploadedDate: "20 November 2025",
-    language: "Indonesia",
-    authors: "Kementerian Kesehatan Republik Indonesia",
-    source: "SATUSEHAT Platform",
-    documentType: "Implementation Guide",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Panduan teknis untuk membantu fasilitas pelayanan kesehatan memahami proses integrasi sistem informasi dengan ekosistem SATUSEHAT.",
-    editorialNote:
-      "Ringkasan disusun untuk membantu pembaca memahami konteks dokumen sebelum membuka dokumen sumber.",
-    summary: [
-      "Konsep integrasi SATUSEHAT.",
-      "Alur pertukaran data kesehatan.",
-      "Pemanfaatan API dan standar interoperabilitas.",
-      "Persiapan sistem fasilitas kesehatan.",
-    ],
-    scope: [
-      {
-        title: "SATUSEHAT Architecture",
-        items: [
-          "Komponen platform",
-          "Integration flow",
-          "Healthcare data exchange",
-        ],
-      },
-      {
-        title: "API Integration",
-        items: [
-          "Authentication",
-          "Request dan response",
-          "Resource management",
-          "Error handling",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "SATUSEHAT",
-      "FHIR",
-      "Healthcare API",
-      "SIMRS",
-      "RME",
-    ],
-    suitableFor: [
-      "System Architect",
-      "Software Engineer",
-      "Integration Specialist",
-      "IT Manager",
-      "Healthcare IT Team",
-    ],
-    reference:
-      "Kementerian Kesehatan Republik Indonesia. SATUSEHAT Platform Implementation Guide.",
-    pdfUrl: "#",
-  },
-
-  {
-    id: 3,
-    tag: "HL7 FHIR",
-    title: "HL7 FHIR Interoperability Overview",
-    desc:
-      "Pengantar standar HL7 FHIR untuk pertukaran informasi kesehatan secara interoperabel.",
-    publisher: "HL7 International",
-    year: "2025",
-    type: "Technical Standard",
-    fileType: "PDF",
-    pages: "42 Halaman",
-    size: "4.1 MB",
-    uploadedDate: "7 Oktober 2025",
-    language: "English",
-    authors: "HL7 International",
-    source: "HL7 International",
-    documentType: "Technical Standard",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Dokumen pengantar mengenai HL7 FHIR dan penggunaannya untuk interoperabilitas sistem informasi kesehatan.",
-    editorialNote:
-      "Halaman Library menyajikan ringkasan dan konteks penggunaan dokumen. Dokumen sumber tetap mengacu pada publikasi penerbit.",
-    summary: [
-      "Konsep dasar HL7 FHIR.",
-      "FHIR resources.",
-      "RESTful API.",
-      "Pertukaran informasi kesehatan.",
-    ],
-    scope: [
-      {
-        title: "FHIR Fundamentals",
-        items: [
-          "FHIR Resources",
-          "Profiles",
-          "Extensions",
-          "Implementation Guides",
-        ],
-      },
-      {
-        title: "Healthcare Interoperability",
-        items: [
-          "Data exchange",
-          "API-based integration",
-          "System interoperability",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "HL7 FHIR",
-      "Healthcare API",
-      "Interoperability",
-      "RME",
-      "Health Information Exchange",
-    ],
-    suitableFor: [
-      "Software Engineer",
-      "System Architect",
-      "Integration Specialist",
-      "System Analyst",
-      "Digital Health Consultant",
-    ],
-    reference:
-      "HL7 International. HL7 FHIR Interoperability Overview.",
-    pdfUrl: "#",
-  },
-
-  {
-    id: 4,
-    tag: "DICOM",
-    title: "DICOM Overview and Medical Imaging Interoperability",
-    desc:
-      "Dokumen pengantar mengenai standar DICOM untuk pertukaran dan pengelolaan medical imaging.",
-    publisher: "DICOM Standards Committee",
-    year: "2018",
-    type: "Technical Standard",
-    fileType: "PDF",
-    pages: "36 Halaman",
-    size: "3.7 MB",
-    uploadedDate: "18 September 2025",
-    language: "English",
-    authors: "DICOM Standards Committee",
-    source: "DICOM Standard",
-    documentType: "Medical Imaging Standard",
-    image:
-      "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Dokumen yang menjelaskan konsep dasar DICOM dan perannya dalam pertukaran informasi medical imaging.",
-    editorialNote:
-      "Ringkasan ini disediakan untuk kebutuhan Library dan tidak menggantikan dokumen standar asli.",
-    summary: [
-      "Konsep DICOM.",
-      "Medical imaging workflow.",
-      "Interoperability.",
-      "Pertukaran image dan metadata.",
-    ],
-    scope: [
-      {
-        title: "DICOM Fundamentals",
-        items: [
-          "Images",
-          "Metadata",
-          "Information objects",
-          "DICOM services",
-        ],
-      },
-      {
-        title: "Imaging Workflow",
-        items: [
-          "Modality",
-          "PACS",
-          "RIS",
-          "Hospital Information System",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "Radiology",
-      "PACS",
-      "RIS",
-      "DICOM",
-      "Medical Imaging",
-    ],
-    suitableFor: [
-      "Radiology IT Team",
-      "System Architect",
-      "Healthcare IT Team",
-      "Integration Specialist",
-    ],
-    reference:
-      "DICOM Standards Committee. DICOM Overview and Medical Imaging Interoperability.",
-    pdfUrl: "#",
-  },
-
-  {
-    id: 5,
-    tag: "BPJS",
-    title: "Digital Healthcare Integration and BPJS Workflow",
-    desc:
-      "Materi referensi mengenai integrasi sistem informasi fasilitas kesehatan dengan workflow layanan BPJS.",
-    publisher: "Healthcare Technology Reference",
-    year: "2025",
-    type: "Healthcare Integration",
-    fileType: "PDF",
-    pages: "31 Halaman",
-    size: "3.2 MB",
-    uploadedDate: "8 Agustus 2025",
-    language: "Indonesia",
-    authors: "Healthcare Technology Editorial Team",
-    source: "Healthcare Technology Reference",
-    documentType: "Integration Guide",
-    image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Referensi mengenai digitalisasi workflow administrasi dan integrasi data dalam pelayanan kesehatan.",
-    editorialNote:
-      "Materi dirangkum sebagai referensi awal untuk pembaca Library.",
-    summary: [
-      "Digitalisasi administrasi pasien.",
-      "Integrasi workflow pelayanan.",
-      "Pertukaran data.",
-      "Pengurangan proses manual.",
-    ],
-    scope: [
-      {
-        title: "Healthcare Administration",
-        items: [
-          "Patient registration",
-          "Eligibility",
-          "Referral workflow",
-          "Service documentation",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "BPJS",
-      "SIMRS",
-      "Patient Registration",
-      "Healthcare Integration",
-    ],
-    suitableFor: [
-      "Hospital IT Team",
-      "Hospital Operations",
-      "System Analyst",
-      "Digital Health Consultant",
-    ],
-    reference:
-      "Healthcare Technology Reference. Digital Healthcare Integration and BPJS Workflow.",
-    pdfUrl: "#",
-  },
-
-  {
-    id: 6,
-    tag: "CYBERSECURITY",
-    title: "Healthcare Cybersecurity Fundamentals",
-    desc:
-      "Panduan dasar keamanan siber untuk sistem informasi dan data kesehatan.",
-    publisher: "Healthcare Security Reference",
-    year: "2025",
-    type: "Cybersecurity",
-    fileType: "PDF",
-    pages: "55 Halaman",
-    size: "4.6 MB",
-    uploadedDate: "16 Juli 2025",
-    language: "English",
-    authors: "Healthcare Security Editorial Team",
-    source: "Healthcare Security Reference",
-    documentType: "Cybersecurity Guide",
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Referensi dasar mengenai cybersecurity dalam lingkungan sistem informasi kesehatan.",
-    editorialNote:
-      "Ringkasan digunakan sebagai informasi pendukung dan tidak menggantikan dokumen sumber.",
-    summary: [
-      "Healthcare cybersecurity fundamentals.",
-      "Access control.",
-      "Data protection.",
-      "Security monitoring.",
-    ],
-    scope: [
-      {
-        title: "Healthcare Security",
-        items: [
-          "Identity management",
-          "Access control",
-          "Data protection",
-          "Security monitoring",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "Cybersecurity",
-      "RME",
-      "Patient Data",
-      "Hospital Information System",
-    ],
-    suitableFor: [
-      "CISO",
-      "IT Security Team",
-      "Hospital CIO",
-      "System Architect",
-      "Risk & Compliance Team",
-    ],
-    reference:
-      "Healthcare Security Reference. Healthcare Cybersecurity Fundamentals.",
-    pdfUrl: "#",
-  },
-
-  {
-    id: 7,
-    tag: "CYBERSECURITY",
-    title:
-      "Securely Connecting the World with Cyber Security Standards",
-    desc:
-      "Securely Connecting the World with Cyber Security Standards merupakan publikasi dari National Institute of Standards and Technology (NIST) yang membahas peran standar cybersecurity dalam membangun konektivitas digital yang aman.",
-    publisher:
-      "National Institute of Standards and Technology (NIST)",
-    year: "2005",
-    type: "Cybersecurity Standard",
-    fileType: "PDF",
-    pages: "18 Halaman",
-    size: "PDF",
-    uploadedDate: "2005",
-    language: "English",
-    authors: "Alicia Clay & Michael D. Hogan",
-    source: "NIST",
-    documentType: "Cybersecurity Standards Publication",
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=80",
-    description:
-      "Securely Connecting the World with Cyber Security Standards merupakan publikasi dari National Institute of Standards and Technology (NIST) yang membahas peran standar cybersecurity dalam membangun konektivitas digital yang aman. Dokumen ini menjelaskan bagaimana standar keamanan dapat membantu organisasi menjaga kerahasiaan, integritas, dan ketersediaan sistem serta informasi. Pembahasan juga mencakup kategori standar cybersecurity, identity management, security testing, interoperability, serta pengelolaan keamanan sistem informasi.",
-    editorialNote:
-      "Konten halaman ini merupakan ringkasan untuk kebutuhan Library. Dokumen PDF yang dirujuk tetap merupakan publikasi asli dari NIST.",
-    summary: [
-      "Pentingnya standar dalam mengamankan sistem yang saling terhubung.",
-      "Confidentiality — menjaga kerahasiaan informasi.",
-      "Integrity — menjaga keutuhan dan keakuratan informasi.",
-      "Availability — memastikan sistem dan informasi tersedia saat dibutuhkan.",
-      "Assurance — memberikan keyakinan bahwa sistem telah memenuhi kebutuhan keamanan.",
-      "Kategori standar mencakup technical standards, management standards, dan testing standards.",
-    ],
-    scope: [
-      {
-        number: "01",
-        title: "Cyber Security Standards",
-        items: [
-          "Confidentiality",
-          "Integrity",
-          "Availability",
-          "Security assurance",
-          "Interoperability",
-          "Secure connectivity",
-        ],
-      },
-      {
-        number: "02",
-        title: "Categories of Cyber Security Standards",
-        items: [
-          "Technical Standards — menetapkan kebutuhan teknis untuk hardware, software, firmware, access, encryption, dan interoperability.",
-          "Management Standards — mendukung pengelolaan keamanan organisasi dan risk management.",
-          "Testing Standards — menyediakan metode pengujian untuk memverifikasi sistem dan komponen.",
-        ],
-      },
-      {
-        number: "03",
-        title: "Identity Management",
-        items: [
-          "User identity",
-          "Identifier management",
-          "Authentication",
-          "Identity theft protection",
-          "Biometric identification",
-          "Smart card technologies",
-        ],
-      },
-      {
-        number: "04",
-        title: "Cyber Security Testing",
-        items: [
-          "Conformance testing",
-          "Interoperability testing",
-          "Security testing",
-          "Test methodology",
-          "Test scenarios",
-          "Laboratory testing",
-          "Validation and certification",
-        ],
-      },
-      {
-        number: "05",
-        title: "Secure Management of Information Systems",
-        items: [
-          "Identify security needs",
-          "Determine appropriate controls",
-          "Test security implementation",
-          "Improve interoperability",
-          "Support risk management",
-        ],
-      },
-    ],
-    healthcareRelevance: [
-      "EMR / RME",
-      "Hospital Information System",
-      "Healthcare APIs",
-      "Health Information Exchange",
-      "Patient Identity Management",
-      "Interoperability Platform",
-      "Connected Medical Systems",
-    ],
-    suitableFor: [
-      "Hospital CIO",
-      "IT Manager",
-      "Cybersecurity Team",
-      "Information Security Officer",
-      "System Architect",
-      "Software Engineer",
-      "System Analyst",
-      "Healthcare IT Team",
-      "Healthcare Integration Specialist",
-      "Digital Health Consultant",
-      "IT Governance Team",
-      "Risk & Compliance Team",
-    ],
-    reference:
-      "National Institute of Standards and Technology (NIST). Securely Connecting the World with Cyber Security Standards. Alicia Clay & Michael D. Hogan.",
-    pdfUrl:
-      "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=150423",
-  },
+  { id: 1, tag: "CHECKLIST", title: "Checklist Kesiapan Digitalisasi Rekam Medis dan Pelaporan Fasilitas Kesehatan", desc: "Alat bantu evaluasi awal kesiapan prosedur, SDM, infrastruktur, kualitas data, pelaporan, dan sistem informasi kesehatan.", publisher: "Inovamedika Knowledge Center", year: "2026", type: "Checklist", fileType: "PDF", pages: "32 halaman sumber", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80", description: "Checklist untuk assessment awal, audit internal, evaluasi SOP, dan persiapan transformasi dari proses manual menuju rekam medis elektronik.", summary: ["Tata kelola dan SOP", "Proses rekam medis dan pelaporan", "Infrastruktur digital dan kesiapan SDM", "Assessment, identifikasi gap, prioritas perbaikan, dan monitoring"] },
+  { id: 2, tag: "EBOOK", title: "Panduan Memahami Kualitas Rumah Sakit: Dari Patient Experience hingga Digital Maturity", desc: "Pengantar dimensi kualitas rumah sakit, pengalaman pasien, PROMs, indikator mutu, benchmarking, dan kematangan digital.", publisher: "Inovamedika Knowledge Center", year: "2026", type: "Ebook", fileType: "PDF", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80", description: "Materi membahas bagaimana data dan indikator dapat membantu organisasi memahami kualitas layanan serta continuous improvement.", summary: ["Patient experience dan Patient-Reported Outcome Measures (PROMs)", "Clinical quality, operational quality, patient experience, digital capability", "Membaca benchmarking secara kontekstual", "Alur data hingga insight dan keputusan"] },
+  { id: 3, tag: "INFOGRAPHIC", title: "Smart Hospital: 5 Pilar Transformasi Digital Rumah Sakit", desc: "Ringkasan visual pilar Smart Clinical, Smart Operations, Smart Patient, Smart Data, dan Smart Governance.", publisher: "Inovamedika Knowledge Center", year: "2026", type: "Infographic", fileType: "PDF", image: "https://images.unsplash.com/photo-151117auto=format&fit=crop&w=1200&q=80", description: "Infografis sebagai referensi singkat untuk memahami hubungan teknologi, SDM, tata kelola, proses, dan data dalam transformasi digital.", summary: ["Smart Clinical: SIMRS, RME, dan sistem klinis", "Smart Operations: otomatisasi dan dashboard", "Smart Patient: layanan digital dan pengalaman pasien", "Smart Data serta Smart Governance"] },
+  { id: 4, tag: "TEMPLATE", title: "Template Assessment Kualitas dan Kesiapan SIMRS", desc: "Template evaluasi infrastruktur, aplikasi, SDM, proses bisnis, kualitas informasi, integrasi, dan dukungan manajemen.", publisher: "Inovamedika Knowledge Center", year: "2026", type: "Template", fileType: "PDF / DOCX", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80", description: "Dapat digunakan sebagai dasar evaluasi internal sebelum menyusun rencana pengembangan atau peningkatan SIMRS.", summary: ["Assessment infrastruktur dan modul SIMRS", "Penilaian kualitas informasi dan kesiapan SDM", "Integrasi/interoperabilitas dan assessment manajemen", "Identifikasi gap, action plan, dan executive summary"] },
+  { id: 5, tag: "WHITEPAPER", title: "Smart Hospital 2026: Framework Kematangan Digital dan Teknologi Rumah Sakit", desc: "Framework konseptual kematangan Smart Hospital meliputi governance, teknologi klinis, data, operasi, pasien, keamanan, dan inovasi.", publisher: "Inovamedika Knowledge Center", year: "2026", type: "Whitepaper", fileType: "PDF", image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80", description: "Framework dummy untuk Knowledge Center Inovamedika Digital Health, bukan metodologi resmi Newsweek atau Statista.", summary: ["Tujuh pilar dan domain assessment Smart Hospital", "Lima level maturity: Basic hingga Smart & Adaptive", "Roadmap: Foundation, Integration, Data, Intelligence, Continuous Improvement", "Teknologi + People + Process + Data + Governance"] },
 ];
-
-/* =========================================================
-   CASE STUDIES
-========================================================= */
 
 const CASE_STUDIES = [
   {
@@ -1100,39 +596,13 @@ function useReveal() {
 function Navbar({ activeTab, onNavigate }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
-  const [indicator, setIndicator] = useState({ left: 0, width: 0, visible: false });
-  const navRef = useRef(null);
-  const itemRefs = useRef({});
-
   const navigate = (id) => {
     onNavigate(id);
     setMobileOpen(false);
     setMoreOpen(false);
   };
 
-  useLayoutEffect(() => {
-    const updateIndicator = () => {
-      const nav = navRef.current;
-      const active = itemRefs.current[activeTab];
-      if (!nav || !active) {
-        setIndicator((prev) => ({ ...prev, visible: false }));
-        return;
-      }
 
-      const navBox = nav.getBoundingClientRect();
-      const activeBox = active.getBoundingClientRect();
-
-      setIndicator({
-        left: activeBox.left - navBox.left,
-        width: activeBox.width,
-        visible: true,
-      });
-    };
-
-    updateIndicator();
-    window.addEventListener('resize', updateIndicator);
-    return () => window.removeEventListener('resize', updateIndicator);
-  }, [activeTab]);
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-100">
@@ -1153,32 +623,12 @@ function Navbar({ activeTab, onNavigate }) {
           </button>
 
           {/* DESKTOP NAV - CENTER */}
-          <nav
-            ref={navRef}
-            className="hidden lg:flex relative items-center gap-1"
-          >
-            {/* GREEN ACTIVE PILL: bergerak mengikuti menu yang dipilih */}
-            <div
-              className="absolute top-0 bottom-0 rounded-full bg-emerald-100 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
-              style={{
-                left: indicator.left,
-                width: indicator.width,
-                opacity: indicator.visible ? 1 : 0,
-              }}
-            />
-
+          <nav className="hidden lg:flex items-center gap-1">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
-                ref={(node) => {
-                  itemRefs.current[item.id] = node;
-                }}
                 onClick={() => navigate(item.id)}
-                className={`relative z-10 px-3.5 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap transition-colors duration-300 ${
-                  activeTab === item.id
-                    ? 'text-emerald-900'
-                    : 'text-slate-700 hover:text-emerald-800'
-                }`}
+                className={`px-3.5 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap transition-colors duration-200 ${activeTab === item.id ? 'bg-emerald-100 text-emerald-900' : 'bg-transparent text-slate-700 hover:bg-emerald-50 hover:text-emerald-800'}`}
               >
                 {item.label}
               </button>
@@ -1300,68 +750,20 @@ function Navbar({ activeTab, onNavigate }) {
 ========================================================= */
 
 function ImageHero({ type, onBack }) {
-  const isLibrary = type === "library";
-
-  return (
-    <section className="relative min-h-[300px] lg:min-h-[350px] overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('${
-            isLibrary
-              ? "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80"
-              : "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1800&q=80"
-          }')`,
-        }}
-      />
-
-      <div className="absolute inset-0 bg-slate-950/80" />
-
-      <div className="relative max-w-[1440px] mx-auto px-6 lg:px-10 py-16 lg:py-20 flex items-center min-h-[300px] lg:min-h-[350px]">
-        <div className="max-w-3xl text-white">
-          <div className="text-[11px] font-bold tracking-[0.22em] uppercase text-emerald-300 mb-4">
-            {isLibrary ? "KNOWLEDGE CENTER" : "SUCCESS STORIES"}
-          </div>
-
-          <h1 className="text-4xl lg:text-5xl font-bold tracking-tight leading-[1.05]">
-            {isLibrary ? (
-              <>
-                Healthcare
-                <br />
-                <span className="text-emerald-300">
-                  Library Resources
-                </span>
-              </>
-            ) : (
-              <>
-                Healthcare Transformation
-                <br />
-                <span className="text-emerald-300">
-                  Case Studies
-                </span>
-              </>
-            )}
-          </h1>
-
-          <p className="mt-5 text-sm lg:text-base text-slate-200 leading-relaxed max-w-2xl">
-            {isLibrary
-              ? "Kumpulan referensi, standar, regulasi, dan publikasi yang relevan dengan transformasi digital healthcare."
-              : "Pelajari bagaimana berbagai fasilitas kesehatan di Indonesia berhasil melakukan digitalisasi operasional dan integrasi layanan medis bersama solusi kami."}
-          </p>
-
-          {onBack && (
-            <button
-              onClick={onBack}
-              className="mt-7 inline-flex items-center gap-2 text-sm text-white hover:text-emerald-300 transition"
-            >
-              <ArrowLeft size={16} />
-              Kembali
-            </button>
-          )}
-        </div>
-      </div>
-    </section>
-  );
+  const configs = {
+    library: { image:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80", eyebrow:"KNOWLEDGE CENTER", title:<>Healthcare<br/><span className="text-emerald-300">Library Resources</span></>, desc:"Kumpulan referensi, standar, regulasi, dan publikasi yang relevan dengan transformasi digital healthcare." },
+    "case-studies": { image:"https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1800&q=80", eyebrow:"SUCCESS STORIES", title:<>Healthcare Transformation<br/><span className="text-emerald-300">Case Studies</span></>, desc:"Pelajari bagaimana berbagai fasilitas kesehatan di Indonesia berhasil melakukan digitalisasi operasional dan integrasi layanan medis bersama solusi kami." },
+    research: { image:"https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80", eyebrow:"INOVAMEDIKA · RESEARCH", title:<>Riset & insight untuk<br/><span className="text-emerald-300">transformasi kesehatan</span></>, desc:"Jelajahi ringkasan kajian, framework, dan referensi seputar AI, keamanan siber, digital health, serta smart hospital." },
+    "knowledge-center": { image:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80", eyebrow:"KNOWLEDGE CENTER", title:<>Knowledge for a<br/><span className="text-emerald-300">Smarter Healthcare Future</span></>, desc:"Temukan panduan, checklist, ebook, infografik, template, dan referensi untuk mendukung transformasi digital fasilitas kesehatan." },
+    news: { image:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1800&q=80", eyebrow:"INOVAMEDIKA · NEWS", title:<>Latest Updates &<br/><span className="text-emerald-300">Digital Health Stories</span></>, desc:"Ikuti kabar terbaru, aktivitas, dan perkembangan seputar Inovamedika serta ekosistem digital healthcare." },
+    insights: { image:"https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80", eyebrow:"INOVAMEDIKA · INSIGHTS", title:<>Perspectives for a<br/><span className="text-emerald-300">Smarter Healthcare Future</span></>, desc:"Temukan perspektif, analisis, dan gagasan mengenai teknologi, data, serta transformasi layanan kesehatan digital." },
+    events: { image:"https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80", eyebrow:"INOVAMEDIKA · EVENTS", title:<>Event<br/><span className="text-emerald-300">Learn, Connect, and Transform Healthcare Together</span></>, desc:"Temukan berbagai webinar atau training yang dirancang untuk mendukung transformasi digital dan peningkatan kompetensi di sektor kesehatan" },
+    community: { image:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80", eyebrow:"INOVAMEDIKA · COMMUNITY", title:<>Tempat Digital Health Indonesia<br/><span className="text-emerald-300">Terhubung</span></>, desc:"Diskusi, berbagi wawasan, dan solusi transformasi dengan komunitas digital health." },
+    "digital-health-talk": { image:"https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=1800&q=80", eyebrow:"INOVAMEDIKA · DIGITAL HEALTH TALK", title:<>Archives <span className="text-emerald-300">Digital Health Talk</span></>, desc:"Kumpulan episode Digital Health Talk yang membahas transformasi digital, interoperabilitas, data, keamanan informasi, dan kesiapan rumah sakit." },
+    about: { image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80", eyebrow:"INOVAMEDIKA DIGITAL HEALTH", title:<>Technology, Knowledge &<br/><span className="text-emerald-300">Healthcare Transformation</span></>, desc:"Mengenal Inovamedika Digital Health dan ruang informasi, pengetahuan, serta kolaborasi untuk transformasi kesehatan." },
+  };
+  const config=configs[type]||configs.library;
+  return <section className="relative min-h-[300px] lg:min-h-[350px] overflow-hidden"><div className="absolute inset-0 bg-cover bg-center transition-transform duration-[1200ms]" style={{backgroundImage:`url('${config.image}')`}}/><div className="absolute inset-0 bg-slate-950/80"/><div className="absolute inset-0 bg-gradient-to-r from-slate-950/20 via-transparent to-slate-950/30"/><div className="relative max-w-[1440px] mx-auto px-6 lg:px-10 py-16 lg:py-20 flex items-center min-h-[300px] lg:min-h-[350px]"><div className="mx-auto flex max-w-5xl flex-col items-center text-center text-white"><div className="mb-4 text-[11px] font-bold tracking-[0.22em] uppercase text-emerald-300">{config.eyebrow}</div><h1 className="text-4xl lg:text-5xl font-bold tracking-tight leading-[1.05]">{config.title}</h1><p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-slate-200 lg:text-base">{config.desc}</p>{onBack&&<button onClick={onBack} className="mt-7 inline-flex items-center gap-2 text-sm text-white transition hover:text-emerald-300"><ArrowLeft size={16}/>Kembali</button>}</div></div></section>;
 }
 
 /* =========================================================
@@ -2640,6 +2042,10 @@ function SidebarInfo({ label, value }) {
 ========================================================= */
 
 function HomePage({ onNavigate }) {
+  const [activeExplore, setActiveExplore] = useState(1);
+  const exploreItems = NAV_ITEMS.filter((item) => item.id !== "home");
+  const activeExploreItem = exploreItems[activeExplore % exploreItems.length];
+
   return (
     <div className="bg-white">
 
@@ -2667,97 +2073,46 @@ function HomePage({ onNavigate }) {
                 sakit dan fasilitas pelayanan kesehatan.
               </p>
 
-              <button
-                onClick={() => onNavigate("research")}
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-emerald-800 px-5 py-3 text-[11px] font-bold text-white shadow-sm transition hover:bg-emerald-900"
-              >
-                Explore Research
-                <ArrowRight size={13} />
-              </button>
+              <div className="mt-8">
+                <div className="relative inline-flex overflow-hidden rounded-full">
+                  <button
+                    key={activeExploreItem.id}
+                    onClick={() => onNavigate(activeExploreItem.id)}
+                    className="inline-flex items-center gap-2 rounded-full bg-emerald-800 px-6 py-3.5 text-[14px] font-semibold text-white shadow-sm transition-colors hover:bg-emerald-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+                    style={{ animation: "exploreSlideIn 320ms cubic-bezier(.2,.75,.25,1) both" }}
+                  >
+                    Explore {activeExploreItem.label}<ArrowRight size={15} />
+                  </button>
+                </div>
 
-              <div className="mt-4 flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
-                <span className="h-1.5 w-3.5 rounded-full bg-emerald-700" />
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-200" />
+                <div className="mt-5 flex items-center justify-center gap-2" aria-label="Pilih halaman Explore">
+                  {exploreItems.map((item, index) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => setActiveExplore(index)}
+                      aria-label={`Explore ${item.label}`}
+                      aria-current={activeExplore === index ? "true" : undefined}
+                      className={`h-2 rounded-full transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${activeExplore === index ? "w-6 bg-emerald-700" : "w-2 bg-emerald-200 hover:bg-emerald-400"}`}
+                    />
+                  ))}
+                </div>
               </div>
+
+              <style>{`@keyframes exploreSlideIn { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: translateX(0); } }`}</style>
             </div>
 
-            {/* INLINE HEALTHCARE ILLUSTRATION — NO EXTERNAL IMAGE */}
+            {/* HERO IMAGE */}
             <div className="relative flex items-center justify-center lg:justify-end">
-              <div className="absolute right-[5%] top-[8%] h-[330px] w-[330px] rounded-[55px] bg-[#D8F7E9]" />
-              <div className="absolute right-[10%] top-[18%] h-[270px] w-[270px] rounded-full bg-[#EEF7FF]" />
-
-              <svg
-                viewBox="0 0 620 430"
-                className="relative z-10 w-full max-w-[610px] drop-shadow-sm"
-                aria-label="Digital healthcare illustration"
-              >
-                {/* decorative leaves */}
-                <g opacity="0.35" fill="none" stroke="#8BCDB5" strokeWidth="3">
-                  <path d="M90 55 C145 28, 178 38, 205 77 C153 68, 121 65, 90 55Z" />
-                  <path d="M92 55 C115 91, 140 106, 179 107" />
-                  <path d="M500 60 C545 40, 568 54, 580 92 C540 82, 519 73, 500 60Z" />
-                  <path d="M500 60 C520 98, 545 112, 577 117" />
-                  <path d="M65 335 C104 311, 133 317, 150 350 C115 348, 89 344, 65 335Z" />
-                  <path d="M65 335 C85 365, 109 378, 142 381" />
-                </g>
-
-                {/* hospital monitor */}
-                <rect x="315" y="92" width="172" height="116" rx="13" fill="#FFFFFF" stroke="#B9D5EF" strokeWidth="4" />
-                <rect x="333" y="108" width="136" height="82" rx="8" fill="#DDEBFF" />
-                <path d="M350 164 L371 150 L390 158 L413 132 L433 145 L452 124" fill="none" stroke="#5B79D8" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
-                <circle cx="350" cy="164" r="5" fill="#5B79D8" />
-                <rect x="388" y="208" width="25" height="12" rx="4" fill="#9CB6D6" />
-                <rect x="362" y="220" width="78" height="9" rx="4.5" fill="#AFC6DD" />
-
-                {/* bed */}
-                <rect x="182" y="287" width="315" height="72" rx="18" fill="#D6E8F8" />
-                <rect x="164" y="300" width="48" height="75" rx="16" fill="#D1E3F2" />
-                <rect x="215" y="267" width="120" height="57" rx="22" fill="#FFFFFF" />
-                <rect x="330" y="283" width="164" height="18" rx="9" fill="#B9D6ED" />
-                <line x1="206" y1="359" x2="206" y2="390" stroke="#7B99B4" strokeWidth="7" />
-                <line x1="477" y1="359" x2="477" y2="390" stroke="#7B99B4" strokeWidth="7" />
-                <circle cx="206" cy="395" r="8" fill="#64859E" />
-                <circle cx="477" cy="395" r="8" fill="#64859E" />
-
-                {/* patient head */}
-                <circle cx="250" cy="239" r="24" fill="#F1B08C" />
-                <path d="M226 238 C227 212, 260 202, 275 226 C264 221, 247 225, 226 238Z" fill="#26364B" />
-                <path d="M249 263 C285 254, 318 260, 345 282 L319 313 L250 302Z" fill="#5B79D8" />
-                <path d="M303 276 L350 303" stroke="#F1B08C" strokeWidth="14" strokeLinecap="round" />
-                <path d="M267 292 L305 320" stroke="#F1B08C" strokeWidth="14" strokeLinecap="round" />
-
-                {/* doctor */}
-                <circle cx="516" cy="142" r="25" fill="#F1B08C" />
-                <path d="M493 141 C496 113, 531 106, 544 132 C534 127, 514 127, 493 141Z" fill="#26364B" />
-                <path d="M483 178 C500 157, 532 157, 548 179 L560 259 L492 259Z" fill="#FFFFFF" stroke="#D5E2EC" strokeWidth="3" />
-                <path d="M493 182 L463 235" stroke="#FFFFFF" strokeWidth="17" strokeLinecap="round" />
-                <path d="M545 183 L570 225" stroke="#FFFFFF" strokeWidth="17" strokeLinecap="round" />
-                <rect x="476" y="206" width="45" height="34" rx="5" fill="#DDEBFF" stroke="#9CB8D3" strokeWidth="2" />
-                <path d="M483 222 L491 218 L498 225 L508 211" fill="none" stroke="#5B79D8" strokeWidth="3" />
-
-                {/* small tablet */}
-                <rect x="423" y="242" width="55" height="76" rx="8" fill="#32445D" transform="rotate(-8 423 242)" />
-                <rect x="431" y="250" width="39" height="56" rx="4" fill="#DDEBFF" transform="rotate(-8 431 250)" />
-
-                {/* shoes */}
-                <path d="M479 259 L501 257 L511 280 L484 283Z" fill="#E85B63" />
-                <path d="M540 258 L558 258 L569 279 L541 283Z" fill="#E85B63" />
-
-                {/* floor shadow */}
-                <ellipse cx="352" cy="399" rx="190" ry="12" fill="#B8E5D2" opacity="0.55" />
-              </svg>
+              <img src="/assets/about-main.png" alt="Inovamedika digital health" className="relative z-10 w-full max-w-[610px] rounded-[28px] object-cover drop-shadow-sm" />
             </div>
+
           </div>
         </div>
       </section>
 
       {/* HOME TOPIC ICONS */}
-      <section className="bg-white">
+      <section className="bg-white scroll-reveal">
         <div className="max-w-[1180px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
           <div className="grid grid-cols-5 items-center gap-5 max-w-[820px] mx-auto">
             {/*
@@ -2787,7 +2142,7 @@ function HomePage({ onNavigate }) {
       </section>
 
       {/* CONTENT PREVIEW */}
-      <section className="bg-[#F8FCFA] py-14">
+      <section className="bg-[#F8FCFA] py-14 scroll-reveal">
         <div className="max-w-[1180px] mx-auto px-6 lg:px-8">
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
@@ -2813,7 +2168,7 @@ function HomePage({ onNavigate }) {
             </button>
           </div>
 
-          <div className="mt-7 grid md:grid-cols-3 gap-5">
+          <div className="mt-7 grid md:grid-cols-3 gap-5 scroll-reveal-stagger">
             <FeatureCard
               icon={<Activity />}
               title="Digital Healthcare"
@@ -2834,7 +2189,7 @@ function HomePage({ onNavigate }) {
       </section>
 
       {/* CASE STUDIES PREVIEW */}
-      <section className="bg-white py-14">
+      <section className="bg-white py-14 scroll-reveal">
         <div className="max-w-[1180px] mx-auto px-6 lg:px-8">
 
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-4">
@@ -2860,7 +2215,7 @@ function HomePage({ onNavigate }) {
             </button>
           </div>
 
-          <div className="mt-7 grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+          <div className="mt-7 grid md:grid-cols-2 xl:grid-cols-3 gap-5 scroll-reveal-stagger">
             {CASE_STUDIES.slice(0, 3).map((item) => (
               <CaseStudyCard
                 key={item.id}
@@ -2868,6 +2223,50 @@ function HomePage({ onNavigate }) {
                 onReadMore={() => onNavigate("case-studies")}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TRENDING TOPICS */}
+      <section className="bg-[#F8FCFA] py-16 scroll-reveal">
+        <div className="mx-auto max-w-[1180px] px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-emerald-700">TOPICS TO EXPLORE</p>
+            <h2 className="mt-2 text-2xl font-black text-emerald-950 lg:text-3xl">Topik Digital Health yang Sedang Dibahas</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-500">Jelajahi berbagai topik yang menjadi bagian penting dari transformasi digital layanan kesehatan.</p>
+          </div>
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 scroll-reveal-stagger">
+            {[['Smart Hospital',Activity,'insights'],['SATUSEHAT',Database,'news'],['RME',FileText,'insights'],['AI Healthcare',Globe2,'insights'],['Cybersecurity',ShieldCheck,'insights'],['SIMRS',Building2,'case-studies']].map(([name,Icon,target])=><button key={name} onClick={()=>onNavigate(target)} className="group rounded-2xl border border-emerald-100 bg-white p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg"><div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 transition group-hover:bg-emerald-700 group-hover:text-white"><Icon size={21}/></div><p className="mt-4 text-xs font-extrabold text-emerald-950">{name}</p></button>)}
+          </div>
+        </div>
+      </section>
+
+      {/* PLATFORM SNAPSHOT */}
+      <section className="bg-emerald-950 py-16 text-white scroll-reveal">
+        <div className="mx-auto max-w-[1180px] px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+            <div>
+              <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-emerald-300">DIGITAL HEALTH INTELLIGENCE</p>
+              <h2 className="mt-3 text-3xl font-black leading-tight">Satu ruang untuk memahami transformasi kesehatan digital.</h2>
+              <p className="mt-4 max-w-xl text-sm leading-7 text-emerald-100">Dari berita dan insight hingga research, case studies, events, dan knowledge resources — temukan informasi yang relevan untuk kebutuhan digital healthcare.</p>
+              <button onClick={()=>onNavigate('about')} className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-extrabold text-emerald-900 transition hover:bg-emerald-50">Tentang Inovamedika <ArrowRight size={16}/></button>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {[['News','Update'],['Insights','Perspektif'],['Research','Data'],['Library','Resources']].map(([a,b])=><div key={a} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"><p className="text-2xl font-black text-white">{a}</p><p className="mt-2 text-xs text-emerald-200">{b}</p></div>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COMMUNITY CTA */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-[1180px] px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[2rem] border border-emerald-100 bg-[#EAF8F2] px-7 py-10 lg:px-12 lg:py-12">
+            <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full border-[35px] border-emerald-500/10"/>
+            <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-emerald-700">COMMUNITY</p><h2 className="mt-2 text-2xl font-black text-emerald-950 lg:text-3xl">Terhubung dengan ekosistem Digital Health Indonesia.</h2><p className="mt-3 text-sm leading-6 text-slate-600">Ikuti diskusi, event, dan berbagai wawasan bersama komunitas yang bergerak di bidang kesehatan digital.</p></div>
+              <button onClick={()=>onNavigate('community')} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-emerald-800 px-6 py-3 text-sm font-extrabold text-white transition hover:bg-emerald-900">Join Community <ArrowRight size={16}/></button>
+            </div>
           </div>
         </div>
       </section>
@@ -3024,23 +2423,7 @@ function KnowledgeCenterPage({ onNavigate, onReadMore }) {
 
   return (
     <div className="knowledge-center min-h-screen bg-[#F7FCFA] text-emerald-900">
-      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-800 text-white">
-        <div className="absolute -right-20 -top-24 h-80 w-80 rounded-full bg-emerald-400/15 blur-3xl" />
-        <div className="absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-teal-300/10 blur-3xl" />
-        <div className="relative mx-auto max-w-[1280px] px-6 py-14 lg:px-10 lg:py-20">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[.2em] text-emerald-100">
-              <BookOpen size={14} /> Knowledge Center
-            </div>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">Knowledge for a<br/><span className="text-emerald-300">Smarter Healthcare Future</span></h1>
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-emerald-50/85 lg:text-base">Temukan panduan, checklist, ebook, infografik, template, dan referensi untuk mendukung transformasi digital fasilitas kesehatan.</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <button onClick={() => onNavigate('library')} className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-xs font-bold text-emerald-950 shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-50">Jelajahi Library <ArrowRight size={15}/></button>
-              <button onClick={() => onNavigate('case-studies')} className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-xs font-bold text-white transition hover:bg-white/10">Lihat Case Studies</button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ImageHero type="knowledge-center" />
 
       <main className="mx-auto max-w-[1280px] px-5 py-10 lg:px-8 lg:py-14">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
@@ -3109,21 +2492,233 @@ function KnowledgeCenterDetail({ item, onBack }) {
   );
 }
 
-function PlaceholderPage({ title }) {
-  return (
-    <div className="min-h-[65vh] bg-slate-50 flex items-center justify-center px-6">
-      <div className="text-center">
-        <div className="w-14 h-14 mx-auto rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
-          <BookOpen size={24} />
-        </div>
-        <h1 className="mt-5 text-2xl font-bold text-slate-900">{title}</h1>
-        <p className="mt-2 text-sm text-slate-500">
-          Halaman ini sedang dalam pengembangan.
-        </p>
-      </div>
+function ResearchPage({ onReadMore }) {
+  const [category, setCategory] = useState("Semua");
+  const categories = ["Semua", ...new Set(RESEARCH_ITEMS.map((item) => item.category))];
+  const items = RESEARCH_ITEMS.filter((item) => category === "Semua" || item.category === category);
+  return <main className="research-page min-h-screen bg-[#F7FCFA] px-6 py-14 text-emerald-950 lg:px-14 lg:py-20">
+    <div className="mx-auto max-w-[1480px]">
+      <div className="-mx-6 -mt-14 mb-12 lg:-mx-14 lg:-mt-20"><ImageHero type="research" /></div>
+      <div className="mb-10 flex flex-wrap gap-3">{categories.map((cat) => <button key={cat} onClick={() => setCategory(cat)} className={`rounded-full px-6 py-3.5 text-base font-extrabold transition duration-300 ${category === cat ? "bg-emerald-800 text-white shadow-lg" : "border border-emerald-200 bg-white text-emerald-800 hover:-translate-y-0.5 hover:bg-emerald-50"}`}>{cat}</button>)}</div>
+      <div className="grid gap-7 sm:grid-cols-2 xl:grid-cols-3">{items.map((item, index) => <article key={item.id} style={{animationDelay: `${index * 70}ms`}} className="research-card group flex flex-col rounded-[1.8rem] border border-[#c5e7da] bg-white p-7 shadow-[0_12px_34px_rgba(6,95,70,.10)] transition duration-300 hover:-translate-y-2 hover:border-emerald-300 hover:shadow-[0_22px_48px_rgba(6,95,70,.14)] lg:p-8">
+        <div className="flex items-center justify-between gap-3"><span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-extrabold tracking-wider text-[#075b49]">{item.tag}</span><span className="text-sm font-bold text-[#326b5c]">{item.date}</span></div>
+        <div className="my-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-50 text-emerald-800"><FileText size={27}/></div>
+        <p className="text-sm font-extrabold uppercase tracking-wider text-[#14745d]">{item.category}</p><h2 className="mt-3 text-2xl font-black leading-8 text-[#063f35]">{item.title}</h2><p className="mt-4 flex-1 text-base leading-7 text-[#244f45]">{item.desc}</p>
+        <div className="mt-6 flex items-center justify-between border-t border-emerald-100 pt-5"><span className="text-sm font-semibold text-[#326b5c]">{item.author}</span><button onClick={() => onReadMore(item)} className="inline-flex items-center gap-2 rounded-full bg-emerald-800 px-5 py-3 text-sm font-extrabold text-white transition hover:bg-emerald-950">Read More <ArrowRight size={14}/></button></div>
+      </article>)}</div>
     </div>
+  </main>;
+}
+
+function ResearchDetail({ item, onBack, onSelect }) {
+  const index = RESEARCH_ITEMS.findIndex((entry) => entry.id === item.id);
+  const previous = index > 0 ? RESEARCH_ITEMS[index - 1] : null;
+  const next = index < RESEARCH_ITEMS.length - 1 ? RESEARCH_ITEMS[index + 1] : null;
+  const section = (title, values) => <section className="mt-8"><h2 className="text-xl font-extrabold text-emerald-950">{title}</h2><ul className="mt-3 grid gap-2 sm:grid-cols-2">{values.map((value, i) => <li key={i} className="rounded-xl border border-emerald-100 bg-emerald-50/60 px-4 py-3 text-sm leading-6 text-emerald-800">{value}</li>)}</ul></section>;
+  return <main className="min-h-screen bg-[radial-gradient(ellipse_at_top_left,_#d8f5e9_0%,_#f7fcfa_44%,_#edf8f4_100%)] px-5 py-12 text-emerald-900 lg:px-10"><article className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-emerald-100 bg-white shadow-2xl shadow-emerald-950/10">
+    <div className="relative overflow-hidden bg-gradient-to-br from-[#052e27] via-[#08634f] to-[#10a080] px-7 py-10 text-white lg:px-14 lg:py-14"><div className="absolute -right-12 -top-16 h-64 w-64 rounded-full border-[28px] border-white/10"/><div className="relative z-10 flex flex-col items-center text-center">
+    <button onClick={onBack} className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-bold text-white backdrop-blur hover:bg-white/20"><ArrowLeft size={16}/> Kembali ke Research</button>
+    <div className="mt-8 flex flex-wrap justify-center gap-2"><span className="rounded-full bg-white/15 px-3 py-1.5 text-xs font-extrabold text-white">{item.tag}</span><span className="rounded-full bg-white/15 px-3 py-1.5 text-xs font-bold text-white">{item.date}</span></div>
+    <h1 className="mx-auto mt-5 max-w-5xl text-3xl font-black leading-tight text-white sm:text-5xl">{item.title}</h1><p className="mx-auto mt-5 max-w-4xl text-base leading-8 text-emerald-50">{item.desc}</p><p className="mt-4 text-sm font-semibold text-emerald-100">{item.author}</p></div></div>
+    <div className="mx-7 -mt-5 relative z-20 mb-7 flex flex-col gap-3 rounded-2xl border border-emerald-100 bg-white p-5 shadow-lg shadow-emerald-950/10 sm:mx-10 sm:flex-row sm:items-center sm:justify-between lg:mx-14"><div><p className="text-sm font-extrabold text-emerald-950">Dokumen lengkap tersedia</p><p className="mt-1 text-sm text-emerald-700">Baca ringkasan di halaman ini, atau buka PDF sumber kapan saja.</p></div><a href={item.url} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-emerald-800"><Download size={16}/> Buka / Download PDF</a></div>
+    <div className="px-7 py-8 lg:px-14 lg:py-12"><div className="mb-8 grid gap-4 sm:grid-cols-3"><div className="rounded-2xl bg-emerald-50 p-5"><p className="text-xs font-extrabold uppercase tracking-widest text-emerald-600">Kategori</p><p className="mt-2 text-lg font-black text-emerald-950">{item.category}</p></div><div className="rounded-2xl bg-teal-50 p-5"><p className="text-xs font-extrabold uppercase tracking-widest text-teal-700">Format</p><p className="mt-2 text-lg font-black text-teal-950">Research brief</p></div><div className="rounded-2xl bg-lime-50 p-5"><p className="text-xs font-extrabold uppercase tracking-widest text-lime-700">Terbit</p><p className="mt-2 text-lg font-black text-lime-950">{item.date}</p></div></div>
+    <section className="mt-8 rounded-2xl bg-emerald-50 p-5"><h2 className="text-lg font-extrabold text-emerald-950">Research Design</h2><p className="mt-2 text-sm leading-7 text-emerald-800">{item.design}</p></section>
+    {section("Data Collection", item.collection)}{section("Assessment Framework", item.framework)}{section("Scope", item.scope)}{section("Research Output", item.outputs)}
+    <aside className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900"><strong>Catatan:</strong> {item.note}</aside>
+    <section className="mt-8 rounded-2xl border border-emerald-100 p-5"><h2 className="font-extrabold text-emerald-950">Research Reference</h2><p className="mt-2 text-sm font-bold text-emerald-800">{item.reference}</p><p className="mt-1 text-xs text-emerald-700">{item.publisher} · Format: PDF</p><p className="mt-3 text-xs text-emerald-700">Dokumen sumber dapat dibuka melalui tombol PDF di bagian atas halaman.</p></section>
+    <nav className="mt-10 grid gap-3 border-t border-emerald-100 pt-6 sm:grid-cols-2"><button disabled={!previous} onClick={() => previous && onSelect(previous)} className="rounded-2xl border border-emerald-200 px-5 py-4 text-left transition hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-40"><span className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600"><ArrowLeft size={14}/> Previous</span><span className="mt-2 block text-sm font-extrabold text-emerald-900">{previous?.title || "Tidak ada research sebelumnya"}</span></button><button disabled={!next} onClick={() => next && onSelect(next)} className="rounded-2xl border border-emerald-200 px-5 py-4 text-right transition hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-40"><span className="flex items-center justify-end gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600">Next <ArrowRight size={14}/></span><span className="mt-2 block text-sm font-extrabold text-emerald-900">{next?.title || "Tidak ada research berikutnya"}</span></button></nav>
+    </div>
+  </article></main>;
+}
+
+function EditorialDetail({ item, type, title, onBack }) {
+  const isInsight = type === "insights";
+  return (
+    <main className="min-h-screen bg-[#F7FCFA] text-emerald-950">
+      <section className="relative overflow-hidden bg-emerald-950 px-6 py-10 text-white lg:px-10 lg:py-14">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(52,211,153,.22),transparent_35%),linear-gradient(135deg,#022c22,#064e3b,#0f766e)]" />
+        <div className="relative mx-auto max-w-6xl">
+          <button onClick={onBack} className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/15"><ArrowLeft size={16}/> Kembali ke {title}</button>
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_300px] lg:items-end">
+            <div>
+              <div className="flex flex-wrap gap-2"><span className="rounded-full bg-emerald-300/15 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.18em] text-emerald-200">{item.category}</span><span className="rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-bold text-emerald-50">{item.meta || "2026"}</span></div>
+              <h1 className="mt-5 max-w-5xl text-3xl font-black leading-tight sm:text-5xl">{item.title}</h1>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-emerald-50">{item.summary}</p>
+            </div>
+            <div className="hidden rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur lg:block"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-emerald-200">{isInsight ? "Insight" : "News"}</p><p className="mt-3 text-2xl font-black">Digital Health</p><p className="mt-2 text-xs leading-5 text-emerald-100/75">Informasi dan perspektif seputar transformasi digital layanan kesehatan.</p></div>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-5xl px-5 py-10 lg:px-8 lg:py-14">
+        <div className="-mt-16 relative z-10 rounded-[2rem] border border-emerald-100 bg-white p-6 shadow-2xl shadow-emerald-950/10 lg:p-10">
+          <div className="grid gap-4 sm:grid-cols-3"><div className="rounded-2xl bg-emerald-50 p-5"><p className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-600">Kategori</p><p className="mt-2 text-base font-black text-emerald-950">{item.category}</p></div><div className="rounded-2xl bg-teal-50 p-5"><p className="text-[10px] font-extrabold uppercase tracking-widest text-teal-700">Tipe</p><p className="mt-2 text-base font-black text-teal-950">{isInsight ? "Insight" : "News"}</p></div><div className="rounded-2xl bg-slate-50 p-5"><p className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">Publisher</p><p className="mt-2 text-base font-black text-slate-900">Inovamedika</p></div></div>
+          <div className="mt-9 border-t border-emerald-100 pt-8"><p className="text-[10px] font-extrabold uppercase tracking-[.18em] text-emerald-600">Narasi</p><h2 className="mt-2 text-2xl font-black text-emerald-950">{item.title}</h2><p className="mt-5 text-base leading-8 text-slate-700">{item.summary} Konten ini merupakan bagian dari halaman editorial Inovamedika Digital Health Intelligence Platform yang membahas perkembangan, implementasi, dan perspektif teknologi kesehatan digital.</p><p className="mt-4 text-base leading-8 text-slate-700">Pembahasan dapat digunakan sebagai bahan awal untuk memahami konteks teknologi, proses, dan isu yang terkait dengan topik tersebut. Detail dan sumber dapat dikembangkan lebih lanjut sesuai kebutuhan artikel.</p></div>
+          <div className="mt-9 flex flex-wrap items-center justify-between gap-4 border-t border-emerald-100 pt-6"><div><p className="text-xs font-bold text-emerald-700">Tim Editorial Inovamedika</p><p className="mt-1 text-xs text-slate-500">Inovamedika Digital Health Intelligence Platform</p></div><button onClick={onBack} className="inline-flex items-center gap-2 rounded-full bg-emerald-800 px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-emerald-950">Kembali ke {title} <ArrowLeft size={15}/></button></div>
+        </div>
+      </section>
+    </main>
   );
 }
+
+function EditorialPage({ title, eyebrow, description, accent = "emerald", items = [], heroType, onReadMore }) {
+  const [query,setQuery]=useState("");
+  const [category,setCategory]=useState("Semua");
+  const [selectedItem,setSelectedItem]=useState(null);
+  const categories=["Semua",...new Set(items.map(x=>x.category))];
+  const filtered=items.filter(x=>(category==="Semua"||x.category===category)&&`${x.title} ${x.summary}`.toLowerCase().includes(query.toLowerCase()));
+
+  return <main className="bg-white text-emerald-950"><ImageHero type={heroType||"news"}/><section id="content" className="mx-auto max-w-[1200px] px-6 py-12 lg:px-10 lg:py-16"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><p className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Explore</p><h2 className="mt-2 text-2xl font-black">Jelajahi {title}</h2><p className="mt-2 text-sm text-slate-600">Pilih topik atau cari konten yang ingin kamu baca.</p></div><div className="relative w-full md:max-w-xs"><Search className="absolute left-4 top-1/2 -translate-y-1/2 text-emerald-500" size={16}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Cari konten..." className="w-full rounded-full border border-emerald-100 bg-white py-3 pl-11 pr-5 text-sm outline-none focus:border-emerald-500"/></div></div><div className="mt-6 flex flex-wrap gap-2">{categories.map(c=><button key={c} onClick={()=>setCategory(c)} className={`rounded-full px-4 py-2 text-xs font-bold transition ${category===c?'bg-emerald-800 text-white':'border border-emerald-100 bg-white text-emerald-800 hover:bg-emerald-50'}`}>{c}</button>)}</div>{filtered.length?<div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{filtered.map((item,i)=><article key={item.title} className="group flex h-full flex-col overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"><div className={`relative flex h-44 items-end overflow-hidden bg-gradient-to-br ${['from-emerald-800 to-teal-500','from-cyan-800 to-emerald-500','from-teal-900 to-lime-500'][i%3]} p-6 text-white`}><div className="absolute -right-5 -top-10 h-40 w-40 rounded-full border-[22px] border-white/10 transition-transform duration-500 group-hover:scale-110"/><span className="relative rounded-full bg-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider backdrop-blur">{item.category}</span></div><div className="flex flex-1 flex-col p-6"><p className="text-[11px] font-semibold text-emerald-600">{item.meta||"Inovamedika Digital Health"}</p><h3 className="mt-3 text-lg font-extrabold leading-snug text-emerald-950">{item.title}</h3><p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{item.summary}</p><div className="mt-auto pt-6"><button onClick={()=>onReadMore ? onReadMore(item) : setSelectedItem(item)} className="group/read inline-flex w-full items-center justify-between rounded-2xl bg-emerald-50 px-4 py-3 text-sm font-extrabold text-emerald-800 transition duration-300 hover:bg-emerald-800 hover:text-white"><span className="flex items-center gap-2">Read more <ArrowRight size={15} className="transition-transform duration-300 group-hover/read:translate-x-1"/></span><span className="h-2 w-2 rounded-full bg-emerald-500 transition group-hover/read:bg-white"/></button></div></div></article>)}</div>:<div className="mt-8 rounded-2xl bg-emerald-50 p-8 text-center text-sm text-emerald-800">Belum ada konten yang cocok dengan pencarian ini.</div>}</section></main>;
+}
+
+const pageContent={
+ news:[
+  {category:"BPJS",title:"Perkembangan Integrasi Digital dalam Layanan BPJS",summary:"Ringkasan informasi mengenai alur layanan, data, dan integrasi digital yang berkaitan dengan ekosistem JKN."},{category:"BPJS",title:"Transformasi Data dan Layanan Kesehatan Berbasis JKN",summary:"Sorotan mengenai pemanfaatan teknologi untuk mendukung proses layanan kesehatan yang terhubung."},{category:"Digital Health",title:"Tren Transformasi Digital Healthcare Indonesia",summary:"Kabar dan perkembangan teknologi yang mendorong perubahan layanan kesehatan digital."},{category:"Digital Health",title:"Interoperabilitas dan Ekosistem Kesehatan Digital",summary:"Perkembangan integrasi sistem, pertukaran data, dan kolaborasi antar pemangku kepentingan."},{category:"Regulasi",title:"Perkembangan Regulasi Teknologi Kesehatan Digital",summary:"Informasi dan ringkasan regulasi yang relevan dengan implementasi teknologi di sektor kesehatan."},{category:"SATUSEHAT",title:"Update Ekosistem dan Integrasi SATUSEHAT",summary:"Informasi seputar interoperabilitas dan implementasi platform kesehatan digital nasional."}
+ ],
+ insights:[
+  {category:"AI Healthcare Insight",title:"AI untuk Mendukung Pengambilan Keputusan Klinis",summary:"Perspektif mengenai pemanfaatan artificial intelligence dalam layanan dan operasional kesehatan."},{category:"Cybersecurity Insight",title:"Membangun Cybersecurity Rumah Sakit yang Resilien",summary:"Insight tentang keamanan data, identitas, akses, dan kesiapan menghadapi risiko siber."},{category:"Data Center Rumah Sakit",title:"Fondasi Data Center untuk Rumah Sakit Modern",summary:"Membahas infrastruktur, availability, dan kebutuhan data center dalam ekosistem rumah sakit."},{category:"RME",title:"RME sebagai Fondasi Data Kesehatan Terintegrasi",summary:"Insight mengenai peran rekam medis elektronik dalam membangun alur data yang lebih terhubung."},{category:"SATUSEHAT Insight",title:"Menyiapkan Organisasi untuk Integrasi SATUSEHAT",summary:"Perspektif implementasi interoperabilitas dan kesiapan proses di fasilitas pelayanan kesehatan."},{category:"SIMRS",title:"SIMRS dan Evolusi Operasional Rumah Sakit",summary:"Membahas integrasi modul, data operasional, dan pemanfaatan sistem informasi untuk pengelolaan rumah sakit."},{category:"Smart Hospital Insight",title:"Menuju Smart Hospital yang Terukur",summary:"Insight mengenai konektivitas, data, automation, dan monitoring sebagai bagian dari transformasi smart hospital."}
+ ],
+ "digital-health-talk":[{category:"Talks",title:"Percakapan tentang masa depan digital health",summary:"Diskusi bersama praktisi dan narasumber tentang teknologi dan layanan kesehatan."},{category:"Podcast",title:"Cerita di balik inovasi produk",summary:"Dengarkan pengalaman, proses, dan pembelajaran dari para pelaku ekosistem."}],
+ about:[{category:"Profil",title:"Tentang Inovamedika Digital Health",summary:"Mengenal ruang informasi dan pembelajaran seputar transformasi digital kesehatan."},{category:"Kolaborasi",title:"Bersama membangun ekosistem kesehatan digital",summary:"Menghubungkan pengetahuan, teknologi, dan kolaborasi untuk mendukung layanan kesehatan."}]
+};
+
+function EventsPage(){
+ const [query,setQuery]=useState(""); const [category,setCategory]=useState("Semua"); const [month,setMonth]=useState(new Date(2026,8,1));
+ const events=[{id:1,category:"Webinar",title:"Digital Health Transformation Webinar",date:"2026-09-18",time:"13:30 WIB",summary:"Webinar mengenai strategi dan praktik transformasi digital layanan kesehatan."},{id:2,category:"Webinar",title:"SATUSEHAT & Interoperability Forum",date:"2026-10-07",time:"10:00 WIB",summary:"Sesi berbagi mengenai interoperabilitas, integrasi data, dan kesiapan fasilitas kesehatan."},{id:3,category:"Training",title:"Healthcare Data & Analytics Training",date:"2026-10-22",time:"09:00 WIB",summary:"Training untuk memahami pengelolaan data dan analytics dalam operasional healthcare."}];
+ const categories=["Semua","Webinar","Training"]; const filtered=events.filter(x=>(category==="Semua"||x.category===category)&&`${x.title} ${x.summary}`.toLowerCase().includes(query.toLowerCase())); const y=month.getFullYear(),m=month.getMonth(),first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate(); const cells=Array.from({length:first+days},(_,i)=>i<first?null:i-first+1); const names=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"]; const byDay=Object.fromEntries(events.filter(x=>new Date(x.date).getFullYear()===y&&new Date(x.date).getMonth()===m).map(x=>[Number(x.date.slice(-2)),x]));
+ return <main className="bg-white text-emerald-950"><ImageHero type="events"/><section className="mx-auto max-w-[1200px] px-6 py-12 lg:px-10 lg:py-16"><div className="mb-8"><p className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Event Categories</p><h2 className="mt-2 text-2xl font-black">Event</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">Learn, connect, dan transform healthcare bersama melalui webinar dan training pilihan.</p></div><div className="grid gap-8 lg:grid-cols-[1fr_390px]"><div><div className="flex flex-col gap-4 md:flex-row"><div className="relative flex-1"><Search className="absolute left-4 top-1/2 -translate-y-1/2 text-emerald-500" size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Cari event..." className="w-full rounded-2xl border border-emerald-100 bg-white py-3 pl-11 pr-4 text-sm outline-none focus:border-emerald-500"/></div><div className="flex flex-wrap gap-2">{categories.map(c=><button key={c} onClick={()=>setCategory(c)} className={`rounded-full px-4 py-2 text-xs font-bold transition ${category===c?'bg-emerald-800 text-white':'border border-emerald-100 text-emerald-800 hover:bg-emerald-50'}`}>{c}</button>)}</div></div><div className="mt-7 space-y-4">{filtered.map(e=><article key={e.id} className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"><div className="flex flex-col gap-5 sm:flex-row sm:items-start"><div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-2xl bg-emerald-50 text-emerald-800"><span className="text-[10px] font-extrabold uppercase">{new Date(e.date).toLocaleDateString('id-ID',{month:'short'})}</span><span className="text-2xl font-black">{e.date.slice(-2)}</span></div><div className="flex-1"><div className="flex flex-wrap items-center gap-2"><span className="rounded-full bg-emerald-100 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-emerald-800">{e.category}</span><span className="text-xs font-semibold text-slate-500">{e.time}</span></div><h3 className="mt-2 text-lg font-extrabold text-emerald-950">{e.title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{e.summary}</p></div></div></article>)}</div></div><aside className="h-fit rounded-3xl border border-emerald-100 bg-emerald-50/50 p-5 lg:sticky lg:top-24"><div className="flex items-center justify-between"><div><p className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Calendar</p><h3 className="mt-1 text-xl font-black">{names[m]} {y}</h3></div><div className="flex gap-2"><button onClick={()=>setMonth(new Date(y,m-1,1))} className="rounded-full border border-emerald-100 bg-white p-2 text-emerald-800 hover:bg-emerald-100"><ArrowLeft size={15}/></button><button onClick={()=>setMonth(new Date(y,m+1,1))} className="rounded-full border border-emerald-100 bg-white p-2 text-emerald-800 hover:bg-emerald-100"><ArrowRight size={15}/></button></div></div><div className="mt-5 grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-slate-500">{['Min','Sen','Sel','Rab','Kam','Jum','Sab'].map(d=><div key={d} className="py-2">{d}</div>)}{cells.map((day,i)=><div key={i} className={`min-h-10 rounded-xl p-1 text-xs ${day?'bg-white text-emerald-900':''}`}>{day&&<div className="flex h-full flex-col items-center justify-center"><span className={byDay[day]?'font-black':''}>{day}</span>{byDay[day]&&<span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-600"/>}</div>}</div>)}</div><div className="mt-5 border-t border-emerald-100 pt-4"><p className="text-xs font-bold text-slate-500">Tanda event</p>{Object.values(byDay).length?Object.values(byDay).map(e=><div key={e.id} className="mt-2 flex items-start gap-2 text-xs text-emerald-800"><span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-600"/><span><strong>{e.date.slice(-2)} {names[m]}</strong> — {e.title}</span></div>):<p className="mt-2 text-xs text-slate-500">Belum ada event pada bulan ini.</p>}</div></aside></div></section></main>;
+}
+
+function CommunityPage(){
+ const cards=[["Digital Health Forum","Forum diskusi terbuka untuk membahas seputar digital health dan topik kesehatan lainnya di Indonesia",BookOpen],["Hospital CIO Community","Komunitas Chief Information Officer untuk berbagi strategi dan best practice",Building2],["Healthcare IT Community","Wadah kolaborasi tim IT kesehatan dalam teknologi, integrasi, keamanan, dan infrastruktur",Database],["Partner Contributor","Berbagi informasi dan pengalaman sebagai bagian dari Contributor dalam Inovamedika Digital Health Intelligence Platform",Users],["Submit Article","Bagikan wawasan, pengalaman, atau penelitian mengenai transformasi digital layanan kesehatan kepada komunitas Inovamedika Digital Health Intelligence Platform",FileText]];
+ return <main className="bg-white text-emerald-950"><ImageHero type="community"/><section className="mx-auto max-w-[1200px] px-6 py-12 lg:px-10 lg:py-16"><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{cards.map(([title,desc,Icon])=><article key={title} className="rounded-3xl border border-emerald-100 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"><div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700"><Icon size={22}/></div><h2 className="mt-5 text-xl font-black text-emerald-950">{title}</h2><p className="mt-3 text-sm leading-7 text-slate-600">{desc}</p></article>)}</div><section className="mt-10 rounded-[2rem] bg-emerald-900 px-7 py-10 text-white lg:px-12 lg:py-12"><h2 className="text-3xl font-black">Bergabung Sekarang</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-emerald-50">Jadilah bagian dari komunitas Digital Health dan dapatkan akses ke diskusi khusus, event, dan insight yang menarik</p><button className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-extrabold text-emerald-900 transition hover:bg-emerald-50">Bergabung Sekarang <ArrowRight size={16}/></button></section></section></main>;
+}
+
+function AboutPage({ onNavigate }) {
+  const contentCards = [
+    ["News", "Berita terbaru dunia kesehatan digital", "news", FileText],
+    ["Insights", "Analisis dan perspektif berdasarkan data", "insights", Activity],
+    ["Research", "Riset, survei, dan laporan detail", "research", BookOpen],
+    ["Case Studies", "Pembelajaran dari implementasi nyata", "case-studies", Building2],
+    ["Knowledge Center", "Materi edukasi dan panduan", "knowledge-center", BookOpen],
+    ["Library", "Dokumen referensi, regulasi, dan standar", "library", FileText],
+  ];
+  const focusCards = [
+    ["Smart Hospital", "smart-hospital", Activity],
+    ["SATUSEHAT", "satusehat", Database],
+    ["Regulasi", "regulasi", FileText],
+    ["Digital Health", "digital-health", Globe2],
+    ["AI Healthcare", "smart-hospital", Activity],
+    ["Cybersecurity", "cybersecurity", ShieldCheck],
+  ];
+
+  return (
+    <main className="bg-white text-emerald-950">
+      {/* About hero intentionally uses a different composition from the global ImageHero. */}
+      <section className="relative overflow-hidden bg-emerald-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_35%,rgba(52,211,153,.28),transparent_35%),linear-gradient(115deg,#022c22_0%,#064e3b_48%,#0f766e_100%)]" />
+        <div className="absolute -right-28 -top-28 h-80 w-80 rounded-full border-[55px] border-white/5" />
+        <div className="absolute bottom-[-150px] right-[20%] h-96 w-96 rounded-full border-[70px] border-emerald-300/10" />
+        <div className="relative mx-auto grid min-h-[430px] max-w-[1240px] items-center gap-10 px-6 py-16 lg:grid-cols-[1.05fr_.95fr] lg:px-10 lg:py-20">
+          <div className="max-w-2xl text-white">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[.2em] text-emerald-200 backdrop-blur">
+              Inovamedika Digital Health
+            </div>
+            <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">Tentang Kami</h1>
+            <p className="mt-6 max-w-xl text-base leading-8 text-emerald-50 lg:text-lg">
+              Platform yang menghadirkan berita, wawasan, riset, dan sumber daya untuk mendorong transformasi digital layanan kesehatan di Indonesia.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button onClick={() => document.getElementById("about-platform")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-extrabold text-emerald-900 transition hover:-translate-y-0.5 hover:bg-emerald-50">
+                Learn more About us <ArrowRight size={16}/>
+              </button>
+              <button onClick={() => onNavigate?.("knowledge-center")} className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-extrabold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15">
+                Lihat Knowledge Center <ArrowRight size={16}/>
+              </button>
+            </div>
+          </div>
+          <div className="relative hidden min-h-[320px] lg:block">
+            <div className="absolute right-4 top-1/2 h-72 w-72 -translate-y-1/2 rounded-[3rem] border border-white/20 bg-white/10 shadow-2xl backdrop-blur-md rotate-3" />
+            <div className="absolute right-12 top-1/2 flex h-64 w-80 -translate-y-1/2 -rotate-3 flex-col justify-between rounded-[2.5rem] border border-white/20 bg-slate-950/20 p-7 shadow-2xl backdrop-blur-xl">
+              <div className="flex items-center justify-between"><span className="text-xs font-bold uppercase tracking-widest text-emerald-200">Digital Health Intelligence</span><Activity size={22} className="text-emerald-300"/></div>
+              <div><p className="text-3xl font-black text-white">Knowledge</p><p className="mt-1 text-sm text-emerald-100">News · Insights · Research · Resources</p></div>
+              <div className="grid grid-cols-3 gap-2"><span className="h-2 rounded-full bg-emerald-300"/><span className="h-2 rounded-full bg-teal-300"/><span className="h-2 rounded-full bg-white/30"/></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about-platform" className="mx-auto max-w-[1200px] px-6 py-14 text-center lg:px-10 lg:py-18 scroll-reveal">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">About Inovamedika</p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-emerald-950 lg:text-4xl">Inovamedika Digital Health Intelligence Platform</h2>
+          <p className="mt-5 text-base leading-8 text-slate-600">
+            Inovamedika Digital Health Intelligence Platform dikembangkan untuk menjadi pusat informasi dan pengetahuan bagi ekosistem layanan kesehatan yang ingin memahami, mengevaluasi, dan mengadopsi teknologi digital secara lebih efektif.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-10 max-w-5xl overflow-hidden scroll-reveal rounded-[2rem] border border-emerald-100 bg-slate-950 shadow-xl">
+          <div className="aspect-video w-full">
+            <iframe className="h-full w-full" src="https://www.youtube.com/embed/0UAKW7cb5wY" title="Inovamedika Digital Health" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+          </div>
+        </div>
+
+        <section className="mt-16 scroll-reveal">
+          <div className="mb-7"><p className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Explore Platform</p><h2 className="mt-2 text-3xl font-black">Konten Inovamedika</h2></div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 scroll-reveal-stagger">
+            {contentCards.map(([title, desc, key, Icon]) => (
+              <button key={title} onClick={() => onNavigate?.(key)} className="group rounded-3xl border border-emerald-100 bg-white p-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 transition group-hover:bg-emerald-700 group-hover:text-white"><Icon size={21}/></div>
+                <h3 className="mt-5 text-xl font-black text-emerald-950">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{desc}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-xs font-extrabold text-emerald-700">Explore <ArrowRight size={14}/></span>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-16 scroll-reveal">
+          <div className="mb-7"><p className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Focus Areas</p><h2 className="mt-2 text-3xl font-black">Fokus Kami</h2></div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 scroll-reveal-stagger">
+            {focusCards.map(([title, key, Icon]) => (
+              <button key={title} onClick={() => onNavigate?.("news")} className="group flex flex-col items-center justify-center rounded-2xl border border-emerald-100 bg-emerald-50/50 p-5 text-center transition hover:-translate-y-0.5 hover:bg-emerald-50 hover:shadow-md">
+                <div className="flex flex-col items-center gap-3"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-emerald-700 shadow-sm"><Icon size={20}/></div><h3 className="text-base font-extrabold text-emerald-950">{title}</h3></div><ChevronRight size={18} className="mt-2 text-emerald-600 transition group-hover:translate-x-1"/>
+              </button>
+            ))}
+          </div>
+        </section>
+      </section>
+    </main>
+  );
+}
+
+function DigitalHealthTalkPage({ onReadMore }) {
+  const talks = [
+    { title:"Digital Health Readiness – Peran Strategis Keuangan dalam Transformasi Digital Rumah Sakit", date:"September 14, 2026", summary:"Transformasi digital memerlukan investasi yang tidak sedikit. Namun keberhasilan implementasi tidak hanya diukur dari teknologi yang digunakan, melainkan juga dari manfaat yang dihasilkan bagi organisasi. Pada episode ini dibahas bagaimana fungsi keuangan berperan dalam menyusun strategi investasi, mengukur…", url:"https://inovamedika.com/digitalhealth/digital-health-talks/digital-health-readiness-peran-strategis-keuangan-dalam-transformasi-digital-rumah-sakit/" },
+    { title:"Digital Health Readiness – Sinergi Digital SATUSEHAT & Clinical Pathway", date:"September 14, 2026", summary:"Standarisasi pelayanan dan interoperabilitas merupakan dua komponen penting dalam transformasi digital rumah sakit. Pada episode ini dibahas bagaimana integrasi SATUSEHAT dapat berjalan selaras dengan implementasi Clinical Pathway untuk mendukung pelayanan yang lebih terukur dan berbasis data. Pembahasan juga…", url:"https://inovamedika.com/digitalhealth/digital-health-talks/digital-health-readiness-sinergi-digital-satusehat-clinical-pathway/" },
+    { title:"Digital Health Readiness – Rahasia Data Hygiene untuk Integrasi Lancar & Lolos Audit", date:"September 14, 2026", summary:"Kualitas data menjadi fondasi utama dalam transformasi digital layanan kesehatan. Integrasi antar sistem, pelaporan ke SATUSEHAT, hingga proses audit sangat bergantung pada konsistensi dan akurasi data yang dikelola rumah sakit. Pada episode Digital Health Talk ini, dibahas mengapa…", url:"https://inovamedika.com/digitalhealth/digital-health-talks/digital-health-readiness-rahasia-data-hygiene-untuk-integrasi-lancar-lolos-audit/" },
+    { title:"Digital Health Readiness – Manajemen Proyek Migrasi Rekam Medis dan Data Quality", date:"September 14, 2026", summary:"Transformasi digital memerlukan investasi yang tidak sedikit. Namun keberhasilan implementasi tidak hanya diukur dari teknologi yang digunakan, melainkan juga dari manfaat yang dihasilkan bagi organisasi. Pada episode ini dibahas bagaimana fungsi keuangan berperan dalam menyusun strategi investasi, mengukur…", url:"https://inovamedika.com/digitalhealth/digital-health-talks/digital-health-readiness-manajemen-proyek-migrasi-rekam-medis-dan-data-quality/" },
+    { title:"Digital Health Readiness – Kupas Tuntas Integrasi SATUSEHAT: Solusi Praktis untuk SIMRS Rumah Sakit", date:"September 14, 2026", summary:"Transformasi digital memerlukan investasi yang tidak sedikit. Namun keberhasilan implementasi tidak hanya diukur dari teknologi yang digunakan, melainkan juga dari manfaat yang dihasilkan bagi organisasi. Pada episode ini dibahas bagaimana fungsi keuangan berperan dalam menyusun strategi investasi, mengukur…", url:"https://inovamedika.com/digitalhealth/digital-health-talks/digital-health-readiness-kupas-tuntas-integrasi-satusehat-solusi-praktis-untuk-simrs-rumah-sakit/" },
+    { title:"Digital Health Readiness – Strategi Keamanan Informasi di Era Transformasi Digital", date:"September 14, 2026", summary:"Transformasi digital memerlukan investasi yang tidak sedikit. Namun keberhasilan implementasi tidak hanya diukur dari teknologi yang digunakan, melainkan juga dari manfaat yang dihasilkan bagi organisasi. Pada episode ini dibahas bagaimana fungsi keuangan berperan dalam menyusun strategi investasi, mengukur…", url:"https://inovamedika.com/digitalhealth/digital-health-talks/digital-health-readiness-strategi-keamanan-informasi-di-era-transformasi-digital/" },
+  ];
+  return (
+    <main className="bg-white text-emerald-950">
+      <ImageHero type="digital-health-talk" />
+      <section className="mx-auto max-w-[1200px] px-6 py-12 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-2xl"><p className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Digital Health Talk</p><h2 className="mt-2 text-3xl font-black">Archives Digital Health Talk</h2><p className="mt-3 text-sm leading-7 text-slate-600">Kumpulan episode dan pembahasan mengenai kesiapan digital, integrasi, data, dan keamanan informasi di layanan kesehatan.</p></div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {talks.map((item, i) => (
+            <article key={item.url} className="group flex h-full flex-col overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className={`relative h-40 bg-gradient-to-br ${['from-emerald-900 to-teal-500','from-cyan-900 to-emerald-500','from-teal-900 to-lime-500'][i%3]} p-6 text-white`}><div className="absolute -right-8 -top-10 h-36 w-36 rounded-full border-[20px] border-white/10"/><div className="relative flex h-full items-end"><span className="rounded-full bg-white/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider backdrop-blur">Digital Health Talk</span></div></div>
+              <div className="flex flex-1 flex-col p-6"><h3 className="text-lg font-black leading-snug text-emerald-950">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-600">{item.summary}</p><div className="mt-auto pt-5"><div className="text-[11px] font-semibold text-emerald-600">Tim Editorial Inovamedika</div><div className="mt-1 text-xs text-slate-500">{item.date}</div><button onClick={() => onReadMore ? onReadMore(item) : window.open(item.url, "_blank", "noopener,noreferrer")} className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-200 px-4 py-2 text-sm font-extrabold text-emerald-800 transition hover:border-emerald-400 hover:bg-emerald-50">Read more <ArrowRight size={15}/></button></div></div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function PlaceholderPage({ title, onReadMore }) { const key=({"News":"news","News & Articles":"news","Insights":"insights"})[title]||"news"; return <EditorialPage title={title} heroType={key} description={`Temukan ${title.toLowerCase()} seputar inovasi, pengetahuan, dan perkembangan kesehatan digital bersama Inovamedika.`} items={pageContent[key]||pageContent.news} onReadMore={onReadMore}/>; }
 
 /* =========================================================
    FOOTER
@@ -3151,6 +2746,63 @@ function Footer({ onNavigate }) {
   );
 }
 
+function HcmWhatsAppButton() {
+  const [hovered, setHovered] = useState(false);
+  const [bottomOffset, setBottomOffset] = useState(28);
+
+  useEffect(() => {
+    const updatePosition = () => {
+      const footer = document.querySelector("footer");
+      if (!footer) {
+        setBottomOffset(28);
+        return;
+      }
+
+      const footerTop = footer.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+      const gap = 16;
+      const isFooterVisible = footerTop < viewportHeight;
+
+      setBottomOffset(
+        isFooterVisible
+          ? Math.max(28, viewportHeight - footerTop + gap)
+          : 28
+      );
+    };
+
+    updatePosition();
+    window.addEventListener("scroll", updatePosition, { passive: true });
+    window.addEventListener("resize", updatePosition);
+
+    return () => {
+      window.removeEventListener("scroll", updatePosition);
+      window.removeEventListener("resize", updatePosition);
+    };
+  }, []);
+
+  return (
+    <a
+      href="https://wa.me/+6285862171877"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Hubungi HCM melalui WhatsApp"
+      className="hcm-whatsapp"
+      style={{ bottom: `${bottomOffset}px` }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <span className="hcm-whatsapp-label">hubungi HCM</span>
+      <span className="hcm-whatsapp-icon" aria-hidden="true">
+        {hovered ? (
+          <span className="hcm-whatsapp-icon-alt">↗</span>
+        ) : (
+          <span className="hcm-whatsapp-icon-main">☏</span>
+        )}
+      </span>
+    </a>
+  );
+}
+
 /* =========================================================
    GLOBAL STYLES
 ========================================================= */
@@ -3164,15 +2816,100 @@ function GlobalStyles() {
       }
 
       body {
+        zoom: 1.18;
         margin: 0;
         font-family: Inter, ui-sans-serif, system-ui, -apple-system,
           BlinkMacSystemFont, "Segoe UI", sans-serif;
         background: #ffffff;
       }
 
+      .hcm-whatsapp {
+        position: fixed;
+        right: 28px;
+        bottom: 28px;
+        z-index: 120;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        transition: transform 220ms ease, bottom 180ms ease;
+      }
+
+      .hcm-whatsapp-icon {
+        display: flex;
+        width: 58px;
+        height: 58px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        border: 3px solid #ffffff;
+        background: #0b8f72;
+        color: #ffffff;
+        box-shadow: 0 10px 28px rgba(6, 95, 70, 0.28);
+        transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+      }
+
+      .hcm-whatsapp:hover .hcm-whatsapp-icon {
+        transform: scale(1.08);
+        background: #063f35;
+        box-shadow: 0 14px 34px rgba(6, 95, 70, 0.34);
+      }
+
+      .hcm-whatsapp-icon-main,
+      .hcm-whatsapp-icon-alt {
+        font-size: 29px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .hcm-whatsapp-icon-alt {
+        font-size: 25px;
+      }
+
+      .hcm-whatsapp-label {
+        max-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        border-radius: 9999px;
+        background: #063f35;
+        padding: 0;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 800;
+        opacity: 0;
+        transform: translateX(8px);
+        transition: max-width 220ms ease, padding 220ms ease, opacity 180ms ease, transform 220ms ease;
+      }
+
+      .hcm-whatsapp:hover .hcm-whatsapp-label {
+        max-width: 120px;
+        padding: 9px 14px;
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      @media (max-width: 768px) {
+        .hcm-whatsapp {
+          right: 16px;
+        }
+
+        .hcm-whatsapp-icon {
+          width: 52px;
+          height: 52px;
+        }
+
+        .hcm-whatsapp-label {
+          display: none;
+        }
+      }
+
       * {
         box-sizing: border-box;
       }
+
+      @media (max-width: 768px) { body { zoom: 1.08; } }
+      .research-card { animation: researchCardIn 520ms cubic-bezier(.22,1,.36,1) both; }
+      @keyframes researchCardIn { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
       ::selection {
         background: rgba(16, 185, 129, 0.18);
@@ -3258,6 +2995,18 @@ function GlobalStyles() {
       @keyframes logoPulse { 0%,100% { transform: scale(.94); opacity: .82; } 50% { transform: scale(1.04); opacity: 1; } }
       @keyframes progressSweep { from { transform: translateX(-110%); } to { transform: translateX(260%); } }
 
+      .scroll-reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms cubic-bezier(.22,1,.36,1), transform 700ms cubic-bezier(.22,1,.36,1); }
+      .scroll-reveal.is-visible { opacity: 1; transform: translateY(0); }
+      .scroll-reveal-stagger > * { opacity: 0; transform: translateY(22px); transition: opacity 650ms cubic-bezier(.22,1,.36,1), transform 650ms cubic-bezier(.22,1,.36,1); }
+      .scroll-reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+      .scroll-reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 60ms; }
+      .scroll-reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 120ms; }
+      .scroll-reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 180ms; }
+      .scroll-reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 240ms; }
+      .scroll-reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 300ms; }
+      .scroll-reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 360ms; }
+      .scroll-reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 420ms; }
+
       /* ================================================
          REDUCE MOTION
       ================================================= */
@@ -3268,7 +3017,7 @@ function GlobalStyles() {
           scroll-behavior: auto;
         }
 
-        .page-transition, .knowledge-center article, .logo-loader-ring, .logo-loader-image, .loading-progress {
+        .page-transition, .knowledge-center article, .logo-loader-ring, .logo-loader-image, .loading-progress, .scroll-reveal, .scroll-reveal-stagger > * {
           animation: none;
         }
 
@@ -3283,7 +3032,7 @@ function GlobalStyles() {
 ========================================================= */
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("knowledge-center");
+  const [activeTab, setActiveTab] = useState("home");
 
   const [selectedLibraryItem, setSelectedLibraryItem] =
     useState(null);
@@ -3291,6 +3040,9 @@ export default function App() {
   const [selectedCaseStudy, setSelectedCaseStudy] =
     useState(null);
   const [selectedKnowledgeItem, setSelectedKnowledgeItem] = useState(null);
+  const [selectedResearch, setSelectedResearch] = useState(null);
+  const [selectedEditorial, setSelectedEditorial] = useState(null);
+  const [selectedEditorialType, setSelectedEditorialType] = useState("news");
   const [loadingMessage, setLoadingMessage] = useState("");
 
   const [pageTransitionKey, setPageTransitionKey] =
@@ -3300,6 +3052,8 @@ export default function App() {
     setSelectedLibraryItem(null);
     setSelectedCaseStudy(null);
     setSelectedKnowledgeItem(null);
+    setSelectedResearch(null);
+    setSelectedEditorial(null);
     setActiveTab(tab);
 
     setPageTransitionKey((prev) => prev + 1);
@@ -3360,13 +3114,44 @@ export default function App() {
     });
   };
 
+  const openResearchDetail = (item) => { setSelectedResearch(item); setActiveTab("research"); setPageTransitionKey((prev) => prev + 1); window.scrollTo({ top: 0, behavior: "smooth" }); };
+  const backFromResearch = () => { setSelectedResearch(null); setActiveTab("research"); setPageTransitionKey((prev) => prev + 1); window.scrollTo({ top: 0, behavior: "smooth" }); };
+
+  const openEditorialDetail = (item, type) => {
+    setSelectedEditorial(item);
+    setSelectedEditorialType(type || "news");
+    setActiveTab(type || "news");
+    setPageTransitionKey((prev) => prev + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const backFromEditorial = () => {
+    setSelectedEditorial(null);
+    setPageTransitionKey((prev) => prev + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const showLoadingThen = (message, callback, item) => {
     setLoadingMessage(message);
     window.setTimeout(() => {
       setLoadingMessage("");
       callback(item);
-    }, 900);
+    }, 1100);
   };
+  useEffect(() => {
+    const nodes = Array.from(document.querySelectorAll(".scroll-reveal, .scroll-reveal-stagger"));
+    if (!nodes.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, [pageTransitionKey, activeTab, selectedEditorial, selectedLibraryItem, selectedKnowledgeItem, selectedCaseStudy, selectedResearch]);
+
   const openKnowledgeDetail = (item) => {
     setSelectedKnowledgeItem(item);
     setSelectedLibraryItem(null);
@@ -3384,7 +3169,10 @@ export default function App() {
 
   let content = null;
 
-  if (selectedKnowledgeItem) {
+  if (selectedEditorial) {
+    const editorialTitle = selectedEditorialType === "insights" ? "Insights" : "News & Articles";
+    content = <EditorialDetail item={selectedEditorial} type={selectedEditorialType} title={editorialTitle} onBack={backFromEditorial} />;
+  } else if (selectedKnowledgeItem) {
     content = <KnowledgeCenterDetail item={selectedKnowledgeItem} onBack={backFromKnowledgeDetail} />;
   } else if (selectedLibraryItem) {
 
@@ -3403,6 +3191,9 @@ export default function App() {
         onBack={backFromCaseDetail}
       />
     );
+
+  } else if (activeTab === "home") {
+    content = <HomePage onNavigate={handleTabChange} />;
 
   } else if (activeTab === "library") {
 
@@ -3429,19 +3220,19 @@ export default function App() {
   } else if (activeTab === "news") {
 
     content = (
-      <PlaceholderPage title="News & Articles" />
+      <PlaceholderPage title="News & Articles" onReadMore={(item) => showLoadingThen("Membuka artikel News...", (entry) => openEditorialDetail(entry, "news"), item)} />
     );
+
+  } else if (selectedResearch) {
+    content = <ResearchDetail item={selectedResearch} onBack={backFromResearch} onSelect={(item) => showLoadingThen("Memuat research berikutnya...", openResearchDetail, item)} />;
 
   } else if (activeTab === "research") {
-
-    content = (
-      <PlaceholderPage title="Research" />
-    );
+    content = <ResearchPage onReadMore={(item) => showLoadingThen("Memuat materi Research...", openResearchDetail, item)} />;
 
   } else if (activeTab === "insights") {
 
     content = (
-      <PlaceholderPage title="Insights" />
+      <PlaceholderPage title="Insights" onReadMore={(item) => showLoadingThen("Membuka Insight...", (entry) => openEditorialDetail(entry, "insights"), item)} />
     );
 
   } else if (activeTab === "knowledge-center") {
@@ -3456,25 +3247,25 @@ export default function App() {
   } else if (activeTab === "digital-health-talk") {
 
     content = (
-      <PlaceholderPage title="Digital Health Talk" />
+      <DigitalHealthTalkPage onReadMore={(item) => showLoadingThen("Membuka Digital Health Talk...", (entry) => window.open(entry.url, "_blank", "noopener,noreferrer"), item)} />
     );
 
   } else if (activeTab === "about") {
 
     content = (
-      <PlaceholderPage title="About" />
+      <AboutPage onNavigate={handleTabChange} />
     );
 
   } else if (activeTab === "events") {
 
     content = (
-      <PlaceholderPage title="Events" />
+      <EventsPage />
     );
 
   } else if (activeTab === "community") {
 
     content = (
-      <PlaceholderPage title="Community" />
+      <CommunityPage />
     );
 
   } else {
@@ -3507,7 +3298,9 @@ export default function App() {
         </div>
       )}
 
-      {!selectedLibraryItem && !selectedCaseStudy && !selectedKnowledgeItem && (
+      <HcmWhatsAppButton />
+
+      {!selectedLibraryItem && !selectedCaseStudy && !selectedKnowledgeItem && !selectedResearch && (
           <Footer
             onNavigate={handleTabChange}
           />
