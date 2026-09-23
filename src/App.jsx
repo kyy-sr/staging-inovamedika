@@ -2104,7 +2104,7 @@ function HomePage({ onNavigate }) {
 
             {/* HERO IMAGE */}
             <div className="relative flex items-center justify-center lg:justify-end">
-              <img src="/assets/about-main.png" alt="Inovamedika digital health" className="relative z-10 w-full max-w-[610px] rounded-[28px] object-cover drop-shadow-sm" />
+              <img src="/public/about-main.png" alt="Inovamedika digital health" className="relative z-10 w-full max-w-[610px] rounded-[28px] object-cover drop-shadow-sm" />
             </div>
 
           </div>
